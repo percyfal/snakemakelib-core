@@ -30,19 +30,18 @@ def package_path(path, filters=()):
     if not os.path.exists(path):
         raise RuntimeError("packaging non-existent path: %s" % path)
     elif os.path.isfile(path):
-        package_data.append(relpath(path, 'snakemakelib_workflows'))
+        package_data.append(relpath(path, 'snakemakelib'))
     else:
         for path, dirs, files in os.walk(path):
-            path = relpath(path, 'snakemakelib_workflows')
+            path = relpath(path, 'snakemakelib')
             for f in files:
                 if not filters or f.endswith(filters):
                     package_data.append(join(path, f))
 
 rule_suffixes = ('.rules', '.rule')
-workflow_suffixes = ('.workflow')
                     
-package_path(join(ROOT, 'snakemakelib_workflows'), rule_suffixes)
-package_path(join(ROOT, 'snakemakelib_workflows'), workflow_suffixes)
+package_path(join(ROOT, 'snakemakelib'), rule_suffixes)
+package_path(join(ROOT, 'snakemakelib'), workflow_suffixes)
 scripts = []
 
 REQUIRES = [
@@ -92,12 +91,12 @@ setup(
     url="http://github.com/percyfal/snakemakelib-workflows",
     scripts=scripts,
     packages=[
-        'snakemakelib_workflows',
+        'snakemakelib',
     ],
     # namespace_packages = [
     #     'snakemakelib',
     #     'snakemakelib.rules',
     # ],
-    package_data={'snakemakelib_workflows': package_data},
+    package_data={'snakemakelib': package_data},
     install_requires=REQUIRES,
 )
