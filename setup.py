@@ -41,7 +41,7 @@ def package_path(path, filters=()):
 rule_suffixes = ('.rules', '.rule')
                     
 package_path(join(ROOT, 'snakemakelib'), rule_suffixes)
-package_path(join(ROOT, 'snakemakelib'), workflow_suffixes)
+
 scripts = []
 
 REQUIRES = [
@@ -81,22 +81,18 @@ _version = versioneer.get_version()
 _cmdclass = versioneer.get_cmdclass()
 _cmdclass.update({'test': PyTest})
 setup(
-    name="snakemakelib-workflows",
+    name="snakemakelib",
     version=_version,
     cmdclass=_cmdclass,
     author="Per Unneberg",
     author_email="per.unneberg@scilifelab.se",
-    description="Snakemake rule library",
+    description="Snakemakelib core library",
     license="MIT",
-    url="http://github.com/percyfal/snakemakelib-workflows",
+    url="http://github.com/percyfal/snakemakelib-core",
     scripts=scripts,
     packages=[
         'snakemakelib',
     ],
-    # namespace_packages = [
-    #     'snakemakelib',
-    #     'snakemakelib.rules',
-    # ],
     package_data={'snakemakelib': package_data},
     install_requires=REQUIRES,
 )
