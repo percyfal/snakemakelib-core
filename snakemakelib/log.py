@@ -3,7 +3,9 @@ import logging
 import logging.config
 import yaml
 import os
+import sys
 
+# NB: _logger level cannot be modified by user
 _logger = logging.getLogger(__name__)
 _logger.setLevel(logging.DEBUG)
 
@@ -32,32 +34,24 @@ class LoggerManager(object):
             LoggerManager._loggers['snakemakelib'] = logging.getLogger('snakemakelib')
             LoggerManager._loggers['snakemakelib'].setLevel(logging.WARNING)
             LoggerManager._loggers['snakemakelib'].addHandler(LoggerManager._ch)
-            self._load_config()
+            self._set_config()
             LoggerManager._has_loaded_config = True
 
+    def _set_config(self):
+        cfg = self._load_config()
+        print(cfg)
+        if cfg:
+            logging.config.dictConfig(cfg)
+
     def _load_config(self):
-        conf = {}
-        if os.path.exists("logconf.yaml"):
-            with open ("logconf.yaml", "r") as fh:
-                conf = yaml.load(fh)
-        else:
-            conf = self._load_sml_config()
-        if conf:
-            logging.config.dictConfig(conf)
-     
-    def _load_sml_config(self):
-        cfg = {}
-        for fn in [os.path.join(os.getenv("HOME"), ".smlconf.yaml"),
-                   os.path.join(os.curdir, "smlconf.yaml")]:
-            if (fn is None):
-                continue
-            if not os.path.exists(fn):
-                continue
-            with open(fn, "r") as fh:
-                cfg_tmp = yaml.load(fh)
-            if cfg_tmp:
-                cfg.update(cfg_tmp)
-        return cfg.get("logging", {})
+        try:
+            import snakemake.workflow as wf
+            if "logging" in wf.config:
+                return wf.config['logging']
+        except Exception as e:
+            _logger.warn("snakemakelib logging setup failed!")
+            _logger.warn(e)
+        return None
 
     @staticmethod
     def getLogger(name=None):
