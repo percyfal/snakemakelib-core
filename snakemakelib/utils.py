@@ -3,7 +3,6 @@ import os
 import shutil
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
-from snakemakelib.stat import is_installed
 
 smllogger = LoggerManager().getLogger(__name__)
 

@@ -39,7 +39,6 @@ class LoggerManager(object):
 
     def _set_config(self):
         cfg = self._load_config()
-        print(cfg)
         if cfg:
             logging.config.dictConfig(cfg)
 
