@@ -3,7 +3,6 @@
 import re
 import os
 import pytest
-from mock import patch
 from itertools import groupby
 from snakemakelib.regexp import RegexpDict, SampleRegexp, ReadGroup, DisallowedKeyException, MissingRequiredKeyException
 
@@ -159,28 +158,24 @@ class TestParseFunctionality:
         m = re.search(data['full_re'], os.path.abspath(data['full_fn']))
         assert m.groupdict() == {'SM': 'P001_101', 'DT': '121015', 'PU1': '1', 'PU2': 'BB002BBBXX', 'PU': '121015_BB002BBBXX'}
 
-    @patch('snakemakelib.regexp.re.match')
-    def test_pardir(self, mock_re):
-        # def mockreturn(pattern, s):
-        #     return None
-        # import snakemakelib.regexp
-        # monkeypatch.setattr(snakemakelib.regexp.re, 'match', mockreturn)
+    def test_pardir(self, mocker):
+        mock_re = mocker.patch('snakemakelib.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup("(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("../data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")
         (args, kw) = mock_re.call_args
         assert args[0].startswith('(?:[\\.\\w\\/]+)?\\/')
 
-    @patch('snakemakelib.regexp.re.match')
-    def test_curdir(self, mock_re):
+    def test_curdir(self, mocker):
+        mock_re = mocker.patch('snakemakelib.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup(r"(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("./data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")
         (args, kw) = mock_re.call_args
         assert args[0].startswith('(?:[\\.\\w\\/]+)?\\/')
 
-    @patch('snakemakelib.regexp.re.match')
-    def test_os_sep(self, mock_re):
+    def test_os_sep(self, mocker):
+        mock_re = mocker.patch('snakemakelib.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup("(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("/data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")

@@ -19,9 +19,9 @@ def test_log(lm, monkeypatch):
     assert logging.getLevelName(logger.level) == "INFO"
     
 def test_log_debug(lm, monkeypatch):
-    def my_mockreturn(cls):
+    def mockreturn(cls):
         return {'version':1, 'disable_existing_loggers': True, 'loggers' : {__name__: {'level': 'DEBUG'}}}
-    monkeypatch.setattr(lm, '_load_config', my_mockreturn)
+    monkeypatch.setattr(lm, '_load_config', mockreturn)
     logger = lm().getLogger(__name__)
     assert logging.getLevelName(logger.level) == "DEBUG"
 
