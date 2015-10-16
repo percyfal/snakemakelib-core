@@ -20,3 +20,15 @@ Contents
    :maxdepth: 2
 
    docs/release_notes
+   docs/reference
+   
+.. _indices:
+
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
