@@ -2,7 +2,6 @@
 # pylint: disable=R0904, C0301, C0103
 import pytest
 import pandas as pd
-from mock import patch
 from ..qualimap import Qualimap
 import snakemakelib.results
 

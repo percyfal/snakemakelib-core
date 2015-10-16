@@ -1,8 +1,9 @@
 # Copyright (c) 2014 Per Unneberg
 import os
-import shutil
+import re
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
+import snakemakelib.regexp
 
 smllogger = LoggerManager().getLogger(__name__)
 
@@ -55,7 +56,7 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
     Returns:
       flist: list of file names, prepended with root path
     """
-    if isinstance(regexp, RegexpDict):
+    if isinstance(regexp, snakemakelib.regexp.RegexpDict):
         r = regexp.re
     else:
         if not regexp:

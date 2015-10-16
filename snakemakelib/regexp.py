@@ -2,7 +2,7 @@
 import re
 import os
 from itertools import groupby
-from snakemakelib.utils import isoformat
+import snakemakelib.utils
 from snakemakelib.log import LoggerManager
 
 logger = LoggerManager().getLogger(__name__)
@@ -251,7 +251,7 @@ class ReadGroup(RunRegexp):
     def _fmt_string(self, k):
         """Take care of date string"""
         if k == 'DT':
-            return isoformat(self[k])
+            return snakemakelib.utils.isoformat(self[k])
         return self[k]
 
     def __str__(self):
