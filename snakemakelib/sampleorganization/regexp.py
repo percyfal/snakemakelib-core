@@ -1,4 +1,9 @@
 # Copyright (C) 2015 by Per Unneberg
+"""The ``snakemakelib.sampleorganization.regexp`` module adds a
+regular expression classes that deal with sample organization and read
+group information.
+
+"""
 import re
 import os
 from itertools import groupby
@@ -191,45 +196,59 @@ class RunRegexp(RegexpDict):
     def _post_process_keys(self, m):
         self['PATH'] = os.path.dirname(m.string)
 
-# SAM format specification
-# @RG Read group. Unordered multiple @RG lines are allowed.
-
-#   ID* Read group identifer. Each @RG line must have a unique ID. The
-#   value of ID is used in the RG tags of alignment records. Must be
-#   unique among all read groups in header section. Read group IDs may
-#   be modified when merging SAMfiles in order to handle collisions.
-
-# CN Name of sequencing center producing the read.
-# DS Description.
-# DT Date the run was produced (ISO8601 date or date/time).
-
-# FO Flow order. The array of nucleotide bases that correspond to the
-# nucleotides used for each ow of each read. Multi-base rows are
-# encoded in IUPAC format, and non-nucleotide rows by various other
-# characters. Format: /\*|[ACMGRSVTWYHKDBN]+/
-
-# KS The array of nucleotide bases that correspond to the key sequence
-# of each read.
-
-# LB Library.
-
-# PG Programs used for processing the read group.
-
-# PI Predicted median insert size.
-
-# PL Platform/technology used to produce the reads. Valid values:
-# CAPILLARY, LS454, ILLUMINA, SOLID, HELICOS, IONTORRENT, ONT, and
-# PACBIO.
-
-# PM Platform model. Free-form text providing further details of the platform/technology used.
-
-# PU Platform unit (e.g. flowcell-barcode.lane for Illumina or slide for SOLiD). Unique identifier.
-
-# SM Sample. Use pool name where a pool is being sequenced.
 
 
 class ReadGroup(RunRegexp):
-    """Adds formatting function for generating read group option string"""
+    """The :class:`snakemakelib.sampleorgzation.regexp.ReadGroup` class 
+    is a placeholder for read group labels. In general, it adds formatting
+    function for generating read group option string.
+
+    The labels are named following the conventions of the 
+    `SAM format specification <http://samtools.github.io/hts-specs/SAMv1.pdf>`_. 
+    To summarize, the class provides the following keys:
+
+    RG 
+      Read group. Unordered multiple @RG lines are allowed.
+    ID* 
+      Read group identifer. Each @RG line must have a unique ID. The
+      value of ID is used in the RG tags of alignment records. Must be
+      unique among all read groups in header section. Read group IDs may
+      be modified when merging SAMfiles in order to handle collisions.
+    CN 
+      Name of sequencing center producing the read.
+    DS 
+      Description.
+    DT 
+      Date the run was produced (ISO8601 date or date/time).
+
+    FO 
+      Flow order. The array of nucleotide bases that correspond to
+      the nucleotides used for each ow of each read. Multi-base rows are
+      encoded in IUPAC format, and non-nucleotide rows by various other
+      characters. Format: /\*|[ACMGRSVTWYHKDBN]+/
+    KS 
+      The array of nucleotide bases that correspond to the key
+      sequence of each read.
+    LB 
+      Library.
+    PG 
+      Programs used for processing the read group.
+    PI 
+      Predicted median insert size.
+    PL
+      Platform/technology used to produce the reads. Valid values:
+      CAPILLARY, LS454, ILLUMINA, SOLID, HELICOS, IONTORRENT, ONT, and
+      PACBIO.
+    PM 
+      Platform model. Free-form text providing further details of the
+      platform/technology used.
+    PU 
+      Platform unit (e.g. flowcell-barcode.lane for Illumina or slide
+      for SOLiD). Unique identifier.
+    SM 
+      Sample. Use pool name where a pool is being sequenced.
+
+    """
     _group_keys = ['ID', 'CN', 'DS', 'DT', 'FO', 'KS',
                    'LB', 'PG', 'PI', 'PL', 'PU', 'SM']
     _extra_keys = ['PATH']

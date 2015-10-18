@@ -3,7 +3,7 @@ import os
 import re
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
-import snakemakelib.regexp
+import snakemakelib.sampleorganization.regexp
 
 smllogger = LoggerManager().getLogger(__name__)
 
