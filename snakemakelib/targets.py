@@ -2,7 +2,7 @@
 import re
 import os
 import csv
-from snakemakelib.regexp import RegexpDict
+from snakemakelib.sampleorganization.regexp import RegexpDict
 from snakemakelib.utils import find_files
 from snakemakelib.log import LoggerManager
 from snakemakelib.exceptions import DeprecatedException

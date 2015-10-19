@@ -3,13 +3,16 @@ import os
 import re
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
-import snakemakelib.sampleorganization.regexp
+from .sample.regexp import RegexpDict
+#import snakemakelib.sample.regexp
 
 smllogger = LoggerManager().getLogger(__name__)
+
 
 def utc_time():
     """Make an utc_time with appended 'Z'"""
     return str(datetime.utcnow()) + 'Z'
+
 
 def isoformat(s=None):
     """Return isoformat date from string"""
@@ -20,14 +23,21 @@ def isoformat(s=None):
         (YY, MM, DD) = (s[0:2], s[2:4], s[4:6])
         return date(int("20{YY}".format(YY=YY)), int(MM.lstrip("0")), int(DD)).isoformat()
 
-# http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string
-def rreplace(s, old, new, occurrence):
-    li = s.rsplit(old, occurrence)
+
+def rreplace(string, old, new, occurrence):
+    """Replace the last occurrence of an expression in a string.
+
+    See http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string
+    """
+    li = string.rsplit(old, occurrence)
     return new.join(li)
+
 
 ## From bcbb
 def safe_makedir(dname):
-    """Make a directory if it doesn't exist, handling concurrent race conditions.
+    """Make a directory if it doesn't exist, handling concurrent race
+    conditions.
+
     """
     if not os.path.exists(dname):
         try:
@@ -56,17 +66,17 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
     Returns:
       flist: list of file names, prepended with root path
     """
-    if isinstance(regexp, snakemakelib.regexp.RegexpDict):
-        r = regexp.re
+    if isinstance(regexp, RegexpDict):
+        file_re = regexp.re
     else:
         if not regexp:
             return []
-        r = re.compile(regexp)
-    if not limit is None and any(k not in r.groupindex.keys() for k in limit.keys()):
+        file_re = re.compile(regexp)
+    if not limit is None and any(k not in file_re.groupindex.keys() for k in limit.keys()):
         smllogger.warning("""Some limit keys '{}' not in regexp
         groupindex '{}'; disregarding limit option for these
-        keys""".format(list(limit.keys()), list(r.groupindex.keys())))
-    re_fn = r.search if search else r.match
+        keys""".format(list(limit.keys()), list(file_re.groupindex.keys())))
+    re_fn = file_re.search if search else file_re.match
     flist = []
     for root, dirs, files in os.walk(path):
         for x in files:
@@ -79,6 +89,7 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
             else:
                 flist += [os.path.join(root, x)]
     return sorted(flist)
+
 
 def dict_to_R(d, as_string=True):
     """Translate a python dictionary to an R option string

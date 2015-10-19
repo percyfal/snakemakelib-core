@@ -4,7 +4,7 @@ import re
 import os
 import pytest
 from itertools import groupby
-from snakemakelib.regexp import RegexpDict, SampleRegexp, ReadGroup, DisallowedKeyException, MissingRequiredKeyException
+from snakemakelib.sample.regexp import RegexpDict, SampleRegexp, ReadGroup, DisallowedKeyException, MissingRequiredKeyException
 
 class TestRegexpDict:
     def test_regexpdict_init_empty(self):
@@ -159,7 +159,7 @@ class TestParseFunctionality:
         assert m.groupdict() == {'SM': 'P001_101', 'DT': '121015', 'PU1': '1', 'PU2': 'BB002BBBXX', 'PU': '121015_BB002BBBXX'}
 
     def test_pardir(self, mocker):
-        mock_re = mocker.patch('snakemakelib.regexp.re.match')
+        mock_re = mocker.patch('snakemakelib.sample.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup("(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("../data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")
@@ -167,7 +167,7 @@ class TestParseFunctionality:
         assert args[0].startswith('(?:[\\.\\w\\/]+)?\\/')
 
     def test_curdir(self, mocker):
-        mock_re = mocker.patch('snakemakelib.regexp.re.match')
+        mock_re = mocker.patch('snakemakelib.sample.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup(r"(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("./data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")
@@ -175,7 +175,7 @@ class TestParseFunctionality:
         assert args[0].startswith('(?:[\\.\\w\\/]+)?\\/')
 
     def test_os_sep(self, mocker):
-        mock_re = mocker.patch('snakemakelib.regexp.re.match')
+        mock_re = mocker.patch('snakemakelib.sample.regexp.re.match')
         mock_re.return_value = None
         rg = ReadGroup("(?P<SM>[a-zA-Z0-9]+)/(?P<PU>[A-Za-z0-9]+)/(?P<PU1>[0-9])_(?P<DT>[0-9]+)_(?P<PU2>[A-Z0-9]+XX)_(?P=SM)")
         rg.parse("/data/projects/J.Doe_00_01/P001_101/121015_BB002BBBXX/1_121015_BB002BBBXX_P001_101_1.fastq.gz", "")
