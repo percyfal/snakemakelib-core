@@ -2,13 +2,52 @@
 """Utilities for finding and determining inputs"""
 import os
 import csv
+import snakemake.workflow
+from snakemake.utils import update_config
 from snakemakelib.log import LoggerManager
 from snakemakelib.utils import find_files
 
-logger = LoggerManager().getLogger(__name__)
+smllogger = LoggerManager().getLogger(__name__)
 
+def initialize_input(src_re=None, sampleinfo=None, filter_suffix="", sample_column_map=None):
+    """Initialize inputs.
 
-def parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
+    Try reading sampleinfo file if present. Returns list of annotated
+    dicts.
+
+    Args:
+      src_re (RegexpDict): RegexpDict object corresponding to the source
+                           regular expression
+      sampleinfo (str): sampleinfo file name
+      filter_suffix (str): only use given suffix to filter for input
+                           file names. Useful if many result files
+                           exist for a sample
+      sample_column_map (dict): mapping from sampleinfo column names
+                                to read group names, e.g.
+                                {'Sample':'SM'}
+
+    Returns:
+      samples (list): list of dicts where each dict corresponds to
+                      sample information. The keys are read group
+                      identifiers and additional arbitrary metadata
+                      information (e.g. factor levels)
+
+    """
+    if not sampleinfo and not src_re:
+        raise Exception("must provide either sampleinfo file name or source regular expression")
+    if sampleinfo:
+        smllogger.info("Reading sample information file ", sampleinfo)
+        samples = _parse_sampleinfo(sampleinfo, sample_column_map = sample_column_map)
+    else:
+        smllogger.info("No sample information file present; trying to set sample information from file names")
+        samples = _samples_from_input_files(src_re, filter_suffix = filter_suffix)
+    # FIXME: rewrite with try/except
+    if not samples:
+        raise Exception("No samples parsed")
+    return samples
+
+def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
+
     """Parse sample information file
 
     Args:
@@ -25,11 +64,11 @@ def parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
       samples (list): list of dictionaries, where the keys of each
         dictionary correspond to read group identifiers
     """
-    logger.debug("trying to gather target information from configuration key config['settings']['sampleinfo']")
+    smllogger.debug("trying to gather target information from configuration key config['settings']['sampleinfo']")
     if isinstance(sampleinfo, str) and not os.path.exists(sampleinfo):
-        logger.debug("no such sample information file '{sampleinfo}'".format(sampleinfo=sampleinfo))
+        smllogger.debug("no such sample information file '{sampleinfo}'".format(sampleinfo=sampleinfo))
         return
-    logger.debug("Reading sample information from '{sampleinfo}'".format(sampleinfo=sampleinfo))
+    smllogger.debug("Reading sample information from '{sampleinfo}'".format(sampleinfo=sampleinfo))
     if isinstance(sampleinfo, str):
         with open(sampleinfo, 'r') as fh:
             reader = csv.DictReader(fh.readlines())
@@ -43,10 +82,20 @@ def parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
     return [s for s in reader]
 
 
-def samples_from_input_files(src_re, filter_suffix="", **kwargs):
+def _samples_from_input_files(src_re, filter_suffix=""):
     """Generate sample names from input files.
 
+    src_re (RegexpDict): RegexpDict object corresponding to the source
+                         regular expression
+    filter_suffix (str): only use given suffix to filter for input
+                         file names. Useful if many result files exist
+                         for a sample
+
+    Returns:
+      samples (list): list of dictionaries, where the keys of each
+        dictionary correspond to read group identifiers
+
     """
-    logger.debug("Getting sample information from input files")
+    smllogger.debug("Getting sample information from input files")
     inputs = find_files(regexp=src_re.basename_pattern + filter_suffix, **kwargs)
     return [dict(src_re.parse(f)) for f in inputs]

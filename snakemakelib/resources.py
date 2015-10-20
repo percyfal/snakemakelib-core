@@ -1,8 +1,9 @@
 ''' Provides access to templates and css files '''
-from snakemakelib.log import LoggerManager
-logger = LoggerManager().getLogger(__name__)
+import os
 from jinja2 import Environment, PackageLoader
 from snakemakelib import SNAKEMAKELIB_PATH
+from snakemakelib.log import LoggerManager
+logger = LoggerManager().getLogger(__name__)
 
 # Template path and templates
 SmlTemplateEnv = Environment(loader = PackageLoader("snakemakelib", "_templates"))

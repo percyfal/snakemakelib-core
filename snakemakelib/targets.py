@@ -2,12 +2,33 @@
 import re
 import os
 import csv
-from snakemakelib.sampleorganization.regexp import RegexpDict
+import snakemake.workflow
+from snakemakelib.sample.regexp import RegexpDict
 from snakemakelib.utils import find_files
 from snakemakelib.log import LoggerManager
 from snakemakelib.exceptions import DeprecatedException
 
-logger = LoggerManager().getLogger(__name__)
+smllogger = LoggerManager().getLogger(__name__)
+
+def make_targets(tgt_re, samples, target_suffix=""):
+    """Make targets
+    
+    Create target names based on the target regular expression and a
+    target suffix.
+
+    Args:
+      tgt_re (RegexpDict): RegexpDict object corresponding to the target
+                           regular expression
+
+      samples (list): list of dicts where each dict is an annotated
+                      sample. The keys correspond to read group labels.
+      target_suffix (str): target suffix to add to target regexp
+
+    Returns:
+      targets (list): list of target names
+    """
+    tgts = [tgt_re.fmt.format(**unit) + target_suffix for unit in samples]
+    return tgts
 
 def generic_target_generator(**kwargs):
     raise DeprecatedException("""snakemakelib.targets.generic_target_generator has been deprecated.
