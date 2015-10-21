@@ -49,6 +49,8 @@ REQUIRES = [
     'pytest',
     'pytest-cov',
     'pytest-mock',
+    'blaze',
+    'bokeh',
 ]
 
 try:
