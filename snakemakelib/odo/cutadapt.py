@@ -1,9 +1,13 @@
 # Copyright (C) 2015 by Per Unneberg
 import re
-from . import pd, resource
+from . import resource, convert, DataFrame
+
+class Cutadapt(object):
+    def __init__(self, path, **kwargs):
+        self.path = path
 
 @resource.register('.+\.cutadapt_metrics')
-def resource_cutadapt_metrics(uri):
+def resource_cutadapt_metrics(uri, **kwargs):
     with open(uri) as fh:
         data = [x.strip("\n").split("\t") for x in fh.readlines()
                 if not x.strip() == ""]
@@ -18,6 +22,12 @@ def resource_cutadapt_metrics(uri):
                         for x in list(y.split(":")
                                       for x in data[indices[0]+1:indices[1]]
                                       for y in x)))
-        df_summary = pd.DataFrame(
-            summary, columns=["statistic", "count"])
-    return df_summary
+        df = DataFrame(summary)
+        df.columns = ["statistic", "value"]
+    return df
+
+
+# @convert.register(DataFrame, Cutadapt)
+# def cutadapt_to_DataFrame(cutadapt):
+#     pass
+    
