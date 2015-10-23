@@ -27,7 +27,7 @@ def make_targets(tgt_re, samples, target_suffix=""):
     Returns:
       targets (list): list of target names
     """
-    tgts = [tgt_re.fmt.format(**unit) + target_suffix for unit in samples]
+    tgts = list(set(tgt_re.fmt.format(**unit) + target_suffix for unit in samples))
     return tgts
 
 def generic_target_generator(**kwargs):
