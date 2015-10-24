@@ -41,6 +41,7 @@ def package_path(path, filters=()):
 rule_suffixes = ('.rules', '.rule')
                     
 package_path(join(ROOT, 'snakemakelib'), rule_suffixes)
+package_path(join(ROOT, 'snakemakelib', '_templates'))
 
 scripts = []
 
