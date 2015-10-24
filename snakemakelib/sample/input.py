@@ -33,7 +33,7 @@ def initialize_input(src_re=None, sampleinfo=None, filter_suffix="", sample_colu
                       information (e.g. factor levels)
 
     """
-    if not sampleinfo and not src_re:
+    if sampleinfo is None and src_re is None:
         raise Exception("must provide either sampleinfo file name or source regular expression")
     if sampleinfo:
         smllogger.info("Reading sample information file ", sampleinfo)
@@ -82,7 +82,7 @@ def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
     return [s for s in reader]
 
 
-def _samples_from_input_files(src_re, filter_suffix=""):
+def _samples_from_input_files(src_re, filter_suffix="", **kwargs):
     """Generate sample names from input files.
 
     src_re (RegexpDict): RegexpDict object corresponding to the source
