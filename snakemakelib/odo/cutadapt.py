@@ -24,7 +24,7 @@ def resource_cutadapt_metrics(uri, **kwargs):
         data = "".join(fh)
     sections = re.split("\n===.*===\n", data)
     df = DataFrame.from_records([_split_x(x) for x in sections[1].split("\n") if x],
-                                index="statistic", columns=["statistic", "value"])
+                                index=["statistic"], columns=["statistic", "value"])
     df["value"] = pd.to_numeric(df["value"])
     return df
 
