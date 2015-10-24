@@ -49,7 +49,7 @@ def test_hist_metrics(insert_metrics):
     
 
 def test_metrics(align_metrics):
-    metrics = odo(str(align_metrics), DataFrame)
+    metrics, _ = odo(str(align_metrics), list)
     assert metrics.loc["FIRST_OF_PAIR"]["MEAN_READ_LENGTH"] == 76
 
 

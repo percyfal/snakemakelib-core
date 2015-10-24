@@ -28,19 +28,19 @@ def _reader(uri):
         metrics = DataFrame.from_records(data[(indices[0]+2):],
                                          columns=data[(indices[0]+1)],
                                          index="CATEGORY")
-    return metrics
+    return (metrics, None)
     
 
 @resource.register('.+\.align_metrics')
 def resource_align_metrics(uri, **kwargs):
-    metrics = _reader(uri)
+    metrics, _ = _reader(uri)
     metrics = metrics.apply(pd.to_numeric, axis=1)
-    return metrics
+    return (metrics, None)
 
 @resource.register('.+\.insert_metrics')
 def resource_insert_metrics(uri, **kwargs):
     (_metrics, hist) = _hist_reader(uri)
-    metrics = _metrics[_metrics.columns - ["PAIR_ORIENTATION"]].apply(pd.to_numeric, axis=0)
+    metrics = _metrics[_metrics.columns.difference(["PAIR_ORIENTATION"])].apply(pd.to_numeric, axis=0)
     metrics["PAIR_ORIENTATION"] = _metrics["PAIR_ORIENTATION"]
     hist = hist.apply(pd.to_numeric, axis=0)
     return (metrics, hist)
@@ -51,4 +51,8 @@ def resource_hs_metrics(uri, **kwargs):
 
 @resource.register('.+\.dup_metrics')
 def resource_dup_metrics(uri, **kwargs):
-    return _hist_reader(uri)
+    (_metrics, hist) = _hist_reader(uri)
+    metrics = _metrics[_metrics.columns.difference(["LIBRARY"])].apply(pd.to_numeric, axis=0)
+    hist = hist.apply(pd.to_numeric, axis=0)
+    return (metrics, hist)
+
