@@ -3,9 +3,10 @@ import re
 import string
 import math
 from datetime import datetime
-from pandas import DataFrame
+import pandas as pd
 from blaze import odo
 
+# FIXME: utilize pandas builtin functionality for handling these issues
 def recast(x, strpfmt="%b %d %H:%M:%S"):
     """Reformat strings to numeric or datestrings"""
     x = x.rstrip().lstrip()
@@ -40,7 +41,7 @@ def annotate_df(infile, parser, groupnames=["SM"]):
       name <name>, the parser should have a corresponding (?P<name>...)
       expression
     """
-    df = odo(infile, DataFrame)
+    df = odo(infile, pd.DataFrame)
     m = parser.parse(infile)
     for name in groupnames:
         df[name] = str(m[name])
