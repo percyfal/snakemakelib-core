@@ -3,7 +3,8 @@ import re
 import string
 import math
 from datetime import datetime
-import pandas as pd
+from pandas import DataFrame
+from blaze import odo
 
 def recast(x, strpfmt="%b %d %H:%M:%S"):
     """Reformat strings to numeric or datestrings"""
@@ -25,3 +26,23 @@ def recast(x, strpfmt="%b %d %H:%M:%S"):
 # Replace whitespace with underscore, convert percent characters to PCT
 def trim_header(x, underscore=False, percent=False):
     return x.lstrip().rstrip().replace(" ", "_" if underscore else " ").replace("%", "PCT" if percent else "%").replace(",", "_" if underscore else " ")
+
+def annotate_df(infile, parser, groupnames=["SM"]):
+    """Annotate a parsed odo unit.
+    
+    Assumes metadata information is stored in input file name.
+
+    Args:
+      infile (str): file name
+      parser (re): regexp object to parse input file name with. Metadata information to parse is stored in file name
+     
+      groupnames (list): list of parser group names to use. For each
+      name <name>, the parser should have a corresponding (?P<name>...)
+      expression
+    """
+    df = odo(infile, DataFrame)
+    m = parser.parse(infile)
+    for name in groupnames:
+        df[name] = str(m[name])
+    return df
+    
