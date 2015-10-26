@@ -11,5 +11,5 @@ def resource_star_log(uri, **kwargs):
                        engine="python", skiprows=[7, 22, 27])
     df["name"] = [x.strip() for x in df["name"]]
     df["value"] = [recast(x) for x in df["value"]]
-    df.index = df["name"]
+    df = df.set_index("name")
     return df
