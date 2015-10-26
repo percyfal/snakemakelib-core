@@ -1,0 +1,108 @@
+Changelog
+=========
+
+%%version%% (unreleased)
+------------------------
+
+- Initial commit. [Per Unneberg]
+
+0.1-alpha.1 (2015-10-26)
+------------------------
+
+- Update docs for 0.1-alpha.1. [Per Unneberg]
+
+- Add annotate_df function. [Per Unneberg]
+
+- Add rseqc odo parser and test. [Per Unneberg]
+
+- Add star odo parser. [Per Unneberg]
+
+- Add rnaseq utilities. [Per Unneberg]
+
+- Fix test for sampleinfo and src_re. [Per Unneberg]
+
+- Update index. [Per Unneberg]
+
+- Add odo picard parser. [Per Unneberg]
+
+- Add _templates to setup. [Per Unneberg]
+
+- Make make_targets return list of unique targets. [Per Unneberg]
+
+- Add code and tests for qualimap, picard. [Per Unneberg]
+
+- Reimplement cutadapt parser. [Per Unneberg]
+
+- Add xls odo format. [Per Unneberg]
+
+- Add DataFrame. [Per Unneberg]
+
+- Add odo resources for atacseq. [Per Unneberg]
+
+- Add input initialization and make_targets. [Per Unneberg]
+
+- Rename sampleorganization and add input. [Per Unneberg]
+
+  - rename sampleorganization module to sample
+  - organization-specific code now lives in sample.organization
+  - add module input to deal with input files
+
+- Simplify sampleorganization module. [Per Unneberg]
+
+- Load sample organization via module import. [Per Unneberg]
+
+- Update sample organization docs. [Per Unneberg]
+
+- Add reference documentation. [Per Unneberg]
+
+- Add indices. [Per Unneberg]
+
+- Organize autodoc groupwise. [Per Unneberg]
+
+- Add versioneer version function. [Per Unneberg]
+
+- Move regexp to sampleorganization. [Per Unneberg]
+
+- Add sample organization. [Per Unneberg]
+
+- Add test_results. [Per Unneberg]
+
+- Add test_utils. [Per Unneberg]
+
+- Add qualimap test, use pytest-mock. [Per Unneberg]
+
+- Add more tests. [Per Unneberg]
+
+- Add applications. [Per Unneberg]
+
+- Delete parsers. [Per Unneberg]
+
+- Rename module parsers to tools and add tools. [Per Unneberg]
+
+- Add report module. [Per Unneberg]
+
+- Add parsers module. [Per Unneberg]
+
+- Add db module. [Per Unneberg]
+
+- Add targets. [Per Unneberg]
+
+- Simplify log and add test. [Per Unneberg]
+
+- Update exceptions and add find_files to utils. [Per Unneberg]
+
+- Add regexp utilities. [Per Unneberg]
+
+- Add utils. [Per Unneberg]
+
+- Add exceptions, resources, results. [Per Unneberg]
+
+- Add logging and update description. [Per Unneberg]
+
+- Add versioneer version management. [Per Unneberg]
+
+- Add setup, sphinx, conda files. [Per Unneberg]
+
+- Initial commit. [Per Unneberg]
+
+
