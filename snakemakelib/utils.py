@@ -3,8 +3,11 @@ import os
 import re
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
-from .sample.regexp import RegexpDict
-#import snakemakelib.sample.regexp
+# Circular import issue here!
+#
+# from snakemakelib.sample.regexp import RegexpDict
+# from snakemakelib.sample.regexp import *
+import snakemakelib.sample.regexp
 
 smllogger = LoggerManager().getLogger(__name__)
 
@@ -66,7 +69,7 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
     Returns:
       flist: list of file names, prepended with root path
     """
-    if isinstance(regexp, RegexpDict):
+    if isinstance(regexp, snakemakelib.sample.regexp.RegexpDict):
         file_re = regexp.re
     else:
         if not regexp:

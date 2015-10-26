@@ -1,7 +1,6 @@
 # Copyright (C) 2015 by Per Unneberg
 import re
 from blaze import resource, DataFrame
-import pytest
 import numpy as np
 import pandas as pd
 
