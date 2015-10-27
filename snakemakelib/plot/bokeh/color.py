@@ -2,7 +2,7 @@
 import math
 import pandas.core.common as com
 from bokeh.palettes import brewer as bokeh_brewer
-from .palettes import snakemakelib_brewer
+from .palettes import brewer as snakemakelib_brewer
 import logging
 
 logger = logging.getLogger(__name__)

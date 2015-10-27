@@ -9,7 +9,7 @@ from bokeh.models.widget import Widget
 from bokeh.util.string import encode_utf8
 
 
-def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE, css_raw=None, template_variables=None):
+def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE, css_raw=None, js_raw=None, template_variables=None):
     """Render static html document.
 
     This is a minor modification of :py:meth:`bokeh.embed.file_html`.
@@ -19,6 +19,7 @@ def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE
       title (str): a title for the HTML document ``<title>`` tags.
       resources (Resources): a resource configuration for BokehJS assets
       css_raw (list): a list of file names for inclusion in the raw css
+      js_raw (list): a list of file names for inclusion in the raw js
 
       template_variables (dict): variables to be used in the Jinja2
           template. In contrast to :py:meth:`bokeh.embed.file_html`,
@@ -47,8 +48,13 @@ def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE
     css_resources = resources
 
     bokeh_js = ''
+
+    _js_raw = js_resources.js_raw
+    if js_raw:
+        tmp = lambda: _inline(js_raw)
+        _js_raw += tmp()
     if js_resources:
-        bokeh_js = JS_RESOURCES.render(js_raw=js_resources.js_raw, js_files=js_resources.js_files)
+        bokeh_js = JS_RESOURCES.render(js_raw=_js_raw, js_files=js_resources.js_files)
 
     bokeh_css = ''
 
