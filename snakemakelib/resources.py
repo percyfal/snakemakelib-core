@@ -10,5 +10,8 @@ SmlTemplateEnv = Environment(loader = PackageLoader("snakemakelib", "_templates"
 SmlTemplateEnv.globals.update(zip=zip)
 
 # Static css files
-css_files = [os.path.join(SNAKEMAKELIB_PATH, 'static', 'basic.css')]
+css_files = [os.path.join(SNAKEMAKELIB_PATH, 'static', 'css', 'basic.css')]
 
+# snakemakelib javascript library
+js_files = [os.path.join(SNAKEMAKELIB_PATH, 'static', 'js', 'snakemakelib.js')]
+# Add coffee script here possible?

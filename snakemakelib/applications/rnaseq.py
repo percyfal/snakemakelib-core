@@ -2,23 +2,26 @@
 import math
 import pandas as pd
 from snakemakelib.log import LoggerManager
+from snakemakelib.odo.utils import annotate_df
+from snakemakelib.odo import rpkmforgenes, rsem
 
 logger = LoggerManager().getLogger(__name__)
 
-def number_of_detected_genes(expr, cutoff=1.0, **kwargs):
+def number_of_detected_genes(expr, cutoff=1.0, quantification="TPM", **kwargs):
     """Aggregate expression data frame to count number of detected genes
 
     Args:
       expr (DataFrame): pandas data frame with expression values
       cutoff (float): cutoff for detected gene
+      quantification (str): quantification label, TPM or FPKM
 
     Returns:
       detected_genes (DataFrame): aggregated data fram with number of detected genes per sample
     """
     expr_long = read_gene_expression(expr)
-    expr_long["TPM"] = [math.log2(x+1.0) for x in expr_long["TPM"]]
+    expr_long[quantification] = [math.log2(x+1.0) for x in expr_long[quantification]]
     try:
-        detected_genes = expr_long.groupby("sample").agg(lambda x: sum(x > cutoff))
+        detected_genes = expr_long.groupby(kwargs.get("groupby", 'SM')).agg(lambda x: sum(x > cutoff))
     except Exception as e:
         logger.warning("Failed to group genes by sample :", e)
         detected_genes = None
@@ -56,3 +59,10 @@ def read_gene_expression(infile, annotation=None, unit_id="gene_id",
         mapping = _gene_name_map_from_gtf(annot, unit_id, unit_name)
         expr[unit_name] = expr[unit_id].map(mapping.get)
     return expr
+
+def summarize_expression_data(targets, outfile, parser, groupnames=["SM"]):
+    """Summarize several expression result files and save as csv output file"""
+    dflist = [annotate_df(t, parser, groupnames=groupnames) for t in targets]
+    df_long = pd.concat(dflist)
+    df_long.to_csv(outfile)
+        
