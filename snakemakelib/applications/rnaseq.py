@@ -1,9 +1,10 @@
 # Copyright (C) 2015 by Per Unneberg
-import math
+import numpy as np
 import pandas as pd
 from snakemakelib.log import LoggerManager
 from snakemakelib.odo.utils import annotate_df
 from snakemakelib.odo import rpkmforgenes, rsem
+
 
 logger = LoggerManager().getLogger(__name__)
 
@@ -66,3 +67,21 @@ def summarize_expression_data(targets, outfile, parser, groupnames=["SM"]):
     df_long = pd.concat(dflist)
     df_long.to_csv(outfile)
         
+
+def estimate_size_factors_for_matrix(counts, locfunc=np.median):
+    """Estimate size factors from count data frame.
+
+    See bioconductor:DEseq2::estimateSizeFactorsForMatrix for original
+    R implementation.
+
+    Args:
+      counts (DataFrame): counts data frame in wide format
+      locfunc (func): location function
+
+    Returns:
+      sizes (Series): size factors for groups
+    """
+    loggeomeans = counts.apply(np.log, axis=1).mean(axis=1)
+    finite = loggeomeans.apply(np.isfinite)
+    factors = counts.apply(np.log, axis=1).apply(lambda x: np.exp( locfunc ((x - loggeomeans).loc[finite])))
+    return factors
