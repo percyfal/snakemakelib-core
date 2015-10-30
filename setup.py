@@ -103,6 +103,7 @@ setup(
         'snakemakelib.bio.ngs',
         'snakemakelib.bio.ngs.rnaseq',
         'snakemakelib.db',
+        'snakemakelib.graphics',
         'snakemakelib.odo',
         'snakemakelib.plot',
         'snakemakelib.plot.bokeh',
