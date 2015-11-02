@@ -4,10 +4,9 @@ from bokeh.models import ColumnDataSource
 import pandas as pd
 import statsmodels.api as sm
 from . import rnaseq
+from snakemakelib.graphics import scatter
 
 
-# FIXME: make into class? use .fit() notation; see statsmodels,
-# sklearn for inspiration
 class ScrnaseqTechnicalNoise(object):
     def __init__(self, df, df_spikein, quantile=.95, cutoff=.3,
                  **kwargs):
@@ -61,3 +60,35 @@ class ScrnaseqTechnicalNoise(object):
         self._coef = coef
         self._fitted_data = pd.concat([self._means, self._cv2], axis=1)
         self._fitted_data.columns = ["normalized mean", "cv2"]
+
+
+def scrnaseq_brenecke_plot(infile, spikein_re, counts="TPM",
+                           index=["SM", "gene_id", "transcript_id",
+                                  "gene_name"], unstack="SM", **kwargs):
+    """Make the brenecke plot"""
+    # df_raw = pd.read_csv(infile, index_col=0)
+    # df_raw = df_raw.set_index(index)
+    # df = df_raw[counts].unstack(level=unstack)
+    df = infile
+    # Partition data set inte genes and spikeins
+    i_spikes = df.index.map(lambda s: bool(spikein_re.search(s[0])))
+    # Do the error modelling
+    noise = ScrnaseqTechnicalNoise(df[~i_spikes], df[i_spikes])
+    noise.fit()
+
+    # Plot the results
+    fig, source = scatter(y="cv2", x="normalized mean",
+                          df=noise._fitted_data.dropna().reset_index(),
+                          x_axis_type="log", y_axis_type="log",
+                          x_axis_label="Normalized mean",
+                          y_axis_label="Cv2",
+                          plot_height=kwargs.pop("plot_height", 400),
+                          plot_width=kwargs.pop("plot_width", 400),
+                          color=kwargs.pop("color", "spikein"),
+                          **kwargs)
+
+    # Add confidence lines
+    xg = [10**x for x in np.linspace(-2.0, 6.0, num=1000)]
+    y = (noise._xi + abs(noise.coefficients["a1tilde"]))/xg + noise.coefficients["a0"]
+    fig.line(xg, y, color="red", line_width=3)
+    return fig, noise
