@@ -1,6 +1,7 @@
 # Copyright (C) 2015 by Per Unneberg
 import numpy as np
 import pandas as pd
+import math
 from snakemakelib.log import LoggerManager
 from snakemakelib.odo.utils import annotate_df
 from snakemakelib.odo import rpkmforgenes, rsem
