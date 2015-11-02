@@ -1,13 +1,13 @@
 var colorbrewer = {Paired: {
-	3	: [ "#A6CEE3","#1F78B4","#B2DF8A"],
-	4	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C"],
-	5	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99"],
-	6	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C"],
-	7	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F"],
-	8	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00"] ,
-	9	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6"],
-	10	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6","#6A3D9A"],
-	11	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6","#6A3D9A","#FFFF99"],
+    3	: [ "#A6CEE3","#1F78B4","#B2DF8A"],
+    4	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C"],
+    5	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99"],
+    6	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C"],
+    7	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F"],
+    8	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00"] ,
+    9	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6"],
+    10	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6","#6A3D9A"],
+    11	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6","#6A3D9A","#FFFF99"],
     12	: [ "#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00","#CAB2D6","#6A3D9A","#FFFF99", "#B15928"]}};
 
 var pca_callback;
@@ -63,9 +63,9 @@ pca_component = function(source, cb_obj, component) {
     var myRe = /^([0-9]+)/;
     var data = source.get('data');
     var value = myRe.exec(String(cb_obj.get('value')))[1]
-    var component = data[component]
-    for (i = 0; i < component.length; i++) {
-        component[i] = data[value][i]
+    var pcacomp = data[component]
+    for (i = 0; i < pcacomp.length; i++) {
+        pcacomp[i] = data[value-1][i]
     }
     source.trigger('change');
 };
