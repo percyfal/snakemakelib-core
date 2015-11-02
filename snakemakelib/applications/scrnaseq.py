@@ -2,9 +2,11 @@
 import numpy as np
 from bokeh.models import ColumnDataSource
 import pandas as pd
+from scipy.stats import chi2
 import statsmodels.api as sm
 from . import rnaseq
 from snakemakelib.graphics import scatter
+from bokeh.models import HoverTool, OpenURL, TapTool
 
 
 class ScrnaseqTechnicalNoise(object):
@@ -30,7 +32,7 @@ class ScrnaseqTechnicalNoise(object):
         self._vars = self._data_norm.var(axis=1)
         self._cv2 = self._vars / (self._means ** 2)
         self._min_mean_for_fit = self._means.loc['gene', :][(self._cv2.loc['gene', :] > self.cutoff)].dropna().quantile(q=self.quantile)
-        
+
         
     @property
     def size_factors(self):
@@ -56,26 +58,26 @@ class ScrnaseqTechnicalNoise(object):
         gamma_results = sm.GLM(self._cv2.loc['gene', :][use_for_fit], X, family = sm.families.Gamma()).fit()
         self._xi = (1 / self.size_factors['gene']).mean()
         coef = gamma_results.params
-        coef['a1tilde'] = coef['a1tilde'] - self._xi
+        coef['a1'] = coef['a1tilde'] - self._xi
         self._coef = coef
         self._fitted_data = pd.concat([self._means, self._cv2], axis=1)
         self._fitted_data.columns = ["normalized mean", "cv2"]
 
 
-def scrnaseq_brenecke_plot(infile, spikein_re, counts="TPM",
+def scrnaseq_brennecke_plot(infile, spikein_re, counts="TPM",
                            index=["SM", "gene_id", "transcript_id",
-                                  "gene_name"], unstack="SM", **kwargs):
-    """Make the brenecke plot"""
-    # df_raw = pd.read_csv(infile, index_col=0)
-    # df_raw = df_raw.set_index(index)
-    # df = df_raw[counts].unstack(level=unstack)
-    df = infile
+                                  "gene_name"], unstack="SM",
+                            tooltips=["gene_name", "gene_id"],
+                            taptool_url=None, **kwargs):
+    """Make the brennecke plot"""
+    df_raw = pd.read_csv(infile, index_col=0)
+    df_raw = df_raw.set_index(index)
+    df = df_raw[counts].unstack(level=unstack)
     # Partition data set inte genes and spikeins
     i_spikes = df.index.map(lambda s: bool(spikein_re.search(s[0])))
     # Do the error modelling
     noise = ScrnaseqTechnicalNoise(df[~i_spikes], df[i_spikes])
     noise.fit()
-
     # Plot the results
     fig, source = scatter(y="cv2", x="normalized mean",
                           df=noise._fitted_data.dropna().reset_index(),
@@ -89,6 +91,18 @@ def scrnaseq_brenecke_plot(infile, spikein_re, counts="TPM",
 
     # Add confidence lines
     xg = [10**x for x in np.linspace(-2.0, 6.0, num=1000)]
-    y = (noise._xi + abs(noise.coefficients["a1tilde"]))/xg + noise.coefficients["a0"]
+    y = (noise._xi + noise.coefficients["a1"])/xg + noise.coefficients["a0"]
     fig.line(xg, y, color="red", line_width=3)
-    return fig, noise
+    # Add chi2 stats
+    chi2df = df.shape[1] - 1
+    fig.line(xg, y * chi2.ppf(.975, chi2df) / chi2df, color="red", line_width=3, line_dash=[4,4])
+    fig.line(xg, y * chi2.ppf(.025, chi2df) / chi2df, color="red", line_width=3, line_dash=[4,4])
+
+    # Add default tooltip displaying index names
+    fig.add_tools(HoverTool(tooltips=[(i, "@{}".format(i)) for i in tooltips]))
+    # Add taptool url if present
+    if taptool_url:
+        fig.add_tools(TapTool(callback=OpenURL(url=taptool_url)))
+        # taptool = fig.select(type=TapTool)
+        # taptool.callback = OpenURL(url=taptool_url)
+    return fig
