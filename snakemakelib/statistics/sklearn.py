@@ -34,6 +34,6 @@ def pca_results(pcaobj, expr, metadata=None, **kwargs):
     if not expr.index.name is None:
         pcares.index = expr.index
     if not metadata is None:
-        md = pd.read_csv(metadata, index_col=0)
+        md = pd.read_csv(metadata, index_col=expr.index.name) # FIXME: may not be present!
         pcares = pcares.join(md)
     return pcares
