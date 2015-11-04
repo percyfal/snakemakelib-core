@@ -6,8 +6,9 @@ from snakemakelib.log import LoggerManager
 from snakemakelib.odo.utils import annotate_df
 from snakemakelib.odo import rpkmforgenes, rsem
 
-
 logger = LoggerManager().getLogger(__name__)
+
+__all__ = ['number_of_detected_genes', 'estimate_size_factors_for_matrix']
 
 def number_of_detected_genes(expr, cutoff=1.0, quantification="TPM", **kwargs):
     """Aggregate expression data frame to count number of detected genes

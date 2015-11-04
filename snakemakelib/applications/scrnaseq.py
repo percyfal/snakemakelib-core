@@ -8,6 +8,8 @@ from . import rnaseq
 from snakemakelib.graphics import scatter
 from bokeh.models import HoverTool, OpenURL, TapTool
 
+__all__ = ['ScrnaseqTechnicalNoise', 'scrnaseq_brennecke_plot']
+
 
 class ScrnaseqTechnicalNoise(object):
     def __init__(self, df, df_spikein, quantile=.95, cutoff=.3,
@@ -19,21 +21,21 @@ class ScrnaseqTechnicalNoise(object):
         self.quantile = quantile
         self.cutoff = cutoff
 
-        
+
     def _calc_size_factors(self):
         return pd.Series({
             g[0]:rnaseq.estimate_size_factors_for_matrix(g[1]) for
             g in self._data.groupby(level="spikein")
         })
 
-    
+
     def _calc_min_mean_for_fit(self):
         self._means = self._data_norm.mean(axis=1)
         self._vars = self._data_norm.var(axis=1)
         self._cv2 = self._vars / (self._means ** 2)
         self._min_mean_for_fit = self._means.loc['gene', :][(self._cv2.loc['gene', :] > self.cutoff)].dropna().quantile(q=self.quantile)
 
-        
+
     @property
     def size_factors(self):
         return self._size_factors
@@ -43,7 +45,7 @@ class ScrnaseqTechnicalNoise(object):
     def coefficients(self):
         return self._coef
 
-    
+
     def fit(self):
         self._size_factors = self._calc_size_factors()
         self._data_norm = pd.concat([
