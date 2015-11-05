@@ -8,21 +8,19 @@ from snakemakelib.odo import rpkmforgenes, rsem
 
 logger = LoggerManager().getLogger(__name__)
 
-__all__ = ['number_of_detected_genes', 'estimate_size_factors_for_matrix']
+__all__ = ['number_of_detected_genes', 'estimate_size_factors_for_matrix', 'summarize_expression_data']
 
-def number_of_detected_genes(expr, cutoff=1.0, quantification="TPM", **kwargs):
+def number_of_detected_genes(expr_long, cutoff=1.0, quantification="TPM", **kwargs):
     """Aggregate expression data frame to count number of detected genes
 
     Args:
-      expr (DataFrame): pandas data frame with expression values
+      expr_long (DataFrame): pandas data frame with expression values in long format
       cutoff (float): cutoff for detected gene
       quantification (str): quantification label, TPM or FPKM
 
     Returns:
       detected_genes (DataFrame): aggregated data fram with number of detected genes per sample
     """
-    expr_long = read_gene_expression(expr)
-    expr_long[quantification] = [math.log2(x+1.0) for x in expr_long[quantification]]
     try:
         detected_genes = expr_long.groupby(kwargs.get("groupby", 'SM')).agg(lambda x: sum(x > cutoff))
     except Exception as e:
