@@ -69,3 +69,15 @@ pca_component = function(source, cb_obj, component) {
     }
     source.trigger('change');
 };
+
+var pca_loadings;
+pca_loadings = function(source, cb_obj, component) {
+    var myRe = /^([0-9]+)/;
+    var data = source.get('data');
+    var value = myRe.exec(String(cb_obj.get('value')))[1]
+    var pcacomp = data[component]
+    for (i = 0; i < pcacomp.length; i++) {
+        pcacomp[i] = data[value-1][i]
+    }
+    source.trigger('change');
+};

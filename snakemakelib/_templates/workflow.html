@@ -9,15 +9,19 @@ The rulegraph figure below illustrates the workflow for all tasks for
 snakemake target {{ rulegraph['target'] }}. The workflow can be
 launched by running
 
-<pre><code>
+<pre>
+  <code>
     snakemake --rerun-incomplete {{ rulegraph['target'] }}
-</code></pre>
+  </code>
+</pre>
 
 If you have the SLURM queue manager, you can run
 
-<pre><code>
+<pre>
+  <code>
     snakemake -j 100 --rerun-incomplete --cluster-config cluster.json --cluster "sbatch -A {cluster.account} -p {cluster.partition} -n {cluster.n}  -t {cluster.time}" {{ rulegraph['target'] }}
-</code></pre>
+  </code>
+</pre>
 
 which will submit 100 jobs (core equivalents) using a cluster
 configuration file 'cluster.json' in which the cluster parameters for

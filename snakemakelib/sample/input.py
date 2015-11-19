@@ -1,7 +1,9 @@
 # Copyright (C) 2015 by Per Unneberg
 """Utilities for finding and determining inputs"""
 import os
+import re
 import csv
+import pandas as pd
 import snakemake.workflow
 from snakemake.utils import update_config
 from snakemakelib.log import LoggerManager
@@ -9,7 +11,9 @@ from snakemakelib.utils import find_files
 
 smllogger = LoggerManager().getLogger(__name__)
 
-def initialize_input(src_re=None, sampleinfo=None, filter_suffix="", sample_column_map=None):
+def initialize_input(src_re=None, sampleinfo=None, metadata=None,
+                     metadata_filter=None, filter_suffix="",
+                     sample_column_map=None):
     """Initialize inputs.
 
     Try reading sampleinfo file if present. Returns list of annotated
@@ -19,6 +23,10 @@ def initialize_input(src_re=None, sampleinfo=None, filter_suffix="", sample_colu
       src_re (RegexpDict): RegexpDict object corresponding to the source
                            regular expression
       sampleinfo (str): sampleinfo file name
+      metadata (str): metadata file name
+      metadata (dict): dictionary of filters where the key corresponds
+                       to a column and the value the regular expression
+                       to match against
       filter_suffix (str): only use given suffix to filter for input
                            file names. Useful if many result files
                            exist for a sample
@@ -44,6 +52,16 @@ def initialize_input(src_re=None, sampleinfo=None, filter_suffix="", sample_colu
     # FIXME: rewrite with try/except
     if not samples:
         raise Exception("No samples parsed")
+    if metadata:
+        md = pd.read_csv(metadata)
+        samples_dict = pd.DataFrame(samples)
+        try:
+            df = samples_dict.merge(md)
+        except:
+            raise
+        samples = list(df.T.to_dict().values())
+        if metadata_filter:
+            samples = list(filter(lambda s: all(re.match(v, s[k]) for k,v in metadata_filter.items()), samples))
     return samples
 
 def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):

@@ -105,6 +105,4 @@ def scrnaseq_brennecke_plot(infile, spikein_re, counts="TPM",
     # Add taptool url if present
     if taptool_url:
         fig.add_tools(TapTool(callback=OpenURL(url=taptool_url)))
-        # taptool = fig.select(type=TapTool)
-        # taptool.callback = OpenURL(url=taptool_url)
     return fig

@@ -3,6 +3,7 @@
 from sklearn.decomposition import PCA
 import pandas as pd
 
+# FIXME: remove entirely since now so short that calling function could use as is
 def pca(expr, **kwargs):
     """scrnaseq pca - run pca
 
@@ -14,7 +15,7 @@ def pca(expr, **kwargs):
     Returns:
       pcaobj (PCA): PCA model fitted to expr
     """
-    pcaobj = PCA(n_components=kwargs.get("n_components", 10))
+    pcaobj = PCA(n_components=kwargs.get("n_components", 10), whiten=kwargs.get("whiten", False))
     pcaobj.fit(expr)
     return pcaobj
 

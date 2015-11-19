@@ -6,7 +6,8 @@ import re
 import numpy as np
 from snakemakelib.plot.bokeh import colorbrewer
 from bokeh.plotting import figure, gridplot
-from bokeh.models import ColumnDataSource, CustomJS, HoverTool
+from bokeh.models import ColumnDataSource, CustomJS, HoverTool, OpenURL, TapTool
+from bokeh.charts import Scatter
 from bokeh.io import vform
 from bokeh.models.widgets import Select, Toggle
 from bokehutils.axes import xaxis, yaxis
@@ -15,7 +16,7 @@ from bokehutils.tools import tooltips
 
 TOOLS = "pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover"
 
-def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, **kwargs):
+def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=None, **kwargs):
     """Make PCA plot
 
     Args:
@@ -37,14 +38,14 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, **kwargs):
     df_pca['x'] = df_pca['0']
     df_pca['y'] = df_pca['1']
     df_pca['size'] = [kwargs.get('size', 10)] * df_pca.shape[0]
-    source = ColumnDataSource(df_pca)
+    pca_source = ColumnDataSource(df_pca)
     cmap = colorbrewer(datalen = df_pca.shape[0])
 
-    callback = CustomJS(args=dict(source=source),
+    callback = CustomJS(args=dict(source=pca_source),
                         code="""pca_callback(source, cb_obj, "SM");""")
-    xcallback = CustomJS(args=dict(source=source),
+    xcallback = CustomJS(args=dict(source=pca_source),
                          code="""pca_component(source, cb_obj, "x");""")
-    ycallback = CustomJS(args=dict(source=source),
+    ycallback = CustomJS(args=dict(source=pca_source),
                          code="""pca_component(source, cb_obj, "y");""")
 
     if not md is None:
@@ -55,7 +56,7 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, **kwargs):
     else:
         toggle_buttons = []
 
-    pca_components = sorted([int(x) + 1 for x in source.column_names if re.match("\d+", x)])
+    pca_components = sorted([int(x) + 1 for x in pca_source.column_names if re.match("\d+", x)])
     # NB: assumes existence of pcaobj
     menulist = ["{} ({:.2f}%)".format(x, 100.0 * p) for x, p in zip(pca_components, pcaobj.explained_variance_ratio_)]
     component_x = Select(title = "PCA component x", options = menulist, value=menulist[0],
@@ -63,16 +64,14 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, **kwargs):
     component_y = Select(title = "PCA component y", options = menulist, value=menulist[1],
                          callback=ycallback)
 
-    buttons = toggle_buttons + [component_x, component_y]
-
     # Make the pca plot
     kwfig = {'plot_width': 400, 'plot_height': 400,
              'title_text_font_size': "12pt"}
 
-    p1 = figure(title="Principal component analysis",
-                tools=TOOLS, **kwfig)
+    pca_fig = figure(title="Principal component analysis",
+                      tools=TOOLS, **kwfig)
 
-    points(p1, 'x', 'y', source=source, color='color', size='size',
+    points(pca_fig, 'x', 'y', source=pca_source, color='color', size='size',
            alpha=.7)
     kwxaxis = {
                'axis_label_text_font_size': '10pt',
@@ -80,24 +79,60 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, **kwargs):
     kwyaxis = {
         'axis_label_text_font_size': '10pt',
         'major_label_orientation': np.pi/3}
-    xaxis(p1, **kwxaxis)
-    yaxis(p1, **kwyaxis)
-    tooltiplist = [("sample", "@SM")] if "SM" in source.column_names else []
+    xaxis(pca_fig, **kwxaxis)
+    yaxis(pca_fig, **kwyaxis)
+    tooltiplist = [("sample", "@SM")] if "SM" in pca_source.column_names else []
     if not md is None:
         tooltiplist = tooltiplist + [(str(x), "@{}".format(x)) for x
                                      in md.columns] + \
         [("Detected genes (TPM)", "@TPM"), ("Detected genes (FPKM)", "@FPKM")]
-    tooltips(p1, HoverTool, tooltiplist)
+    tooltips(pca_fig, HoverTool, tooltiplist)
+
+    # Loadings
+    loadings = pd.DataFrame(pcaobj.components_).T
+    loadings.columns = [str(x) for x in loadings.columns]
+    loadings['x'] = loadings['0']
+    loadings['y'] = loadings['1']
+    try:
+        loadings["gene_id"] = pcaobj.gene_id
+        loadings["gene_name"] = pcaobj.gene_name
+    except:
+        pass
+    loadings_source = ColumnDataSource(loadings)
+    pca_loadings_fig = figure(title="Loadings",
+                tools=TOOLS,
+                **kwfig)
+    points(pca_loadings_fig, "x", "y", source=loadings_source)
+    xaxis(pca_loadings_fig, **kwxaxis)
+    yaxis(pca_loadings_fig, **kwyaxis)
+    tooltips(pca_loadings_fig, HoverTool, [('gene_id', '@gene_id'), ('gene_name', '@gene_name')])
+    x_loadings_callback = CustomJS(args=dict(source=loadings_source),
+                                   code="""pca_loadings(source, cb_obj, "x");""")
+    y_loadings_callback = CustomJS(args=dict(source=loadings_source),
+                                   code="""pca_loadings(source, cb_obj, "y");""")
+    menulist = ["{} ({:.2f}%)".format(x, 100.0 * p) for x, p in zip(pca_components, pcaobj.explained_variance_ratio_)]
+    loadings_component_x = Select(title = "PCA loading x", options = menulist, value=menulist[0],
+                         callback=x_loadings_callback)
+    loadings_component_y = Select(title = "PCA loading y", options = menulist, value=menulist[1],
+                         callback=y_loadings_callback)
+
+
+    # Add taptool url if present
+    if taptool_url:
+        pca_loadings_fig.add_tools(TapTool(callback=OpenURL(url=taptool_url)))
 
     # Detected genes, FPKM and TPM
-    p2 = figure(title="Number of detected genes",
+    n_genes_fig = figure(title="Number of detected genes",
                 x_range=list(df_pca.index), tools=TOOLS,
                 **kwfig)
     kwxaxis.update({'axis_label': "Sample"})
     kwyaxis.update({'axis_label': "Detected genes"})
-    dotplot(p2, "SM", "FPKM", source=source)
-    xaxis(p2, **kwxaxis)
-    yaxis(p2, **kwyaxis)
-    tooltips(p2, HoverTool, [('sample', '@SM'),
+    dotplot(n_genes_fig, "SM", "FPKM", source=pca_source)
+    xaxis(n_genes_fig, **kwxaxis)
+    yaxis(n_genes_fig, **kwyaxis)
+    tooltips(n_genes_fig, HoverTool, [('sample', '@SM'),
                              ('# genes (FPKM)', '@FPKM')])
-    return {'pca' : vform(*(buttons + [gridplot([[p1, p2]])]))}
+
+    buttons = toggle_buttons + [component_x, component_y] + [loadings_component_x, loadings_component_y]
+    return {'pca' : vform(*(buttons + [gridplot([[pca_fig,
+                                                  pca_loadings_fig], [n_genes_fig, None]])]))}
