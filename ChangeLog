@@ -1,13 +1,68 @@
 Changelog
 =========
 
-%%version%% (unreleased)
+0.1-alpha.2 (2015-11-24)
 ------------------------
 
-- Initial commit. [Per Unneberg]
+- Add release notes for 0.1-alpha.2. [Per Unneberg]
+
+- Add function for loadings. [Per Unneberg]
+
+- Simplify number_of_detected_genes and pca_results. [Per Unneberg]
+
+  Annotation to be done by calling code
+
+- Add bokeh bootstrap css and js. [Per Unneberg]
+
+- Remove deprecated generic_target_generator. [Per Unneberg]
+
+- Add loadings and __all__ statements. [Per Unneberg]
+
+- Fix metadata column readi. [Per Unneberg]
+
+- Add confidence lines to Brennecke. [Per Unneberg]
+
+- Merge remote-tracking branch 'origin/develop' into develop. [Per
+  Unneberg]
+
+  Fix pca component index
+
+- Update brenecke plot. [Per Unneberg]
+
+- Add missing math import. [Per Unneberg]
+
+- Add glyph keywords. [Per Unneberg]
+
+- Load scatter. [Per Unneberg]
+
+- Add graphics. [Per Unneberg]
+
+- Update applications; add scrnaseq. [Per Unneberg]
+
+- Add graphics module. [Per Unneberg]
+
+- Add rseqc odo glob function. [Per Unneberg]
+
+- Misc updates. [Per Unneberg]
+
+- Add item parameter. [Per Unneberg]
+
+- Add pca plots and misc updates. [Per Unneberg]
+
+- Add statistics and resource files. [Per Unneberg]
+
+- Add and update rnaseq parsers. [Per Unneberg]
+
+- Add plot module. [Per Unneberg]
+
+- Add template files. [Per Unneberg]
+
+- Add requirements. [Per Unneberg]
 
 0.1-alpha.1 (2015-10-26)
 ------------------------
+
+- Update ChangeLog. [Per Unneberg]
 
 - Update docs for 0.1-alpha.1. [Per Unneberg]
 
@@ -102,6 +157,8 @@ Changelog
 - Add versioneer version management. [Per Unneberg]
 
 - Add setup, sphinx, conda files. [Per Unneberg]
+
+- Initial commit. [Per Unneberg]
 
 - Initial commit. [Per Unneberg]
 

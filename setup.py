@@ -39,9 +39,10 @@ def package_path(path, filters=()):
                     package_data.append(join(path, f))
 
 rule_suffixes = ('.rules', '.rule')
-                    
+
 package_path(join(ROOT, 'snakemakelib'), rule_suffixes)
 package_path(join(ROOT, 'snakemakelib', '_templates'))
+package_path(join(ROOT, 'snakemakelib', 'static'))
 
 scripts = []
 
@@ -98,6 +99,18 @@ setup(
     scripts=scripts,
     packages=[
         'snakemakelib',
+        'snakemakelib.bio',
+        'snakemakelib.bio.ngs',
+        'snakemakelib.bio.ngs.rnaseq',
+        'snakemakelib.db',
+        'snakemakelib.graphics',
+        'snakemakelib.odo',
+        'snakemakelib.plot',
+        'snakemakelib.plot.bokeh',
+        'snakemakelib.report',
+        'snakemakelib.sample',
+        'snakemakelib.sample.organization',
+        'snakemakelib.tools',
     ],
     package_data={'snakemakelib': package_data},
     install_requires=REQUIRES,
