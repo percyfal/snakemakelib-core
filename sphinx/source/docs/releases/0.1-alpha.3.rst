@@ -1,0 +1,5 @@
+0.1-alpha.3 (Nov XX 2015)
+=========================
+
+- add io class which simplifies target name parsing and creation. Code
+  now more in line with snakemake.io
