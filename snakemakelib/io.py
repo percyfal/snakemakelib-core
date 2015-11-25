@@ -7,6 +7,10 @@ from snakemakelib.log import LoggerManager
 
 smllogger = LoggerManager().getLogger(__name__)
 
+class MissingRequiredKeyException(Exception):
+    """Exception if required key is missing"""
+
+
 def make_targets(tgt_re, samples, target_suffix=""):
     """Make targets
     
@@ -28,26 +32,36 @@ def make_targets(tgt_re, samples, target_suffix=""):
     return tgts
 
 
-# From snakemake.io
+# Based on snakemake.io.regex
 def string_format(filepattern):
     f = []
     last = 0
     for match in _wildcard_regex.finditer(filepattern):
-        f.append(re.escape(filepattern[last:match.start()]))
+        f.append(filepattern[last:match.start()])
         wildcard = match.group("name")
         f.append("{{{}}}".format(wildcard))
         last = match.end()
-    f.append(re.escape(filepattern[last:]))
+    f.append(filepattern[last:])
     return "".join(f)
 
 
+
 class IOTarget(str):
-    """Override standard format function"""
+    """Class for generating and parsing target file names.
+
+    Overrides standard string format function.
+
+    """
+    _required_keys = []
+
+
     def __new__(cls, file):
         obj = str.__new__(cls, file)
         obj._file = file
         obj._regex = None
         obj._format = None
+        obj._match = None
+        obj._groupdict = dict()
 
         return obj
 
@@ -56,17 +70,26 @@ class IOTarget(str):
     def file(self):
         return self._file
 
+
     def format(self, **kw):
         s = self.fmt.format(**kw)
         self._check_format_ok(s)
         return s
+
 
     @property
     def regex(self):
         if self._regex is None:
             # compile a regular expression
             self._regex = re.compile(regex(self.file))
+        self._groupdict = {k:None for k in self._regex.groupindex.keys()}
+        if any([k not in self.keys() for k in self._required_keys]):
+            raise MissingRequiredKeyException(
+                """some of the required keys {reqkeys} not in regexp {regexp}""".format(
+                    reqkeys=",".join(self._required_keys),
+                    regexp=self._regex))
         return self._regex
+
 
     @property
     def fmt(self):
@@ -74,9 +97,31 @@ class IOTarget(str):
             # Set the format
             self._format = string_format(self.file)
         return self._format
-    
+
+
     def _check_format_ok(self, s):
         m = self.regex.search(s)
         if m is None:
             raise Exception("Wrong format for ", s)
+
+
+    def keys(self):
+        return set(self.groupdict.keys())
+
+
+    def match(self, file):
+        self._match = self.regex.match(file)
+        if self._match:
+            self._groupdict.update(self._match.groupdict())
+            
+
+    @property
+    def groupdict(self):
+        return self._groupdict
+
+
+
+# Special targets with required key names
+class IOSampleTarget(IOTarget):
+    _required_keys = ['SM']
 
