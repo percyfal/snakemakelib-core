@@ -9,7 +9,9 @@ class TestIOTarget:
     """Test IOTarget class"""
     filepattern = "{key1}_{key2,[0-9]+}"
     f = IOTarget(filepattern)
-
+    f2 = IOTarget(filepattern, suffix=".suffix")
+    fn = "foo_123.suffix"
+    fn_short = "foo_123"
 
     def test_wrong_format(self):
         with pytest.raises(Exception):
@@ -25,6 +27,15 @@ class TestIOTarget:
         assert self.f.keys() == {'key1', 'key2'}
 
 
+    def test_target_w_suffix(self):
+        self.f2.match(self.fn)
+        assert self.f2.groupdict == {'key1': 'foo', 'key2': '123'}
+        self.f2.search(self.fn_short)
+        assert self.f2.groupdict == {'key1': 'foo', 'key2': '123'}
+        s = self.f2.format(**{'key1':'foo', 'key2':123})
+        assert s == "foo_123.suffix"
+
+        
 
 class TestIOSampleTarget:
     """Test IOSampleTarget class"""

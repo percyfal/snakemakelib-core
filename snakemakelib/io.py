@@ -55,12 +55,13 @@ class IOTarget(str):
     _required_keys = []
 
 
-    def __new__(cls, file):
+    def __new__(cls, file, suffix=None):
         obj = str.__new__(cls, file)
         obj._file = file
         obj._regex = None
         obj._format = None
         obj._match = None
+        obj._suffix = suffix
         obj._groupdict = dict()
 
         return obj
@@ -80,8 +81,8 @@ class IOTarget(str):
     @property
     def regex(self):
         if self._regex is None:
-            # compile a regular expression
-            self._regex = re.compile(regex(self.file))
+            # compile a regular expression; we remove the $ at end
+            self._regex = re.compile(regex(self.file)[:-1])
         self._groupdict = {k:None for k in self._regex.groupindex.keys()}
         if any([k not in self.keys() for k in self._required_keys]):
             raise MissingRequiredKeyException(
@@ -96,6 +97,8 @@ class IOTarget(str):
         if self._format is None:
             # Set the format
             self._format = string_format(self.file)
+            if self._suffix:
+                self._format += self._suffix
         return self._format
 
 
@@ -113,6 +116,14 @@ class IOTarget(str):
         self._match = self.regex.match(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
+        return self._match
+
+
+    def search(self, file):
+        self._match = self.regex.search(file)
+        if self._match:
+            self._groupdict.update(self._match.groupdict())
+        return self._match
             
 
     @property
