@@ -119,6 +119,12 @@ class Application(object):
     def __str__(self):
         return repr(self) + "; application name: " + self.name
     
-# application=None, suffix=None, regexp=None,
-#      run=True, odo=None, 
-                 
+
+
+class SampleApplication(Application):
+    """SampleApplication class
+
+    Automagically adds annotation function that annotates data frames
+    by sample key.
+    """
+    pass
