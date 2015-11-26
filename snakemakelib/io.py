@@ -1,5 +1,7 @@
 # Copyright (C) 2015 by Per Unneberg
+import os
 import re
+from itertools import groupby
 import snakemake.workflow
 from snakemake.io import _wildcard_regex, regex
 from snakemakelib.sample.regexp import RegexpDict
@@ -53,6 +55,8 @@ class IOTarget(str):
 
     """
     _required_keys = []
+    _concat_regex = re.compile("(?P<NAME>[A-Za-z]+)(?P<INDEX>[0-9]+)$")
+    _concat = "_"
 
 
     def __new__(cls, file, suffix=None):
@@ -63,6 +67,7 @@ class IOTarget(str):
         obj._match = None
         obj._suffix = suffix
         obj._groupdict = dict()
+        obj._concat_groupdict = dict()
 
         return obj
 
@@ -82,7 +87,8 @@ class IOTarget(str):
     def regex(self):
         if self._regex is None:
             # compile a regular expression; we remove the $ at end
-            self._regex = re.compile(regex(self.file)[:-1])
+            pattern = regex(self.file)[:-1]
+            self._regex = re.compile(pattern)
         self._groupdict = {k:None for k in self._regex.groupindex.keys()}
         if any([k not in self.keys() for k in self._required_keys]):
             raise MissingRequiredKeyException(
@@ -91,6 +97,16 @@ class IOTarget(str):
                     regexp=self._regex))
         return self._regex
 
+
+    @property
+    def pattern(self):
+        return self.regex.pattern
+    
+
+    @property
+    def basename_pattern(self):
+        return os.path.basename(self.pattern)
+    
 
     @property
     def fmt(self):
@@ -116,19 +132,39 @@ class IOTarget(str):
         self._match = self.regex.match(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
-        return self._match
+        return self
 
 
     def search(self, file):
         self._match = self.regex.search(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
-        return self._match
+        return self
             
 
     @property
     def groupdict(self):
         return self._groupdict
+
+
+    @property
+    def concat_groupdict(self):
+        if self._groupdict and not self._concat_groupdict:
+            self._concat_indexed_keys()
+        return self._concat_groupdict
+
+
+    def _concat_indexed_keys(self):
+        """Concatenate indexed keys"""
+        keylist = sorted([(re.sub("[0-9]+$", "", k), k)
+                          if re.search("[0-9]+$", k) else (k, k)
+                          for k in list(self.groupdict.keys())])
+        keymap = {k: [y[1] for y in list(v)]
+                  for (k, v) in groupby(keylist, lambda x: x[0])}
+        self._concat_groupdict = {
+            k: self._concat.join(self.groupdict[mkey] for mkey in group) for k, group in keymap.items()
+        }
+        self._concat_groupdict.update(self.groupdict)
 
 
 
