@@ -11,7 +11,7 @@ def append_dataframe_to_dataframe(tgt, src, **kw):
 
 
 def annotate_by_uri(df, uri, **kwargs):
-    if 'annotation_fn' in kwargs:
+    if not kwargs.get('annotation_fn') is None:
         func = kwargs.pop('annotation_fn')
         return func(df, uri, **kwargs)
     else:
