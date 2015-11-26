@@ -136,3 +136,7 @@ class IOTarget(str):
 class IOSampleTarget(IOTarget):
     _required_keys = ['SM']
 
+
+
+class IOAggregateTarget(IOTarget):
+    pass
