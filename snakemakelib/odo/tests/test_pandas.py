@@ -1,9 +1,9 @@
 # Copyright (C) 2015 by Per Unneberg
 import os
 from blaze import DataFrame, odo, resource
+import pandas as pd
 from snakemakelib.odo import pandas
 import pytest
-import pandas as pd
 
 
 @resource.register('.+\.csv', priority=20)
