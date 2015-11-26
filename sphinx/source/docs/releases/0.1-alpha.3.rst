@@ -3,3 +3,7 @@
 
 - add io class which simplifies target name parsing and creation. Code
   now more in line with snakemake.io
+- delete obsolete tools module. Collection and parsing of results
+  files is now done by odo.
+- delete results module
+- delete obsolete functions, such as group_samples
