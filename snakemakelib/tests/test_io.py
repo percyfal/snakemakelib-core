@@ -1,6 +1,8 @@
 # Copyright (C) 2015 by Per Unneberg
 # pylint: disable=R0904
 from os.path import join
+import pandas as pd
+from snakemakelib.odo import pandas
 from blaze import DataFrame, odo, resource
 import pytest
 from ..io import string_format, IOTarget, IOSampleTarget, MissingRequiredKeyException
@@ -58,6 +60,12 @@ class TestIOTarget:
         assert self.f2.groupdict == {'key1': 'foo', 'key2': '123'}
         s = self.f2.format(**{'key1':'foo', 'key2':123})
         assert s == "foo_123.suffix"
+
+        
+    def test_concat_keys(self):
+        tgt = IOTarget("{key2}_{key1}_{foo,[^\.]+}", suffix=".txt")
+        tgt.match("KEY2_KEY1_FOO.txt")
+        assert tgt.concat_groupdict == {'foo': 'FOO', 'key': 'KEY1_KEY2', 'key1': 'KEY1', 'key2': 'KEY2'}
 
         
 
