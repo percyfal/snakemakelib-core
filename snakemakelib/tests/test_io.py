@@ -1,8 +1,32 @@
 # Copyright (C) 2015 by Per Unneberg
 # pylint: disable=R0904
 from os.path import join
+from blaze import DataFrame, odo, resource
 import pytest
 from ..io import string_format, IOTarget, IOSampleTarget, MissingRequiredKeyException
+
+
+@resource.register('.+\.csv', priority=20)
+def resource_csv_to_df(uri, annotate=False, **kwargs):
+    df = pd.read_csv(uri)
+    if annotate:
+        df = pandas.annotate_by_uri(df, uri, **kwargs)
+    return df
+
+
+@pytest.fixture(scope="module")
+def dataframe1(tmpdir_factory):
+    fn = tmpdir_factory.mktemp('data').join('foo_123_1.csv')
+    fn.write("""foo,bar\n1,2\n3,4""")
+    return fn
+
+
+@pytest.fixture(scope="module")
+def dataframe2(tmpdir_factory):
+    fn = tmpdir_factory.mktemp('data').join('foo_456_1.csv')
+    fn.write("""foo,bar\n5,6\n7,8""")
+    return fn
+
 
 
 class TestIOTarget:
@@ -56,4 +80,3 @@ class TestIOSampleTarget:
     def test_sample_parse(self):
         self.f.match(self.fn)
         assert self.f.groupdict == {'suffix': 'txt', 'SM': 'foo'}
-
