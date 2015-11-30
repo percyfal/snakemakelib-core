@@ -49,6 +49,11 @@ class Application(object):
 
 
     @property
+    def run(self):
+        return self._run
+
+        
+    @property
     def name(self):
         return self._name
 
@@ -87,6 +92,8 @@ class Application(object):
 
             
     def aggregate(self, key=None):
+        if not self.run:
+            return self
         for k in self.targets.keys():
             if not key is None and not key == k:
                 next
@@ -97,13 +104,15 @@ class Application(object):
             df = pd.concat([
                 odo(x, pd.DataFrame,
                     annotate=annotate,
-                    annotation_fn=self._annotation_funcs.get(k, None)) for x in self.targets[k]
+                    annotation_fn=self._annotation_funcs.get(k, None), key=k) for x in self.targets[k]
             ])
             # Run post-processing hooks, if any
             if not self._post_processing_hooks.get(k, None) is None:
                 smllogger.debug("Running post processing hook")
                 df = self._post_processing_hooks[k](df)
             self._aggregate_data[k] = df
+        return self
+    
 
     @property
     def aggregate_data(self):
@@ -183,7 +192,26 @@ class Application(object):
                 d[key] = [f(df, **kwargs) for f in self._plot_funcs[key]]
         return d
     
-        
+
+    def save_aggregate_data(self, datakey=None, backend="csv", **kwargs):
+        """Save aggregate data"""
+        for key in self.aggregate_data.keys():
+            if not datakey is None:
+                if datakey != key:
+                    continue
+            if backend == "csv":
+                self.aggregate_data[key].to_csv(self.aggregate_targets[key])
+            # FIXME: all hdf5 data should go to same output; would
+            # need to write text to aggregate_targets[key] so target
+            # has been created
+            # elif backend == "hdf5":
+            #     self.aggregate_data[key].to_hdf(self.aggregate_targets[key], key=key)
+            # elif backend == "sql":
+            #     self.aggregate_data[key].to_sql(self.aggregate_targets[key], key=key, con=kwargs.get(con, None))
+            else:
+                raise Exception("Unsupported backend ", backend)
+
+    
     def __str__(self):
         return repr(self) + "; application name: " + self.name
     
@@ -203,6 +231,7 @@ class SampleApplication(Application):
                 m = iotarget.search(uri)
                 try:
                     df[samplekey] = iotarget.concat_groupdict[samplekey]
+                    df.set_index([samplekey], append=True, inplace=True)
                 except AttributeError:
                     raise
                 return df
