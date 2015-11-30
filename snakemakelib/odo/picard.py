@@ -2,6 +2,7 @@
 from blaze import resource, DataFrame
 import pandas as pd
 import re
+from .pandas import annotate_by_uri
 
 
 def _hist_reader(uri):
@@ -32,27 +33,38 @@ def _reader(uri):
     
 
 @resource.register('.+\.align_metrics')
+@annotate_by_uri
 def resource_align_metrics(uri, **kwargs):
     metrics, _ = _reader(uri)
     metrics = metrics.apply(pd.to_numeric, axis=1)
-    return (metrics, None)
+    return metrics
 
 @resource.register('.+\.insert_metrics')
-def resource_insert_metrics(uri, **kwargs):
+@annotate_by_uri
+def resource_insert_metrics(uri, key="insert_metrics", **kwargs):
     (_metrics, hist) = _hist_reader(uri)
     metrics = _metrics[_metrics.columns.difference(["PAIR_ORIENTATION"])].apply(pd.to_numeric, axis=0)
     metrics["PAIR_ORIENTATION"] = _metrics["PAIR_ORIENTATION"]
     hist = hist.apply(pd.to_numeric, axis=0)
-    return (metrics, hist)
+    if key == "insert_metrics":
+        return metrics
+    elif key == "insert_metrics_hist":
+        return hist
 
 @resource.register('.+\.hs_metrics')
+@annotate_by_uri
 def resource_hs_metrics(uri, **kwargs):
     return _hist_reader(uri)
 
+
 @resource.register('.+\.dup_metrics')
-def resource_dup_metrics(uri, **kwargs):
+@annotate_by_uri
+def resource_dup_metrics(uri, key="dup_metrics", **kwargs):
     (_metrics, hist) = _hist_reader(uri)
     metrics = _metrics[_metrics.columns.difference(["LIBRARY"])].apply(pd.to_numeric, axis=0)
     hist = hist.apply(pd.to_numeric, axis=0)
-    return (metrics, hist)
+    if key == "dup_metrics":
+        return metrics
+    elif key == "dup_metrics_hist":
+        return hist
 
