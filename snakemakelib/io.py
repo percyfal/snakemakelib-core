@@ -68,7 +68,6 @@ class IOTarget(str):
         obj._suffix = suffix
         obj._groupdict = dict()
         obj._concat_groupdict = dict()
-
         return obj
 
 
@@ -128,18 +127,24 @@ class IOTarget(str):
         return set(self.groupdict.keys())
 
 
-    def match(self, file):
+    def match(self, file, return_instance=False):
         self._match = self.regex.match(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
-        return self
+        self._concat_indexed_keys()
+        if return_instance:
+            return self
+        return self._match
 
 
-    def search(self, file):
+    def search(self, file, return_instance=False):
         self._match = self.regex.search(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
-        return self
+        self._concat_indexed_keys()
+        if return_instance:
+            return self
+        return self._match
             
 
     @property
@@ -149,8 +154,6 @@ class IOTarget(str):
 
     @property
     def concat_groupdict(self):
-        if self._groupdict and not self._concat_groupdict:
-            self._concat_indexed_keys()
         return self._concat_groupdict
 
 

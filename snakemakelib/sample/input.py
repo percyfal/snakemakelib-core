@@ -116,4 +116,4 @@ def _samples_from_input_files(src_re, filter_suffix="", **kwargs):
     """
     smllogger.debug("Getting sample information from input files")
     inputs = find_files(regexp=src_re.basename_pattern + filter_suffix, **kwargs)
-    return [src_re.search(f).concat_groupdict for f in inputs]
+    return [src_re.search(f, return_instance=True).concat_groupdict for f in inputs]

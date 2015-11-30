@@ -1,7 +1,11 @@
 # Copyright (C) 2015 by Per Unneberg
+import os
 import pandas as pd
 from blaze import odo
 from .io import IOTarget, IOAggregateTarget
+from snakemakelib.log import LoggerManager
+
+smllogger = LoggerManager().getLogger(__name__)
 
 class Application(object):
     """Container class for an application.
@@ -54,6 +58,8 @@ class Application(object):
 
     @property
     def targets(self):
+        if not self._run:
+            return {k:[] for k in self.iotargets.keys()}
         if not self._targets:
             self._make_targets()
         return self._targets
@@ -66,6 +72,8 @@ class Application(object):
 
     @property
     def aggregate_targets(self):
+        if not self._run:
+            return {k:[] for k in self.iotargets.keys()}
         if not self._aggregate_targets:
             self._make_aggregate_targets()
         return self._aggregate_targets
@@ -125,6 +133,44 @@ class SampleApplication(Application):
     """SampleApplication class
 
     Automagically adds annotation function that annotates data frames
-    by sample key.
+    by sample unit.
     """
-    pass
+    def __init__(self, samplekey="SM", **kwargs):
+        super(SampleApplication, self).__init__(**kwargs)
+        def _annotate_fn_factory(iotarget, **kwargs):
+            def _annotate_fn(df, uri, **kwargs):
+                m = iotarget.search(uri)
+                try:
+                    df[samplekey] = iotarget.concat_groupdict[samplekey]
+                except AttributeError:
+                    raise
+                return df
+            return _annotate_fn
+        
+        for k in self.iotargets.keys():
+            self._annotation_funcs[k] = _annotate_fn_factory(self.iotargets[k][0])
+
+
+
+class PlatformUnitApplication(Application):
+    """PlatformUnitApplication class
+
+    Automagically adds annotation function that annotates data frames
+    by sample and platform unit (i.e. run level)
+    """
+    def __init__(self, samplekey="SM", pukey="PU", **kwargs):
+        super(PlatformUnitApplication, self).__init__(**kwargs)
+        def _annotate_fn_factory(iotarget, **kwargs):
+            def _annotate_fn(df, uri, **kwargs):
+                m = iotarget.search(uri)
+                try:
+                    df[samplekey] = iotarget.concat_groupdict[samplekey]
+                    df[pukey] = iotarget.concat_groupdict[pukey]
+                    df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
+                except AttributeError:
+                    raise
+                return df
+            return _annotate_fn
+        
+        for k in self.iotargets.keys():
+            self._annotation_funcs[k] = _annotate_fn_factory(self.iotargets[k][0])
