@@ -39,6 +39,8 @@ class Application(object):
         self._iotargets = iotargets
         self._targets = {}
         self._annotation_funcs = {}
+        self._post_processing_hooks = {}
+        self._plot_funcs = {}
         self._name = name
         self._aggregate_data = {}
         self._aggregate_targets = {}
@@ -90,12 +92,17 @@ class Application(object):
                 next
             annotate = self._annotate
             if not self._annotation_funcs.get(k, None) is None:
+                smllogger.debug("Annotating data")
                 annotate = True
             df = pd.concat([
                 odo(x, pd.DataFrame,
                     annotate=annotate,
                     annotation_fn=self._annotation_funcs.get(k, None)) for x in self.targets[k]
             ])
+            # Run post-processing hooks, if any
+            if not self._post_processing_hooks.get(k, None) is None:
+                smllogger.debug("Running post processing hook")
+                df = self._post_processing_hooks[k](df)
             self._aggregate_data[k] = df
 
     @property
@@ -114,22 +121,76 @@ class Application(object):
 
     def register_annotation_fn(self, key):
         """Decorator for registering annotation functions"""
-        def _(func):
+        def wrap(func):
             self.add_annotation_fn(func, key)
             return func
-        return _
+        return wrap
 
 
     def add_annotation_fn(self, func, key):
         self._annotation_funcs[key] = func
 
 
+    def register_post_processing_hook(self, key):
+        """Decorator for registering post processing hook.
+
+        Sometimes the data needs to be transformed in some way, e.g.
+        pivoted into wide format. This decorator registers a post
+        processing hook that is run once the data has been read.
+
+        """
+        def wrap(func):
+            self.add_post_processing_hook(func, key)
+            return func
+        return wrap
+
+
+    def add_post_processing_hook(self, func, key):
+        self._post_processing_hooks[key] = func
+
+        
+    def register_plot(self, key):
+        """Decorator for registering plot"""
+
+        def wrap(func):
+            self.add_plot_func(func, key)
+            return func
+        return wrap
+
+
+    def add_plot_func(self, func, key):
+        if not key in self._plot_funcs:
+            self._plot_funcs[key] = [func]
+        else:
+            self._plot_funcs[key].append(func)
+
+
+    def reset_plot_func(self, key):
+        """Remove plotting functions for a key"""
+        self._plot_funcs[key] = []
+
+
+    def plot(self, plotkey=None, **kwargs):
+        """For each aggregation key, return list of plots"""
+        d = {}
+        for key in self.aggregate_data.keys():
+            if not plotkey is None:
+                if plotkey != key:
+                    continue
+            df = self.aggregate_data[key]
+            d[key] = []
+            if not self._plot_funcs.get(key, None) is None:
+                d[key] = [f(df, **kwargs) for f in self._plot_funcs[key]]
+        return d
+    
+        
     def __str__(self):
         return repr(self) + "; application name: " + self.name
     
 
 
 class SampleApplication(Application):
+
     """SampleApplication class
 
     Automagically adds annotation function that annotates data frames

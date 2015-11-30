@@ -175,3 +175,48 @@ class TestSampleApplication:
         app.aggregate()
         assert list(app.aggregate_data['foo']['SM']) == ['foo1', 'foo1', 'foo2', 'foo2', 'foo3', 'foo3']
 
+
+
+# atomic tests
+def test_post_processing_hook(foo1, foo2, foo3, bar1, bar2, bar3, SM_PU_iotargets_foo_bar_aggregate, units):
+    app = PlatformUnitApplication(name="foo", iotargets=SM_PU_iotargets_foo_bar_aggregate, units=units)
+    @app.register_post_processing_hook('foo')
+    def _pphook(df, **kwargs):
+        df['foobar'] = df['foo'] + df['bar']
+        return df
+    app._targets = {'foo': [str(foo1), str(foo2), str(foo3)], 'bar': [str(bar1), str(bar2), str(bar3)]}
+    app.aggregate()
+    assert 'foobar' in list(app.aggregate_data['foo'].columns)
+    assert 'foobar' not in list(app.aggregate_data['bar'].columns)
+    assert list(app.aggregate_data['foo']['foobar']) == [3, 7, 11, 15, 19, 23]
+
+    
+def test_plot_fn(foo1, foo2, foo3, bar1, bar2, bar3, SM_PU_iotargets_foo_bar_aggregate, units):
+    app = PlatformUnitApplication(name="foo", iotargets=SM_PU_iotargets_foo_bar_aggregate, units=units)
+    @app.register_plot('foo')
+    def _plot1(df, **kwargs):
+        from bokeh.charts import Scatter
+        return Scatter(df, x="foo", y="bar", **kwargs)
+
+    @app.register_plot('bar')
+    @app.register_plot('foo')
+    def _plot2(df, **kwargs):
+        from bokeh.charts import Scatter
+        return Scatter(df, x="bar", y="foo", **kwargs)
+
+    app._targets = {'foo': [str(foo1), str(foo2), str(foo3)], 'bar': [str(bar1), str(bar2), str(bar3)]}
+    app.aggregate()
+    d = app.plot()
+    assert sorted(list(d.keys())) == ['bar', 'foo']
+    assert len(d['foo']) == 2
+    assert len(d['bar']) == 1
+    from bokeh.charts import Chart
+    assert isinstance(d['foo'][0], Chart)
+    d = app.plot(plotkey="foo")
+    assert list(d.keys()) == ['foo']
+    assert len(d['foo']) == 2
+    assert d['foo'][0].plot_width == 600
+    d = app.plot(plotkey="foo", width=400)
+    assert d['foo'][0].plot_width == 400
+    
+    
