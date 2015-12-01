@@ -6,7 +6,6 @@ try:
     from snakemake.workflow import config
 except:
     config = {}
-from ..regexp import RunRegexp, SampleRegexp
 from ...io import IOTarget, IOSampleTarget
 
 # Define named tuple that holds regular expressions for raw run names,

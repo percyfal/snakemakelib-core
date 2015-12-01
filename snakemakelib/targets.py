@@ -3,7 +3,6 @@ import re
 import os
 import csv
 import snakemake.workflow
-from snakemakelib.sample.regexp import RegexpDict
 from snakemakelib.utils import find_files
 from snakemakelib.log import LoggerManager
 from snakemakelib.exceptions import DeprecatedException
@@ -17,7 +16,7 @@ def make_targets(tgt_re, samples, target_suffix=""):
     target suffix.
 
     Args:
-      tgt_re (RegexpDict): RegexpDict object corresponding to the target
+      tgt_re (IOTarget): IOTarget object corresponding to the target
                            regular expression
 
       samples (list): list of dicts where each dict is an annotated

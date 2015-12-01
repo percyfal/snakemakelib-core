@@ -3,10 +3,10 @@
 sample
 -------
 """
-from . import RunRegexp, SampleRegexp, update_config, config, sample_org, join
+from . import update_config, config, sample_org, join, IOTarget, IOSampleTarget
 
 update_config(
     config, {'settings': {
-        'sample_organization' :  sample_org(RunRegexp(join("(?P<SM>[a-zA-Z0-9]+)", "(?P=SM)")),
-                                            RunRegexp(join("(?P<SM>[a-zA-Z0-9]+)", "(?P=SM)")),
-                                            SampleRegexp(join("(?P<SM>[a-zA-Z0-9]+)", "(?P=SM)")))}})
+        'sample_organization': sample_org(IOTarget(join("{SM, [a-zA-Z0-9]+}", "{SM}")),
+                                          IOTarget(join("{SM, [a-zA-Z0-9]+}", "{SM}")),
+                                          IOSampleTarget(join("{SM,[a-zA-Z0-9]+}", "{SM}")))}})

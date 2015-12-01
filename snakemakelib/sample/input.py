@@ -20,7 +20,7 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
     dicts.
 
     Args:
-      src_re (RegexpDict): RegexpDict object corresponding to the source
+      src_re (IOTarget): IOTarget object corresponding to the source
                            regular expression
       sampleinfo (str): sampleinfo file name
       metadata (str): metadata file name
@@ -103,7 +103,7 @@ def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
 def _samples_from_input_files(src_re, filter_suffix="", **kwargs):
     """Generate sample names from input files.
 
-    src_re (RegexpDict): RegexpDict object corresponding to the source
+    src_re (IOTarget): IOTarget object corresponding to the source
                          regular expression
     filter_suffix (str): only use given suffix to filter for input
                          file names. Useful if many result files exist
