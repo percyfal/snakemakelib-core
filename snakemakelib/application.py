@@ -74,7 +74,9 @@ class Application(object):
             
     def _make_targets(self):
         for k,v in self.iotargets.items():
-            self._targets[k] = [v[0].format(**u) for u in self.units]
+            self._targets[k] = list(set([v[0].format(**u) for u in self.units]))
+            # Initialize aggregate_data, even if no target is defined
+            self._aggregate_data[k] = None
             
 
     @property
@@ -179,18 +181,12 @@ class Application(object):
         self._plot_funcs[key] = []
 
 
-    def plot(self, plotkey=None, **kwargs):
-        """For each aggregation key, return list of plots"""
-        d = {}
-        for key in self.aggregate_data.keys():
-            if not plotkey is None:
-                if plotkey != key:
-                    continue
-            df = self.aggregate_data[key]
-            d[key] = []
-            if not self._plot_funcs.get(key, None) is None:
-                d[key] = [f(df, **kwargs) for f in self._plot_funcs[key]]
-        return d
+    def plot(self, key, **kwargs):
+        """Create plots for plotkey."""
+        df = self.aggregate_data[key]
+        if not self._plot_funcs.get(key, None) is None:
+            return [f(df, **kwargs) for f in self._plot_funcs[key]]
+        return
     
 
     def save_aggregate_data(self, datakey=None, backend="csv", **kwargs):
@@ -200,7 +196,8 @@ class Application(object):
                 if datakey != key:
                     continue
             if backend == "csv":
-                self.aggregate_data[key].to_csv(self.aggregate_targets[key])
+                index = kwargs.pop('index', False)
+                self.aggregate_data[key].reset_index().to_csv(self.aggregate_targets[key], index=index, **kwargs)
             # FIXME: all hdf5 data should go to same output; would
             # need to write text to aggregate_targets[key] so target
             # has been created
@@ -211,6 +208,17 @@ class Application(object):
             else:
                 raise Exception("Unsupported backend ", backend)
 
+
+    def read_aggregate_data(self, datakey=None, backend="csv", **kwargs):
+        """Read aggregate data"""
+        for key in self.aggregate_data.keys():
+            if not datakey is None:
+                if datakey != key:
+                    continue
+            if backend == "csv":
+                self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key])
+
+        
     
     def __str__(self):
         return repr(self) + "; application name: " + self.name
@@ -231,6 +239,7 @@ class SampleApplication(Application):
                 m = iotarget.search(uri)
                 try:
                     df[samplekey] = iotarget.concat_groupdict[samplekey]
+                    df[samplekey] = df[samplekey].astype(str)
                     df.set_index([samplekey], append=True, inplace=True)
                 except AttributeError:
                     raise
@@ -256,6 +265,8 @@ class PlatformUnitApplication(Application):
                 try:
                     df[samplekey] = iotarget.concat_groupdict[samplekey]
                     df[pukey] = iotarget.concat_groupdict[pukey]
+                    df[samplekey] = df[samplekey].astype(str)
+                    df[pukey] = df[pukey].astype(str)
                     df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
                 except AttributeError:
                     raise
