@@ -16,8 +16,6 @@ logger = logging.getLogger(__name__)
 
 __all__ = ['scatter', 'points']
 
-
-
 def scatter(x, y, df, return_source=False, marker='circle',
             **kwargs):
     """Wrapper for fig.scatter. Note that this function only supports a

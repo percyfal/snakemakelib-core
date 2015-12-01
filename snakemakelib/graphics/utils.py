@@ -2,6 +2,7 @@
 """
 Helper functions for graphics with bokeh
 """
+from bokeh.models import ColumnDataSource
 from snakemakelib.log import LoggerManager
 
 smllogger = LoggerManager().getLogger(__name__)
@@ -38,4 +39,11 @@ FIGURE_ATTRIBUTES = {'x_range', 'y_range', 'x_axis_type', 'y_axis_type',
 
 def fig_args(kwargs, keys=FIGURE_ATTRIBUTES):
     return dict([ (k, kwargs.pop(k, None)) for k in keys if k in kwargs ])
-    
+
+
+def df_to_source(df):
+    if not isinstance(df, ColumnDataSource):
+        return ColumnDataSource(df)
+    else:
+        return df
+

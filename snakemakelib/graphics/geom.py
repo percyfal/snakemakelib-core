@@ -4,14 +4,35 @@ Author: Per Unneberg
 Created: Tue Dec  1 08:56:58 2015
 
 '''
+import pandas.core.common as com
 from bokeh.models import ColumnDataSource
+from . import utils
 from .color import colorbrewer
 from snakemakelib.log import LoggerManager
 
 smllogger = LoggerManager().getLogger(__name__)
 
-__all__ = ['lines']
+__all__ = ['dotplot', 'lines']
 
+
+
+def dotplot(x, y, df, return_source=False, marker='circle',
+            **kwargs):
+    # setup figure
+    kwfig = utils.fig_args(kwargs)
+    fig = utils.create_bokeh_fig(plot_height=kwargs.pop('plot_height', None),
+                                 plot_width=kwargs.pop('plot_width', None),
+                                 **kwfig)
+    fig_props = set(fig.properties())
+    kwfig = utils.fig_args(kwargs, fig_props)
+    fig.set(**kwfig)
+    source = utils.df_to_source(df)
+    if com.is_numeric_dtype(source.to_df()[x]) == True:
+        raise TypeError("{}: dependant variable must not be numerical type".format(__name__))
+    fig.circle(x=x, y=y, source=source, **kwargs)
+    return fig
+
+    
 def lines(fig, x, y, df, groups=None, **kwargs):
     """lines: add lines to a figure
 
