@@ -103,15 +103,16 @@ class Application(object):
             if not self._annotation_funcs.get(k, None) is None:
                 smllogger.debug("Annotating data")
                 annotate = True
-            df = pd.concat([
+            dflist = [
                 odo(x, pd.DataFrame,
                     annotate=annotate,
                     annotation_fn=self._annotation_funcs.get(k, None), key=k) for x in self.targets[k]
-            ])
+            ]
             # Run post-processing hooks, if any
             if not self._post_processing_hooks.get(k, None) is None:
                 smllogger.debug("Running post processing hook")
-                df = self._post_processing_hooks[k](df)
+                dflist = [self._post_processing_hooks[k](df) for df in dflist]
+            df = pd.concat(dflist)
             self._aggregate_data[k] = df
         return self
     
