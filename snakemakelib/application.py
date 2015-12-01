@@ -90,15 +90,22 @@ class Application(object):
 
     def _make_aggregate_targets(self):
         for k,v in self.iotargets.items():
-            self._aggregate_targets[k] = v[1].format()
+            if v[1] is None:
+                self._aggregate_targets[k] = []
+            else:
+                self._aggregate_targets[k] = v[1].format()
 
             
     def aggregate(self, key=None):
         if not self.run:
             return self
         for k in self.targets.keys():
+            smllogger.debug("Aggregating key ", k, " iotargets: ", self.iotargets[k])
             if not key is None and not key == k:
-                next
+                continue
+            if self.iotargets[k][1] is None:
+                smllogger.debug("Skipping iotarget key ", k)
+                continue
             annotate = self._annotate
             if not self._annotation_funcs.get(k, None) is None:
                 smllogger.debug("Annotating data")
@@ -193,6 +200,8 @@ class Application(object):
     def save_aggregate_data(self, datakey=None, backend="csv", **kwargs):
         """Save aggregate data"""
         for key in self.aggregate_data.keys():
+            if self.iotargets[key][1] is None:
+                continue
             if not datakey is None:
                 if datakey != key:
                     continue
