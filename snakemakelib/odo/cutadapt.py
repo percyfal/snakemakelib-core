@@ -3,6 +3,7 @@ import re
 from blaze import resource, DataFrame
 import numpy as np
 import pandas as pd
+from .pandas import annotate_by_uri
 
 # Potentially add regexp for adapter sections as these are repetitive
 adapter_re = re.compile(r'''
@@ -18,6 +19,7 @@ def _split_x(x, delim=":"):
 
 # For now only return the summary section
 @resource.register('.+\.cutadapt_metrics')
+@annotate_by_uri
 def resource_cutadapt_metrics(uri, **kwargs):
     with open(uri) as fh:
         data = "".join(fh)

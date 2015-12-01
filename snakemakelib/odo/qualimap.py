@@ -2,6 +2,7 @@
 import re
 from blaze import resource, DataFrame
 import pandas as pd
+from .pandas import annotate_by_uri
 
 COVERAGE_PER_CONTIG_COLUMNS = ["chr", "chrlen", "mapped_bases",
                                "mean_coverage", "sd"]
@@ -14,7 +15,8 @@ def _split_x(x, delim=" = "):
     return [y[0], re_trim.sub("", y[1])]
 
 @resource.register('.*genome_results.txt', priority=20)
-def resource_genome_results(uri, **kwargs):
+@annotate_by_uri
+def resource_genome_results(uri, key="Globals", **kwargs):
     with open(uri) as fh:
         data = "".join(fh)
     sections = re.split(">+\s+[a-zA-Z ]+", data)
@@ -34,4 +36,4 @@ def resource_genome_results(uri, **kwargs):
                                           index="statistic")
             if not h in ["Input"]:
                 d[h] = d[h].apply(pd.to_numeric)
-    return d
+    return d[key]

@@ -7,6 +7,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+__all__ = ['colorbrewer']
+
 MINSIZE = 3
 MAXSIZE = 9  # FIXME: some palettes have 9 as max, some 11
 
