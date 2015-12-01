@@ -55,7 +55,7 @@ def mlines(fig, x, y, df, **kwargs):
     for yy, c, l in zip(y, color, legend):
         kw = kwargs
         kw['color'] = c
-        kw['legend'] = l
+        kw['legend'] = str(l)
         lines(fig=fig, x=x, y=yy, df=df, **kwargs)
     return fig
     

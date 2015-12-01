@@ -57,7 +57,7 @@ def lines(fig, x, y, df, groups=None, **kwargs):
             group = grouped.get_group(name)
             source = ColumnDataSource(group)
             if 'legend' in kwargs:
-                kwargs['legend'] = name
+                kwargs['legend'] = str(name)
             if 'color' in kwargs:
                 kwargs['color'] = color
             fig.line(x=x, y=y, source=source, **kwargs)
