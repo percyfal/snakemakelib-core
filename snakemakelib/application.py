@@ -31,9 +31,12 @@ class Application(object):
         for k,v in iotargets.items():
             assert isinstance(v, tuple), "iotargets values must be a tuple"
             assert len(v) == 2, "iotargets values must be of length 2"
-            assert isinstance(v[0], IOTarget), "first value must be of instance IOTarget"
+            if not v[0] is None:
+                assert isinstance(v[0], IOTarget), "first value must be of instance IOTarget or None"
             if not v[1] is None:
                 assert isinstance(v[1], IOAggregateTarget), "second value must be of instance IOAggregateTarget or None"
+            if v[0] is None and v[1] is None:
+                raise Exception("first and second value cannot both be None")
         assert isinstance(run, bool), "run must be a boolean"
         self._units = units if units else []
         self._iotargets = iotargets
@@ -221,12 +224,14 @@ class Application(object):
 
     def read_aggregate_data(self, datakey=None, backend="csv", **kwargs):
         """Read aggregate data"""
-        for key in self.aggregate_data.keys():
+        for key in self.iotargets.keys():
+            if self.iotargets[key][1] is None:
+                continue
             if not datakey is None:
                 if datakey != key:
                     continue
             if backend == "csv":
-                self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key])
+                self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key], **kwargs)
 
         
     
