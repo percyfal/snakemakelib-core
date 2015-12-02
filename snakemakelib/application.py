@@ -43,6 +43,7 @@ class Application(object):
         self._targets = {}
         self._annotation_funcs = {}
         self._post_processing_hooks = {}
+        self._aggregate_post_processing_hooks = {}
         self._plot_funcs = {}
         self._name = name
         self._aggregate_data = {}
@@ -77,7 +78,8 @@ class Application(object):
             
     def _make_targets(self):
         for k,v in self.iotargets.items():
-            self._targets[k] = list(set([v[0].format(**u) for u in self.units]))
+            if v[0]:
+                self._targets[k] = list(set([v[0].format(**u) for u in self.units]))
             # Initialize aggregate_data, even if no target is defined
             self._aggregate_data[k] = None
             
@@ -102,8 +104,8 @@ class Application(object):
     def aggregate(self, key=None):
         if not self.run:
             return self
-        for k in self.targets.keys():
-            smllogger.debug("Aggregating key ", k, " iotargets: ", self.iotargets[k])
+        for k,v in self.iotargets.items():
+            smllogger.debug("Aggregating key ", k, " iotargets: ", v)
             if not key is None and not key == k:
                 continue
             if self.iotargets[k][1] is None:
@@ -123,6 +125,10 @@ class Application(object):
                 smllogger.debug("Running post processing hook")
                 dflist = [self._post_processing_hooks[k](df) for df in dflist]
             df = pd.concat(dflist)
+            # Run post-processing hook for aggregated data, if any
+            if not self._aggregate_post_processing_hooks.get(k, None) is None:
+                smllogger.debug("Running post processing hook on aggregated data")
+                df = self._aggregate_post_processing_hooks[k](df)
             self._aggregate_data[k] = df
         return self
     
@@ -169,6 +175,25 @@ class Application(object):
 
     def add_post_processing_hook(self, func, key):
         self._post_processing_hooks[key] = func
+
+
+    def register_aggregate_post_processing_hook(self, key):
+        """Decorator for registering post processing hook to be run on
+        aggregate data.
+
+        Sometimes the data needs to be transformed in some way, e.g.
+        pivoted into wide format. This decorator registers a post
+        processing hook that is run on the aggregated data.
+
+        """
+        def wrap(func):
+            self.add_aggregate_post_processing_hook(func, key)
+            return func
+        return wrap
+
+
+    def add_aggregate_post_processing_hook(self, func, key):
+        self._aggregate_post_processing_hooks[key] = func
 
         
     def register_plot(self, key):
