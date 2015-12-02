@@ -31,6 +31,18 @@ def create_bokeh_fig(fig=None, plot_height=None, plot_width=None, **kw):
     return fig
 
 
+def create_bokeh_fig_set_props(fig=None, plot_height=None, plot_width=None, **kwargs):
+    """Create bokeh figure and set properties"""
+    kwfig = fig_args(kwargs)
+    fig = create_bokeh_fig(plot_height=kwargs.pop('plot_height', plot_height),
+                           plot_width=kwargs.pop('plot_width', plot_width),
+                           **kwfig)
+    fig_props = set(fig.properties())
+    kwfig = fig_args(kwargs, fig_props)
+    fig.set(**kwfig)
+    return fig
+
+
 FIGURE_ATTRIBUTES = {'x_range', 'y_range', 'x_axis_type', 'y_axis_type',
                      'x_minor_ticks', 'y_minor_ticks', 'x_axis_location',
                      'y_axis_location', 'x_axis_label', 'y_axis_label',
@@ -47,3 +59,12 @@ def df_to_source(df):
     else:
         return df
 
+def add_glyph(fig, x, y, source, marker, **kwargs):
+    try:
+        glyph = getattr(fig, marker)(x=x, y=y, source=source)
+        props = glyph.properties()
+        kwglyph = fig_args(kwargs, props)
+        glyph.set(**kwglyph)
+    except:
+        raise
+    return fig

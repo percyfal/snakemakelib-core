@@ -9,6 +9,7 @@ from bokeh.models import ColumnDataSource
 from . import utils
 from .color import colorbrewer
 from snakemakelib.log import LoggerManager
+from .axes import xaxis, yaxis
 
 smllogger = LoggerManager().getLogger(__name__)
 
@@ -19,17 +20,20 @@ __all__ = ['dotplot', 'lines']
 def dotplot(x, y, df, return_source=False, marker='circle',
             **kwargs):
     # setup figure
-    kwfig = utils.fig_args(kwargs)
-    fig = utils.create_bokeh_fig(plot_height=kwargs.pop('plot_height', None),
-                                 plot_width=kwargs.pop('plot_width', None),
-                                 **kwfig)
-    fig_props = set(fig.properties())
-    kwfig = utils.fig_args(kwargs, fig_props)
-    fig.set(**kwfig)
+    fig = utils.create_bokeh_fig_set_props(plot_height=kwargs.pop('plot_height', None),
+                                           plot_width=kwargs.pop('plot_width', None),
+                                           **kwargs)
+    xaxis(fig, **kwargs)
+    yaxis(fig, **kwargs)
+
     source = utils.df_to_source(df)
     if com.is_numeric_dtype(source.to_df()[x]) == True:
         raise TypeError("{}: dependant variable must not be numerical type".format(__name__))
-    fig.circle(x=x, y=y, source=source, **kwargs)
+    if isinstance(y, list):
+        for yy in y:
+            fig = utils.add_glyph(fig, x, yy, source, marker, **kwargs)
+    else:
+        fig = utils.add_glyph(fig, x, y, source, marker, **kwargs)
     return fig
 
     
