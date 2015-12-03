@@ -89,7 +89,7 @@ class TestApplication:
 
     def test_targets(self, units):
         app = Application(name="foo", iotargets=self.iotargets_w_suffix, units=units)
-        assert app.targets == {'foo': ['foo1_bar1.foo', 'foo2_bar2.foo', 'foo3_bar3.foo']}
+        assert sorted(app.targets['foo']) == ['foo1_bar1.foo', 'foo2_bar2.foo', 'foo3_bar3.foo']
 
 
     def test_targets_no_run(self, units):
@@ -99,7 +99,8 @@ class TestApplication:
         
     def test_foobar_targets(self, units):
         app = Application(name="foo", iotargets=self.iotargets_foo_bar, units=units)
-        assert app.targets == {'foo': ['foo1_bar1.foo', 'foo2_bar2.foo', 'foo3_bar3.foo'], 'bar': ['bar1_foo1.bar', 'bar2_foo2.bar', 'bar3_foo3.bar']}
+        assert sorted(app.targets['foo']) == ['foo1_bar1.foo', 'foo2_bar2.foo', 'foo3_bar3.foo']
+        assert sorted(app.targets['bar']) == ['bar1_foo1.bar', 'bar2_foo2.bar', 'bar3_foo3.bar']
 
 
     def test_add_annotation_fn(self, units):
@@ -173,7 +174,7 @@ class TestSampleApplication:
         app = SampleApplication(name="foo", iotargets=SM_PU_iotargets_foo_bar_aggregate, units=units)
         app._targets = {'foo': [str(foo1), str(foo2), str(foo3)], 'bar': [str(bar1), str(bar2), str(bar3)]}
         app.aggregate()
-        assert list(app.aggregate_data['foo']['SM']) == ['foo1', 'foo1', 'foo2', 'foo2', 'foo3', 'foo3']
+        assert list(app.aggregate_data['foo'].reset_index()['SM']) == ['foo1', 'foo1', 'foo2', 'foo2', 'foo3', 'foo3']
 
 
 
@@ -206,17 +207,17 @@ def test_plot_fn(foo1, foo2, foo3, bar1, bar2, bar3, SM_PU_iotargets_foo_bar_agg
 
     app._targets = {'foo': [str(foo1), str(foo2), str(foo3)], 'bar': [str(bar1), str(bar2), str(bar3)]}
     app.aggregate()
-    d = app.plot()
-    assert sorted(list(d.keys())) == ['bar', 'foo']
-    assert len(d['foo']) == 2
-    assert len(d['bar']) == 1
+    # bar
+    d = app.plot('bar')
+    assert isinstance(d, list)
+    assert len(d) == 1
+    # foo
+    d = app.plot('foo')
+    assert len(d) == 2
     from bokeh.charts import Chart
-    assert isinstance(d['foo'][0], Chart)
-    d = app.plot(plotkey="foo")
-    assert list(d.keys()) == ['foo']
-    assert len(d['foo']) == 2
-    assert d['foo'][0].plot_width == 600
-    d = app.plot(plotkey="foo", width=400)
-    assert d['foo'][0].plot_width == 400
+    assert isinstance(d[0], Chart)
+    assert d[0].plot_width == 600
+    d = app.plot(key="foo", width=400)
+    assert d[0].plot_width == 400
     
     

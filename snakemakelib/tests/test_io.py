@@ -2,17 +2,16 @@
 # pylint: disable=R0904
 from os.path import join
 import pandas as pd
-from snakemakelib.odo import pandas
+from snakemakelib.odo.pandas import annotate_by_uri
 from blaze import DataFrame, odo, resource
 import pytest
 from ..io import string_format, IOTarget, IOSampleTarget, MissingRequiredKeyException
 
 
 @resource.register('.+\.csv', priority=20)
-def resource_csv_to_df(uri, annotate=False, **kwargs):
+@annotate_by_uri
+def resource_csv_to_df(uri, **kwargs):
     df = pd.read_csv(uri)
-    if annotate:
-        df = pandas.annotate_by_uri(df, uri, **kwargs)
     return df
 
 

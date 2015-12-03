@@ -2,15 +2,14 @@
 import os
 from blaze import DataFrame, odo, resource
 import pandas as pd
-from snakemakelib.odo import pandas
+from snakemakelib.odo.pandas import annotate_by_uri
 import pytest
 
 
 @resource.register('.+\.csv', priority=20)
-def resource_csv_to_df(uri, annotate=False, **kwargs):
+@annotate_by_uri
+def resource_csv_to_df(uri, **kwargs):
     df = pd.read_csv(uri)
-    if annotate:
-        df = pandas.annotate_by_uri(df, uri, **kwargs)
     return df
 
 
@@ -39,7 +38,7 @@ def test_custom_annotate_df(dataframe1, dataframe2):
         uristr = os.path.basename(uri)
         df['sample'] = uristr.split(".")[0]
         return df
-
+    
     df1 = odo(str(dataframe1), DataFrame, annotate=True, annotation_fn=_annotate_fn)
     df2 = odo(str(dataframe2), df1, annotate=True, annotation_fn=_annotate_fn)
     assert set(df2['sample']) == {'sample1', 'sample2'}

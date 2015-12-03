@@ -41,14 +41,14 @@ def resource_align_metrics(uri, **kwargs):
 
 @resource.register('.+\.insert_metrics')
 @annotate_by_uri
-def resource_insert_metrics(uri, key="insert_metrics", **kwargs):
+def resource_insert_metrics(uri, key="metrics", **kwargs):
     (_metrics, hist) = _hist_reader(uri)
     metrics = _metrics[_metrics.columns.difference(["PAIR_ORIENTATION"])].apply(pd.to_numeric, axis=0)
     metrics["PAIR_ORIENTATION"] = _metrics["PAIR_ORIENTATION"]
     hist = hist.apply(pd.to_numeric, axis=0)
-    if key == "insert_metrics":
+    if key == "metrics":
         return metrics
-    elif key == "insert_metrics_hist":
+    elif key == "hist":
         return hist
 
 @resource.register('.+\.hs_metrics')
@@ -59,12 +59,12 @@ def resource_hs_metrics(uri, **kwargs):
 
 @resource.register('.+\.dup_metrics')
 @annotate_by_uri
-def resource_dup_metrics(uri, key="dup_metrics", **kwargs):
+def resource_dup_metrics(uri, key="metrics", **kwargs):
     (_metrics, hist) = _hist_reader(uri)
     metrics = _metrics[_metrics.columns.difference(["LIBRARY"])].apply(pd.to_numeric, axis=0)
     hist = hist.apply(pd.to_numeric, axis=0)
-    if key == "dup_metrics":
+    if key == "metrics":
         return metrics
-    elif key == "dup_metrics_hist":
+    elif key == "hist":
         return hist
 

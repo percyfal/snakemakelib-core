@@ -88,6 +88,6 @@ def qualimap_data(tmpdir_factory):
     return fn
 
 def test_qualimap(qualimap_data):
-    d = odo(str(qualimap_data), dict)
-    assert list(d['Coverage_per_contig'].columns) == ['chrlen', 'mapped_bases', 'mean_coverage', 'sd']
-    assert list(d['Coverage_per_contig'].index) == ['chr10', 'chr11']
+    df = odo(str(qualimap_data), DataFrame, key='Coverage_per_contig')
+    assert list(df.columns) == ['chrlen', 'mapped_bases', 'mean_coverage', 'sd']
+    assert list(df.index) == ['chr10', 'chr11']

@@ -43,13 +43,14 @@ PAIR	4004	4004	1	0	3944	0.985015	298623	3943	298579	278038	0	0.006309	0.006303	0
     return fn
 
 def test_hist_metrics(insert_metrics):
-    (metrics, hist) = odo(str(insert_metrics), list)
+    metrics = odo(str(insert_metrics), DataFrame)
+    hist = odo(str(insert_metrics), DataFrame, key="hist")
     assert all(metrics["MEDIAN_INSERT_SIZE"] == [156])
     assert all(hist["insert_size"] == [70,76,78])
     
 
 def test_metrics(align_metrics):
-    metrics, _ = odo(str(align_metrics), list)
+    metrics = odo(str(align_metrics), DataFrame)
     assert metrics.loc["FIRST_OF_PAIR"]["MEAN_READ_LENGTH"] == 76
 
 
