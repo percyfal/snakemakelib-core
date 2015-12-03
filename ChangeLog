@@ -1,8 +1,120 @@
 Changelog
 =========
 
+0.1-alpha.3 (2015-12-03)
+------------------------
+
+- Add release notes for 0.1-alpha.3. [Per Unneberg]
+
+- Fix failing tests. [Per Unneberg]
+
+- Add kwargs to application aggregate function. [Per Unneberg]
+
+- Move workflow-specific code to workflow repo for now. [Per Unneberg]
+
+- Add annotate_by_uri. [Per Unneberg]
+
+- Add hook for aggregate target. [Per Unneberg]
+
+- More updates to graphics module. [Per Unneberg]
+
+  - add axes
+  - simplify kw handling
+
+- Update graphics module. [Per Unneberg]
+
+- Add annotate_by_uri. [Per Unneberg]
+
+- Allow IOTarget=None. [Per Unneberg]
+
+- Change RegexpDict to IOTarget throughout. [Per Unneberg]
+
+- Add annotate_by_uri. [Per Unneberg]
+
+- Don't aggregate keys with no aggregate target set. [Per Unneberg]
+
+- Simplify make_targets, update release notes. [Per Unneberg]
+
+- Run post processing hook on *every* odo result. [Per Unneberg]
+
+  Previous implementation ran hook on aggregated data, which obviously
+  gives erroneous results if normalizing by the sum in a group
+
+- Make sure legend arguments are strings. [Per Unneberg]
+
+- Simplify plotting function, uniquify target list. [Per Unneberg]
+
+- Add plot functions from bokehutils. [Per Unneberg]
+
+- Update graphics module. [Per Unneberg]
+
+  - add working points plot for data frames
+  - add warning message if plot_height, plot_width unset
+  - add tools
+
+- Add annotation and return data frames. [Per Unneberg]
+
+- Add function to save aggregate data. [Per Unneberg]
+
+- Add decorator for plots and plot function. [Per Unneberg]
+
+- Add annotate_by_uri decorator and specific applications. [Per
+  Unneberg]
+
+  - add annotate_by_uri decorator for adding annotation function
+  - add PlatformUnitApplication, SampleUnitApplication
+  - add tests
+
+- Update release notes. [Per Unneberg]
+
+- Add SampleApplication. [Per Unneberg]
+
+- Remove obsolete group_samples function. [Per Unneberg]
+
+- Update input tests and return concat_groupdict. [Per Unneberg]
+
+- Add pandas. [Per Unneberg]
+
+- Add test for indexed keys. [Per Unneberg]
+
+- Add concat_groupdict for indexed keys. [Per Unneberg]
+
+- Delete obsolete tools for collecting results. [Per Unneberg]
+
+  Superseded by odo
+
+- Delete obsolete results module. [Per Unneberg]
+
+- Minor additions. [Per Unneberg]
+
+- Use IOTargets for sample organization. [Per Unneberg]
+
+- Add test fixtures. [Per Unneberg]
+
+- Add IOAggregateTarget. [Per Unneberg]
+
+- Add application class and tests. [Per Unneberg]
+
+- Add odo.pandas for concatenating data frames. [Per Unneberg]
+
+  Also add annotate_by_uri
+
+- Add suffix functionality. [Per Unneberg]
+
+- Update release_notes index. [Per Unneberg]
+
+- Add release notes for 0.1-alpha.3. [Per Unneberg]
+
+- Update io class and tests. [Per Unneberg]
+
+- Add io module for IO objects, such as targets. [Per Unneberg]
+
+  Mimick and use functionality from snakemake.io
+
 0.1-alpha.2 (2015-11-24)
 ------------------------
+
+- Update conda recipe. [Per Unneberg]
 
 - Add release notes for 0.1-alpha.2. [Per Unneberg]
 
