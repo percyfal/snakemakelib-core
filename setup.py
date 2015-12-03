@@ -47,7 +47,7 @@ package_path(join(ROOT, 'snakemakelib', 'static'))
 scripts = []
 
 REQUIRES = [
-    'snakemake>=3.4.2',
+    'snakemake>=3.5.3',
     'pytest-cov',
     'pytest-mock',
     'pytest',
@@ -99,18 +99,6 @@ setup(
     scripts=scripts,
     packages=[
         'snakemakelib',
-        'snakemakelib.bio',
-        'snakemakelib.bio.ngs',
-        'snakemakelib.bio.ngs.rnaseq',
-        'snakemakelib.db',
-        'snakemakelib.graphics',
-        'snakemakelib.odo',
-        'snakemakelib.plot',
-        'snakemakelib.plot.bokeh',
-        'snakemakelib.report',
-        'snakemakelib.sample',
-        'snakemakelib.sample.organization',
-        'snakemakelib.tools',
     ],
     package_data={'snakemakelib': package_data},
     install_requires=REQUIRES,
