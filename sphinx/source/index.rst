@@ -9,8 +9,25 @@ snakemakelib-core - core functionality of snakemakelib
 
 .. _about:
 
-`snakemakelib` core functionality.
+`snakemakelib` core functionality. Adds modules, functions and
+utilities for working with `Snakemake
+<https://bitbucket.org/johanneskoester/snakemake/wiki/Home>`__ and
+`snakemake-rules <https://github.com/percyfal/snakemake-rules>`__.
 
+Features
+^^^^^^^^
+
+1. **IOTarget classes**. These classes utilize the power regular
+   expressions to find input and define output targets.
+2. **Application classes**. Application classes group targets at the
+   application level. Hooks makes it easy to add custom functionality,
+   such as plot and annotation functions.
+3. **odo parsers**. `odo <http://odo.pydata.org/en/latest/>`__ parsers
+   are used for parsing program outputs, thereby making it easy to
+   transform between many data formats
+4. **bokeh plots**. Customized `bokeh
+   <http://bokeh.pydata.org/en/latest/>`__ plots for making
+   interactive graphics
 
 
 Contents
@@ -19,6 +36,10 @@ Contents
 .. toctree::
    :maxdepth: 2
 
+   docs/quickstart
+   docs/targets
+   docs/datahandling
+   docs/tutorial
    docs/release_notes
    docs/reference
    
