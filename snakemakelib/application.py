@@ -101,7 +101,15 @@ class Application(object):
                 self._aggregate_targets[k] = v[1].format()
 
             
-    def aggregate(self, key=None):
+    def aggregate(self, key=None, **kwargs):
+        """Aggregate targets to aggregate_targets, if present.
+
+        Args:
+          key (str): aggregate targets for key, if None all targets are aggregated
+          kwargs (dict): additional arguments, passed to *all* hooks
+
+        """
+        
         if not self.run:
             return self
         for k,v in self.iotargets.items():
@@ -118,17 +126,17 @@ class Application(object):
             dflist = [
                 odo(x, pd.DataFrame,
                     annotate=annotate,
-                    annotation_fn=self._annotation_funcs.get(k, None), key=k) for x in self.targets[k]
+                    annotation_fn=self._annotation_funcs.get(k, None), key=k, **kwargs) for x in self.targets[k]
             ]
             # Run post-processing hooks, if any
             if not self._post_processing_hooks.get(k, None) is None:
                 smllogger.debug("Running post processing hook")
-                dflist = [self._post_processing_hooks[k](df) for df in dflist]
+                dflist = [self._post_processing_hooks[k](df, **kwargs) for df in dflist]
             df = pd.concat(dflist)
             # Run post-processing hook for aggregated data, if any
             if not self._aggregate_post_processing_hooks.get(k, None) is None:
                 smllogger.debug("Running post processing hook on aggregated data")
-                df = self._aggregate_post_processing_hooks[k](df)
+                df = self._aggregate_post_processing_hooks[k](df, **kwargs)
             self._aggregate_data[k] = df
         return self
     
