@@ -14,7 +14,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-__all__ = ['scatter', 'points']
+__all__ = ['scatter']
 
 def scatter(x, y, df, return_source=False, marker='circle',
             **kwargs):

@@ -13,7 +13,7 @@ from .axes import xaxis, yaxis
 
 smllogger = LoggerManager().getLogger(__name__)
 
-__all__ = ['dotplot', 'lines']
+__all__ = ['dotplot', 'lines', 'points']
 
 
 
@@ -25,18 +25,45 @@ def dotplot(x, y, df, return_source=False, marker='circle',
                                            **kwargs)
     xaxis(fig, **kwargs)
     yaxis(fig, **kwargs)
-
+    color = kwargs.get('color', None)
     source = utils.df_to_source(df)
     if com.is_numeric_dtype(source.to_df()[x]) == True:
         raise TypeError("{}: dependant variable must not be numerical type".format(__name__))
     if isinstance(y, list):
-        for yy in y:
+        color = [None] * len(y)
+        if 'color' in kwargs:
+            if isinstance(kwargs['color'], list) and len(kwargs['color']) == len(y):
+                color = kwargs['color']
+            else:
+                color = [kwargs['color']] * len(y)
+        for yy, c in zip(y, color):
+            if not c is None:
+                kwargs['color'] = c
             fig = utils.add_glyph(fig, x, yy, source, marker, **kwargs)
     else:
         fig = utils.add_glyph(fig, x, y, source, marker, **kwargs)
     return fig
 
+
+def points(x, y, df, return_source=False, marker='circle',
+           **kwargs):
+    """Add points to a figure.
+
+    Args:
+
+    """
+    # setup figure
+    fig = utils.create_bokeh_fig_set_props(plot_height=kwargs.pop('plot_height', None),
+                                           plot_width=kwargs.pop('plot_width', None),
+                                           **kwargs)
+    xaxis(fig, **kwargs)
+    yaxis(fig, **kwargs)
+
+    source = utils.df_to_source(df)
+    fig = utils.add_glyph(fig, x, y, source, marker, **kwargs)
+    return fig
     
+
 def lines(fig, x, y, df, groups=None, **kwargs):
     """lines: add lines to a figure
 

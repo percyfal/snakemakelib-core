@@ -59,12 +59,16 @@ def df_to_source(df):
     else:
         return df
 
+
+GLYPH_ATTRIBUTES = {'color', 'size', 'alpha'}
+    
 def add_glyph(fig, x, y, source, marker, **kwargs):
     try:
-        glyph = getattr(fig, marker)(x=x, y=y, source=source)
-        props = glyph.properties()
-        kwglyph = fig_args(kwargs, props)
-        glyph.set(**kwglyph)
+        kwglyph = fig_args(kwargs, GLYPH_ATTRIBUTES)
+        glyph = getattr(fig, marker)(x=x, y=y, source=source, **kwglyph)
+        # props = glyph.properties()
+        # kwglyph = fig_args(kwargs, props)
+        # glyph.set(**kwglyph)
     except:
         raise
     return fig
