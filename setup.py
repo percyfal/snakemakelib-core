@@ -99,6 +99,7 @@ setup(
     scripts=scripts,
     packages=[
         'snakemakelib',
+        'snakemakelib.applications',
         'snakemakelib.bio',
         'snakemakelib.bio.ngs',
         'snakemakelib.bio.ngs.rnaseq',
