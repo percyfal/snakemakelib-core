@@ -28,7 +28,7 @@ pca_callback = function(source, cb_obj, item) {
 	    }
 	} else {
 	    var j = 0;
-	    // Simple categorical grouping
+	    // Simple categorical grouping; set the colormap
 	    for (i = 0; i < data[item].length; i++) {
 		if (data[label][i] in colormap) {
 		} else {

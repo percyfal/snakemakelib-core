@@ -5,14 +5,13 @@ import pickle
 import re
 import numpy as np
 from snakemakelib.plot.bokeh import colorbrewer
+from snakemakelib.graphics import tooltips, xaxis, yaxis, dotplot, points
+import snakemakelib.graphics.utils
 from bokeh.plotting import figure, gridplot
 from bokeh.models import ColumnDataSource, CustomJS, HoverTool, OpenURL, TapTool
 from bokeh.charts import Scatter
 from bokeh.io import vform
 from bokeh.models.widgets import Select, Toggle
-from bokehutils.axes import xaxis, yaxis
-from bokehutils.geom import dotplot, points
-from bokehutils.tools import tooltips
 
 TOOLS = "pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover"
 
@@ -23,6 +22,7 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
       pca_results_file (str): pca results file
       metadata (str): metadata file name
       pcaobjfile (str): file name containing pickled pca object
+      taptool_url (str): url prefix that is attached to taptool; typically a link to ensembl
 
     Returns: 
       dict: dictionary with keys 'fig' pointing to a (:py:class:`~bokeh.models.GridPlot`) Bokeh GridPlot object and key 'table' pointing to a (:py:class:`~bokeh.widgets.DataTable`) DataTable
@@ -65,28 +65,22 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
                          callback=ycallback)
 
     # Make the pca plot
-    kwfig = {'plot_width': 400, 'plot_height': 400,
-             'title_text_font_size': "12pt"}
-
-    pca_fig = figure(title="Principal component analysis",
-                      tools=TOOLS, **kwfig)
-
-    points(pca_fig, 'x', 'y', source=pca_source, color='color', size='size',
-           alpha=.7)
-    kwxaxis = {
-               'axis_label_text_font_size': '10pt',
-               'major_label_orientation': np.pi/3}
-    kwyaxis = {
-        'axis_label_text_font_size': '10pt',
-        'major_label_orientation': np.pi/3}
-    xaxis(pca_fig, **kwxaxis)
-    yaxis(pca_fig, **kwyaxis)
+    kwargs = {'plot_width': 400, 'plot_height': 400,
+              'title_text_font_size': "12pt",
+              'title': "Principal component analysis",
+              'tools': TOOLS,
+              'x_axis_label_text_font_size': '10pt',
+              'x_major_label_orientation': np.pi/3,
+              'y_axis_label_text_font_size': '10pt',
+              'y_major_label_orientation': np.pi/3,
+    }
+    fig = points('x', 'y', df=pca_source, color='color', size='size', alpha=0.7, **kwargs)
     tooltiplist = [("sample", "@SM")] if "SM" in pca_source.column_names else []
     if not md is None:
         tooltiplist = tooltiplist + [(str(x), "@{}".format(x)) for x
                                      in md.columns] + \
         [("Detected genes (TPM)", "@TPM"), ("Detected genes (FPKM)", "@FPKM")]
-    tooltips(pca_fig, HoverTool, tooltiplist)
+    tooltips(fig, HoverTool, tooltiplist)
 
     # Loadings
     loadings = pd.DataFrame(pcaobj.components_).T
@@ -94,18 +88,20 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
     loadings['x'] = loadings['0']
     loadings['y'] = loadings['1']
     try:
-        loadings["gene_id"] = pcaobj.gene_id
-        loadings["gene_name"] = pcaobj.gene_name
+        loadings["gene_id"] = pcaobj.features
     except:
-        pass
+        print("failed to set gene_id")
+
+    try:
+        loadings["gene_name"] = pcaobj.labels
+    except:
+        print("failed to set gene_name")
     loadings_source = ColumnDataSource(loadings)
-    pca_loadings_fig = figure(title="Loadings",
-                tools=TOOLS,
-                **kwfig)
-    points(pca_loadings_fig, "x", "y", source=loadings_source)
-    xaxis(pca_loadings_fig, **kwxaxis)
-    yaxis(pca_loadings_fig, **kwyaxis)
-    tooltips(pca_loadings_fig, HoverTool, [('gene_id', '@gene_id'), ('gene_name', '@gene_name')])
+    kwargs.update({'title': "Loadings"})
+    loadings_fig = points(x='x', y='y', df=loadings_source,
+                          **kwargs)
+
+    tooltips(loadings_fig, HoverTool, [('gene_id', '@gene_id'), ('gene_name', '@gene_name')])
     x_loadings_callback = CustomJS(args=dict(source=loadings_source),
                                    code="""pca_loadings(source, cb_obj, "x");""")
     y_loadings_callback = CustomJS(args=dict(source=loadings_source),
@@ -119,20 +115,16 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
 
     # Add taptool url if present
     if taptool_url:
-        pca_loadings_fig.add_tools(TapTool(callback=OpenURL(url=taptool_url)))
+        loadings_fig.add_tools(TapTool(callback=OpenURL(url=taptool_url)))
 
     # Detected genes, FPKM and TPM
-    n_genes_fig = figure(title="Number of detected genes",
-                x_range=list(df_pca.index), tools=TOOLS,
-                **kwfig)
-    kwxaxis.update({'axis_label': "Sample"})
-    kwyaxis.update({'axis_label': "Detected genes"})
-    dotplot(n_genes_fig, "SM", "FPKM", source=pca_source)
-    xaxis(n_genes_fig, **kwxaxis)
-    yaxis(n_genes_fig, **kwyaxis)
+    kwargs.update({'title': 'Number of detected genes',
+                   'x_axis_label': "Sample",
+                   'y_axis_label': "Detected genes"})
+    n_genes_fig = dotplot(df=pca_source, x="SM", y="TPM", **kwargs)
     tooltips(n_genes_fig, HoverTool, [('sample', '@SM'),
-                             ('# genes (FPKM)', '@FPKM')])
+                                      ('# genes (TPM)', '@TPM'),
+                                      ('# genes (FPKM)', '@FPKM')])
 
     buttons = toggle_buttons + [component_x, component_y] + [loadings_component_x, loadings_component_y]
-    return {'pca' : vform(*(buttons + [gridplot([[pca_fig,
-                                                  pca_loadings_fig], [n_genes_fig, None]])]))}
+    return {'pca' : vform(*(buttons + [gridplot([[fig, loadings_fig, n_genes_fig]])]))}
