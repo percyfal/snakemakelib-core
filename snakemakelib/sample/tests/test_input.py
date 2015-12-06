@@ -2,7 +2,7 @@
 # pylint: disable=R0904, C0301, C0103
 import csv
 import pytest
-from ..input import _parse_sampleinfo, _samples_from_input_files
+from ..input import _parse_sampleinfo, _samples_from_input_files, initialize_input
 from snakemakelib.sample.organization import config, illumina_scilife
 
 
@@ -41,3 +41,15 @@ class TestSamplesFromInputFiles:
         samples = _samples_from_input_files(config['settings']['sample_organization'].run_id_re)
         assert samples[0] == {'SM': 'P001_102', 'DT': '120924', 'PU2': '2', 'PU': 'AC003CCCXX_2', 'PU1': 'AC003CCCXX'}
 
+
+
+class TestInitializeInput:
+    def test_initialize_input(self, illumina_scilife_files, mocker):
+        mock_samples = mocker.patch('snakemakelib.sample.input._samples_from_input_files')
+        mock_samples.return_value = [{'SM': 'P001_102', 'DT': '120924', 'PU2': '2', 'PU': 'AC003CCCXX_2', 'PU1': 'AC003CCCXX'},
+                                     {'SM': 'P001_101', 'DT': '120924', 'PU2': '1', 'PU': 'AC003CCCXX_1', 'PU1': 'AC003CCCXX'},
+                                     {'SM': 'P001_101', 'DT': '121015', 'PU2': '1', 'PU': 'BB002BBBXX_1', 'PU1': 'BB002BBBXX'}]
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter="P001_101")
+        assert len(samples) == 2
+        assert not 'P001_102' in [s['SM'] for s in samples]
+        

@@ -13,7 +13,7 @@ smllogger = LoggerManager().getLogger(__name__)
 
 def initialize_input(src_re=None, sampleinfo=None, metadata=None,
                      metadata_filter=None, filter_suffix="",
-                     sample_column_map=None):
+                     sample_column_map=None, sample_filter=None):
     """Initialize inputs.
 
     Try reading sampleinfo file if present. Returns list of annotated
@@ -33,6 +33,7 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
       sample_column_map (dict): mapping from sampleinfo column names
                                 to read group names, e.g.
                                 {'Sample':'SM'}
+      sample_filter (list): list of sample names to use as subset
 
     Returns:
       samples (list): list of dicts where each dict corresponds to
@@ -62,6 +63,9 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
         samples = list(df.T.to_dict().values())
         if metadata_filter:
             samples = list(filter(lambda s: all(re.match(v, s[k]) for k,v in metadata_filter.items()), samples))
+    if not sample_filter is None:
+        samples = [s for s in samples if s["SM"] in sample_filter]
+
     return samples
 
 def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
