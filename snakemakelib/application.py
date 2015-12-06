@@ -144,10 +144,22 @@ class Application(object):
     @property
     def aggregate_data(self):
         return self._aggregate_data
-            
+
+
+    def filter_aggregate_data(self, datakey, key=None, values=None):
+        if key is None:
+            return
+        try:
+            self._aggregate_data[datakey] = self._aggregate_data[datakey][self._aggregate_data[datakey][key].isin(values)]
+        except:
+            raise Exception("failed to filter aggregate data on datakey {}, key {} using values {}".format(datakey, key, values))
+        return
+    
+
     def set_units(self, units):
         self._units = units
         self._make_targets()
+        return self
 
 
     @property
@@ -266,8 +278,7 @@ class Application(object):
             if backend == "csv":
                 self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key], **kwargs)
 
-        
-    
+
     def __str__(self):
         return repr(self) + "; application name: " + self.name
     
