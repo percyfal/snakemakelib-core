@@ -61,3 +61,5 @@ class TestInitializeInput:
                                      {'SM': 'SM_11', 'DT': '121015', 'PU2': '1', 'PU': 'BB002BBBXX_1', 'PU1': 'BB002BBBXX'}]
         samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter=["SM_11"])
         assert len(samples) == 1
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter=["SM_1"])
+        assert len(samples) == 1

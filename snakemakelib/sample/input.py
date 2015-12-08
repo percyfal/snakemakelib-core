@@ -64,6 +64,12 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
         if metadata_filter:
             samples = list(filter(lambda s: all(re.match(v, s[k]) for k,v in metadata_filter.items()), samples))
     if not sample_filter is None:
+        if not isinstance(sample_filter, list):
+            try:
+                sample_filter = eval(sample_filter)
+                assert isinstance(sample_filter, list), "sample_filter must be list"
+            except:
+                raise
         samples = [s for s in samples if s["SM"] in set(sample_filter)]
 
     return samples
