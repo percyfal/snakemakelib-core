@@ -63,3 +63,19 @@ class TestInitializeInput:
         assert len(samples) == 1
         samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter=["SM_1"])
         assert len(samples) == 1
+
+
+    def test_initialize_input_sample_filter(self, mocker):
+        mock_samples = mocker.patch('snakemakelib.sample.input._samples_from_input_files')
+        mock_samples.return_value = [{'SM': 'SM_1', 'DT': '120924', 'PU2': '2', 'PU': 'AC003CCCXX_2', 'PU1': 'AC003CCCXX'},
+                                     {'SM': 'SM_2', 'DT': '120924', 'PU2': '1', 'PU': 'AC003CCCXX_1', 'PU1': 'AC003CCCXX'},
+                                     {'SM': 'SM_11', 'DT': '121015', 'PU2': '1', 'PU': 'BB002BBBXX_1', 'PU1': 'BB002BBBXX'}]
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter="['SM_11']")
+        assert len(samples) == 1
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter="['SM_11','SM_1']")
+        assert len(samples) == 2
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter=["SM_1", "SM_11"])
+        assert len(samples) == 2
+        samples = initialize_input(src_re=config['settings']['sample_organization'].run_id_re, sample_filter='"SM_2" "SM_1","SM_11"')
+        assert len(samples) == 1
+
