@@ -1,8 +1,67 @@
 Changelog
 =========
 
+%%version%% (unreleased)
+------------------------
+
+- Add release notes. [Per Unneberg]
+
+- Add function to convert sample string to list. [Per Unneberg]
+
+- Minor fixes. [Per Unneberg]
+
+  - check for values when filtering aggregate data
+  - use pandas to read xls
+  - add logger to sklearn
+
+- Parse --config string to list. [Per Unneberg]
+
+  Fixes #12
+
+- Make version table wider. [Per Unneberg]
+
+- Assert sample_filter is list. [Per Unneberg]
+
+  Note: potential security risk as we're currently not checking the
+  eval'ed statement
+
+- Make sure initialize_input return filter only. [Per Unneberg]
+
+  Fixes #6
+
+- Add filter_aggregate_data. [Per Unneberg]
+
+  Fixes #10
+
+- Add sample_filter to initialize_input. [Per Unneberg]
+
+- Fix pca plot. [Per Unneberg]
+
+- Add axes import, new points plot. [Per Unneberg]
+
+- Add docs. [Per Unneberg]
+
+- Add missing template files. [Per Unneberg]
+
+- Update docs. [Per Unneberg]
+
+  Rename automodules
+
+- Switch order of pytest and pytest-cov. [Per Unneberg]
+
+  See https://bitbucket.org/pypa/setuptools/issues/370/unable-to-install-pytest
+
+- Add missing scrnaseq.applications. [Per Unneberg]
+
+0.1-alpha.4 (2015-12-03)
+------------------------
+
+- Update ChangeLog, meta.yaml. [Per Unneberg]
+
 0.1-alpha.3 (2015-12-03)
 ------------------------
+
+- Update ChangeLog, meta.yaml. [Per Unneberg]
 
 - Add release notes for 0.1-alpha.3. [Per Unneberg]
 
