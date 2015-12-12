@@ -147,6 +147,8 @@ class Application(object):
 
 
     def filter_aggregate_data(self, datakey, key=None, values=None):
+        if values is None:
+            return
         if key is None:
             return
         try:

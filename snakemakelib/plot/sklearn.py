@@ -13,6 +13,10 @@ from bokeh.charts import Scatter
 from bokeh.io import vform
 from bokeh.models.widgets import Select, Toggle
 
+from snakemakelib.log import LoggerManager
+
+smllogger = LoggerManager().getLogger(__name__)
+
 TOOLS = "pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover"
 
 def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=None, **kwargs):
@@ -90,12 +94,14 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
     try:
         loadings["gene_id"] = pcaobj.features
     except:
-        print("failed to set gene_id")
+        smllogger.warn("failed to set gene_id")
+        raise
 
     try:
-        loadings["gene_name"] = pcaobj.labels
+        loadings["gene_name"] = [pcaobj.labels[x] for x in loadings["gene_id"]]
     except:
-        print("failed to set gene_name")
+        smllogger.warn("failed to set gene_name")
+        raise
     loadings_source = ColumnDataSource(loadings)
     kwargs.update({'title': "Loadings"})
     loadings_fig = points(x='x', y='y', df=loadings_source,
@@ -119,8 +125,9 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
 
     # Detected genes, FPKM and TPM
     kwargs.update({'title': 'Number of detected genes',
-                   'x_axis_label': "Sample",
-                   'y_axis_label': "Detected genes"})
+                   'xlabel': "Sample",
+                   'ylabel': "Detected genes",
+                   'x_range': list(pca_source.data["SM"])})
     n_genes_fig = dotplot(df=pca_source, x="SM", y="TPM", **kwargs)
     tooltips(n_genes_fig, HoverTool, [('sample', '@SM'),
                                       ('# genes (TPM)', '@TPM'),
