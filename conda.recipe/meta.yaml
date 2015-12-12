@@ -9,6 +9,8 @@ requirements:
     - python ==3.4.3 # As with snakemake
     - setuptools
     - snakemake >=3.4.2
+    - blaze
+    - bokeh
 
   run:
     - python >=3.3
@@ -27,6 +29,8 @@ test:
     - mock
     - pytest
     - pytest-cov ==1.8.1
+
+
   imports:
     - snakemake
     

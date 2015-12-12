@@ -47,10 +47,7 @@ package_path(join(ROOT, 'snakemakelib', 'static'))
 scripts = []
 
 REQUIRES = [
-    'snakemake>=3.5.3',
-    'pytest-cov',
-    'pytest-mock',
-    'pytest',
+    'snakemake>=3.4.2',
     'blaze',
     'bokeh',
 ]
