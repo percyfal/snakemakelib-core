@@ -11,6 +11,18 @@ from snakemakelib.utils import find_files
 
 smllogger = LoggerManager().getLogger(__name__)
 
+def convert_samples_to_list(samples=None):
+    """Convert samples to list.
+
+    Passing --config samples=["S1", "S2"] will set samples to a string.
+    """
+    if not samples:
+        return None
+    if isinstance(samples, str):
+        return re.sub("[\"\'\[\]\s+]", "", samples).split(",")
+    assert isinstance(samples, list), "samples configuration setting must be a list of sample names"
+    return samples
+    
 def initialize_input(src_re=None, sampleinfo=None, metadata=None,
                      metadata_filter=None, filter_suffix="",
                      sample_column_map=None, sample_filter=None):
