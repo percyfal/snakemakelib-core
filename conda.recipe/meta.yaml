@@ -24,6 +24,7 @@ test:
     - sphinx-bootstrap-theme
     - blaze
     - pandas
+    - bokeh
 
     # tests
     - coverage
