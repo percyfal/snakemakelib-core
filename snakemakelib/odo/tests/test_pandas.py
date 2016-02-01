@@ -29,7 +29,7 @@ def dataframe2(tmpdir_factory):
 
 def test_annotate_df(dataframe1, dataframe2):
     df1 = odo(str(dataframe1), DataFrame, annotate=True)
-    df2 = odo(str(dataframe2), df1, annotate=True)
+    df2 = df1.append(odo(str(dataframe2), DataFrame, annotate=True))
     assert set([os.path.basename(x) for x in df2['uri']]) == {'sample1.dataframe1.csv', 'sample2.dataframe2.csv'}
 
 
@@ -40,6 +40,6 @@ def test_custom_annotate_df(dataframe1, dataframe2):
         return df
     
     df1 = odo(str(dataframe1), DataFrame, annotate=True, annotation_fn=_annotate_fn)
-    df2 = odo(str(dataframe2), df1, annotate=True, annotation_fn=_annotate_fn)
+    df2 = df1.append(odo(str(dataframe2), DataFrame, annotate=True, annotation_fn=_annotate_fn))
     assert set(df2['sample']) == {'sample1', 'sample2'}
     

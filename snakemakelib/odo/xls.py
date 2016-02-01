@@ -7,4 +7,6 @@ def resource_xls(uri, **kwargs):
     delimiter = "\t"
     if 'delimiter' in kwargs:
         delimiter = kwargs.pop("delimiter")
+    if 'dshape' in kwargs:
+        kwargs.pop("dshape")
     return pd.read_csv(uri, delimiter=delimiter, **kwargs)
