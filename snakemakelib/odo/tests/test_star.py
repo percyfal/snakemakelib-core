@@ -10,7 +10,6 @@ def star_data(tmpdir_factory):
                              Started mapping on |       Apr 29 22:42:00
                                     Finished on |       Apr 29 22:43:51
        Mapping speed, Million of reads per hour |       152.43
-
                           Number of input reads |       4699845
                       Average input read length |       202
                                     UNIQUE READS:
