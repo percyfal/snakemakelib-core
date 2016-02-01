@@ -2,3 +2,5 @@
 =========================
 
 Add deploy script.
+
+Add continuous integration via travis.
