@@ -41,7 +41,6 @@ def star_data(tmpdir_factory):
 
 def test_star_log(star_data):
     df = odo(str(star_data), DataFrame)
-    print(df)
     assert df.loc["% of reads unmapped: too short","value"] == 8.73
     assert df.loc["Uniquely mapped reads number","value"] == 4011114
 

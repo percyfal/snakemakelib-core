@@ -40,8 +40,6 @@ conda install --yes snakemake
 pip install pytest-mock
 pip install coveralls
 
-conda build --quiet conda.recipe
+# Install snakemakelib
+python setup.py install
 
-BUILDFILE=`conda build conda.recipe --output`
-
-conda install --yes $BUILDFILE
