@@ -3,9 +3,9 @@ import os
 import mimetypes
 import base64
 from bokeh.resources import INLINE
-from bokeh.templates import JS_RESOURCES, CSS_RESOURCES
+from bokeh.core.templates import JS_RESOURCES, CSS_RESOURCES
 from bokeh.embed import components
-from bokeh.models.widget import Widget
+from bokeh.models import Widget
 from bokeh.util.string import encode_utf8
 
 
