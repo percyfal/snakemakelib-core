@@ -32,6 +32,7 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
       dict: dictionary with keys 'fig' pointing to a (:py:class:`~bokeh.models.GridPlot`) Bokeh GridPlot object and key 'table' pointing to a (:py:class:`~bokeh.widgets.DataTable`) DataTable
 
     """
+    md = None
     if not metadata is None:
         md = pd.read_csv(metadata, index_col=0)
     if not pcaobjfile is None:
