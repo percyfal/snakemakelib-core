@@ -2,7 +2,7 @@
 # pylint: disable=R0904, C0301, C0103
 import csv
 import pytest
-from ..input import _parse_sampleinfo, _samples_from_input_files, initialize_input
+from snakemakelib.sample.input import _parse_sampleinfo, _samples_from_input_files, initialize_input
 from snakemakelib.sample.organization import config, illumina_scilife
 
 

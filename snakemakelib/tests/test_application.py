@@ -5,8 +5,8 @@ import logging
 import pytest
 import pandas as pd
 from blaze import DataFrame, resource
-from ..application import Application, PlatformUnitApplication, SampleApplication
-from ..io import IOTarget, IOSampleTarget, IOAggregateTarget
+from snakemakelib.application import Application, PlatformUnitApplication, SampleApplication
+from snakemakelib.io import IOTarget, IOSampleTarget, IOAggregateTarget
 logging.basicConfig(level=logging.DEBUG)
 from snakemakelib.odo import pandas
 
