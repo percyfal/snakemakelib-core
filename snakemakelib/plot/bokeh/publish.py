@@ -5,7 +5,7 @@ import base64
 from bokeh.resources import INLINE
 from bokeh.core.templates import JS_RESOURCES, CSS_RESOURCES
 from bokeh.embed import components
-from bokeh.models import Widget
+from bokeh.models import Component
 from bokeh.util.string import encode_utf8
 
 
@@ -69,7 +69,7 @@ def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE
     def _update(template_variables):
         tmp = {}
         for k, v in template_variables.items():
-            if (isinstance(v, Widget)):
+            if (isinstance(v, Component)):
                 tmp.update({k: [{'script': s, 'div': d}
                                 for s, d in [components(v, resources)]][0]})
             elif (isinstance(v, dict)):
