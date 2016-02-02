@@ -3,7 +3,9 @@ from blaze import resource, DataFrame
 import pandas as pd
 import re
 from .pandas import annotate_by_uri
+from snakemakelib.log import LoggerManager
 
+smllogger = LoggerManager().getLogger(__name__)
 
 def _hist_reader(uri):
     with open(uri) as fh:
@@ -12,11 +14,17 @@ def _hist_reader(uri):
         indices = list((i for i, val in enumerate(data)
                         if val[0].startswith("## METRICS CLASS")
                         or val[0].startswith("## HISTOGRAM")))
+        if len(indices) == 1:
+            indices.append(len(data))
         metrics = DataFrame.from_records(data[(indices[0]+2):(indices[1])],
                                          columns=data[(indices[0]+1)])
-
-        hist = DataFrame.from_records(data[(indices[1]+2):],
-                                      columns = data[(indices[1]+1)])
+        # We could be missing the histogram
+        try:
+            hist = DataFrame.from_records(data[(indices[1]+2):],
+                                          columns = data[(indices[1]+1)])
+        except:
+            smllogger.warn("No histogram data for {}".format(uri))
+            hist = None
     return (metrics, hist)
 
 
@@ -62,7 +70,8 @@ def resource_hs_metrics(uri, **kwargs):
 def resource_dup_metrics(uri, key="metrics", **kwargs):
     (_metrics, hist) = _hist_reader(uri)
     metrics = _metrics[_metrics.columns.difference(["LIBRARY"])].apply(pd.to_numeric, axis=0)
-    hist = hist.apply(pd.to_numeric, axis=0)
+    if not hist is None:
+        hist = hist.apply(pd.to_numeric, axis=0)
     if key == "metrics":
         return metrics
     elif key == "hist":
