@@ -5,7 +5,7 @@ import pandas as pd
 from snakemakelib.odo.pandas import annotate_by_uri
 from blaze import DataFrame, odo, resource
 import pytest
-from ..io import string_format, IOTarget, IOSampleTarget, MissingRequiredKeyException
+from snakemakelib.io import string_format, IOTarget, IOSampleTarget, MissingRequiredKeyException
 
 
 @resource.register('.+\.csv', priority=20)

@@ -9,6 +9,9 @@ from blaze import odo
 # FIXME: utilize pandas builtin functionality for handling these issues
 def recast(x, strpfmt="%b %d %H:%M:%S"):
     """Reformat strings to numeric or datestrings"""
+    if isinstance(x, float):
+        if math.isnan(x):
+            return x
     x = x.rstrip().lstrip()
     if re.match('^[0-9]+$', x):
         return int(x)

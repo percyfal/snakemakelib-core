@@ -2,7 +2,7 @@
 # pylint: disable=R0904, C0301, C0103
 import os
 import pytest
-from ..utils import find_files, isoformat
+from snakemakelib.utils import find_files, isoformat
 
 @pytest.fixture(scope="module", autouse=True)
 def walk():

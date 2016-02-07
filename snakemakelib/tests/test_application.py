@@ -5,8 +5,8 @@ import logging
 import pytest
 import pandas as pd
 from blaze import DataFrame, resource
-from ..application import Application, PlatformUnitApplication, SampleApplication
-from ..io import IOTarget, IOSampleTarget, IOAggregateTarget
+from snakemakelib.application import Application, PlatformUnitApplication, SampleApplication
+from snakemakelib.io import IOTarget, IOSampleTarget, IOAggregateTarget
 logging.basicConfig(level=logging.DEBUG)
 from snakemakelib.odo import pandas
 
@@ -217,7 +217,7 @@ def test_plot_fn(foo1, foo2, foo3, bar1, bar2, bar3, SM_PU_iotargets_foo_bar_agg
     from bokeh.charts import Chart
     assert isinstance(d[0], Chart)
     assert d[0].plot_width == 600
-    d = app.plot(key="foo", width=400)
+    d = app.plot(key="foo", plot_width=400)
     assert d[0].plot_width == 400
     
     

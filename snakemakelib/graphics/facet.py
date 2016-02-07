@@ -49,7 +49,7 @@ def facet_grid(fig, x, y, df=None, source=None, groups=None, ncol=3,
         subfig = figure(title=str(name), **kwargs)
         for glyph, yy in zip(gr, y):
             plotfn = str(glyph.glyph).split(", ")[0].lower()
-            kw = glyph.glyph.vm_props()
+            kw = glyph.glyph.properties_with_values()
             kw.pop('x', None)
             kw.pop('y', None)
             kw.pop('xs', None)

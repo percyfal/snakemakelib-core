@@ -2,6 +2,7 @@
 import os
 import pandas as pd
 from blaze import odo
+from bokeh.plotting import figure
 from .io import IOTarget, IOAggregateTarget
 from snakemakelib.log import LoggerManager
 
@@ -109,11 +110,11 @@ class Application(object):
           kwargs (dict): additional arguments, passed to *all* hooks
 
         """
-        
+
         if not self.run:
             return self
         for k,v in self.iotargets.items():
-            smllogger.debug("Aggregating key ", k, " iotargets: ", v)
+            smllogger.debug("Aggregating key {}, iotargets: {}".format(k, v))
             if not key is None and not key == k:
                 continue
             if self.iotargets[k][1] is None:
@@ -123,11 +124,15 @@ class Application(object):
             if not self._annotation_funcs.get(k, None) is None:
                 smllogger.debug("Annotating data")
                 annotate = True
-            dflist = [
-                odo(x, pd.DataFrame,
-                    annotate=annotate,
-                    annotation_fn=self._annotation_funcs.get(k, None), key=k, **kwargs) for x in self.targets[k]
-            ]
+            try:
+                dflist = [
+                    odo(x, pd.DataFrame,
+                        annotate=annotate,
+                        annotation_fn=self._annotation_funcs.get(k, None), key=k, **kwargs) for x in self.targets[k]
+                ]
+            except:
+                smllogger.warn("Unable to generate data frame list; not aggregating results for targets {}".format(self.targets[k]))
+                return self
             # Run post-processing hooks, if any
             if not self._post_processing_hooks.get(k, None) is None:
                 smllogger.debug("Running post processing hook")
@@ -252,6 +257,11 @@ class Application(object):
         for key in self.aggregate_data.keys():
             if self.iotargets[key][1] is None:
                 continue
+            if self.aggregate_data[key] is None:
+                # Emulate touch so rule completes
+                with open(self.iotargets[key][1], "w") as fh:
+                    fh.write("")
+                continue
             if not datakey is None:
                 if datakey != key:
                     continue
@@ -278,7 +288,10 @@ class Application(object):
                 if datakey != key:
                     continue
             if backend == "csv":
-                self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key], **kwargs)
+                try:
+                    self.aggregate_data[key] = pd.read_csv(self.aggregate_targets[key], **kwargs)
+                except:
+                    smllogger.warn("Failed to read aggregate data for {}".format(self.aggregate_targets[key]))
 
 
     def __str__(self):
@@ -302,6 +315,8 @@ class SampleApplication(Application):
                     df[samplekey] = iotarget.concat_groupdict[samplekey]
                     df[samplekey] = df[samplekey].astype(str)
                     df.set_index([samplekey], append=True, inplace=True)
+                except KeyError:
+                    raise
                 except AttributeError:
                     raise
                 return df
@@ -328,6 +343,11 @@ class PlatformUnitApplication(Application):
                     df[pukey] = iotarget.concat_groupdict[pukey]
                     df[samplekey] = df[samplekey].astype(str)
                     df[pukey] = df[pukey].astype(str)
+                    df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
+                except KeyError:
+                    smllogger.warn("No platform unit present; using sample unit to identify platform unit")
+                    df[pukey] = iotarget.concat_groupdict[samplekey]
+                    df[pukey] = df[samplekey].astype(str)
                     df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
                 except AttributeError:
                     raise

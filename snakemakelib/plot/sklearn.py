@@ -19,24 +19,24 @@ smllogger = LoggerManager().getLogger(__name__)
 
 TOOLS = "pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover"
 
-def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=None, **kwargs):
+def plot_pca(pcaobjfile, pca_results_file=None, metadata=None, taptool_url=None, **kwargs):
     """Make PCA plot
 
     Args:
+      pcaobjfile (str): file name containing pickled pca object
       pca_results_file (str): pca results file
       metadata (str): metadata file name
-      pcaobjfile (str): file name containing pickled pca object
       taptool_url (str): url prefix that is attached to taptool; typically a link to ensembl
 
     Returns: 
       dict: dictionary with keys 'fig' pointing to a (:py:class:`~bokeh.models.GridPlot`) Bokeh GridPlot object and key 'table' pointing to a (:py:class:`~bokeh.widgets.DataTable`) DataTable
 
     """
+    with open(pcaobjfile, 'rb') as fh:
+        pcaobj = pickle.load(fh)
+    md = None
     if not metadata is None:
         md = pd.read_csv(metadata, index_col=0)
-    if not pcaobjfile is None:
-        with open(pcaobjfile, 'rb') as fh:
-            pcaobj = pickle.load(fh)
     df_pca = pd.read_csv(pca_results_file, index_col=kwargs.get('index_col', "SM"))
     df_pca['color'] = [kwargs.get('color', 'red')] * df_pca.shape[0]
     df_pca['x'] = df_pca['0']
@@ -61,7 +61,6 @@ def plot_pca(pca_results_file=None, metadata=None, pcaobjfile=None, taptool_url=
         toggle_buttons = []
 
     pca_components = sorted([int(x) + 1 for x in pca_source.column_names if re.match("\d+", x)])
-    # NB: assumes existence of pcaobj
     menulist = ["{} ({:.2f}%)".format(x, 100.0 * p) for x, p in zip(pca_components, pcaobj.explained_variance_ratio_)]
     component_x = Select(title = "PCA component x", options = menulist, value=menulist[0],
                          callback=xcallback)

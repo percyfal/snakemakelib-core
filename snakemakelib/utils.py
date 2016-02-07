@@ -54,7 +54,7 @@ def safe_makedir(dname):
 
 
 
-def find_files(regexp, path=os.curdir, search=False, limit=None):
+def find_files(regexp, path=os.curdir, search=False, limit=None, use_full_path=False):
     """Find files in path that comply with a regular expression.
 
     Args:
@@ -65,6 +65,7 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
       limit (dict): dictionary where keys correspond to regular expression
              grouping labels and values are lists that limit the
              returned pattern
+      use_full_path (bool): use full path in match/search
 
     Returns:
       flist: list of file names, prepended with root path
@@ -83,9 +84,13 @@ def find_files(regexp, path=os.curdir, search=False, limit=None):
     flist = []
     for root, dirs, files in os.walk(path):
         for x in files:
-            m = re_fn(x)
+            if use_full_path:
+                m = re_fn(os.path.join(os.path.normpath(root), x))
+            else:
+                m = re_fn(x)
             if m is None:
                 continue
+
             if limit:
                 if any([m.group(k) in limit[k] for k in limit.keys() if k in m.groupdict().keys()]):
                     flist += [os.path.join(root, x)]

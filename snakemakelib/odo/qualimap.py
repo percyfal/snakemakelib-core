@@ -24,7 +24,7 @@ def resource_genome_results(uri, key="Globals", **kwargs):
     d = dict()
     for h, sec in zip(section_names, sections):
         if h == "Coverage_per_contig":
-            d[h] = DataFrame.from_records([x.strip().split("\t") for x in sec.split("\n") if x],
+            d[h] = DataFrame.from_records([re.split("\s+", x.strip()) for x in sec.split("\n") if x],
                                           columns=COVERAGE_PER_CONTIG_COLUMNS,
                                           index="chr")
             d[h] = d[h].apply(pd.to_numeric)
