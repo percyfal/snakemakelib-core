@@ -1,6 +1,15 @@
 Changelog
 =========
 
+%%version%% (unreleased)
+------------------------
+
+- Chmod deploy to executable. [Per Unneberg]
+
+- Updating conda version to 0.1-alpha.5. [Per Unneberg]
+
+- Updating ChangeLog. [Per Unneberg]
+
 0.1-alpha.5 (2016-02-07)
 ------------------------
 
