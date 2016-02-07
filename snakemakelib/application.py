@@ -110,11 +110,11 @@ class Application(object):
           kwargs (dict): additional arguments, passed to *all* hooks
 
         """
-        
+
         if not self.run:
             return self
         for k,v in self.iotargets.items():
-            smllogger.debug("Aggregating key ", k, " iotargets: ", v)
+            smllogger.debug("Aggregating key {}, iotargets: {}".format(k, v))
             if not key is None and not key == k:
                 continue
             if self.iotargets[k][1] is None:
@@ -315,6 +315,8 @@ class SampleApplication(Application):
                     df[samplekey] = iotarget.concat_groupdict[samplekey]
                     df[samplekey] = df[samplekey].astype(str)
                     df.set_index([samplekey], append=True, inplace=True)
+                except KeyError:
+                    raise
                 except AttributeError:
                     raise
                 return df
@@ -341,6 +343,11 @@ class PlatformUnitApplication(Application):
                     df[pukey] = iotarget.concat_groupdict[pukey]
                     df[samplekey] = df[samplekey].astype(str)
                     df[pukey] = df[pukey].astype(str)
+                    df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
+                except KeyError:
+                    smllogger.warn("No platform unit present; using sample unit to identify platform unit")
+                    df[pukey] = iotarget.concat_groupdict[samplekey]
+                    df[pukey] = df[samplekey].astype(str)
                     df['PlatformUnit'] = df[samplekey] + "__" + df[pukey]
                 except AttributeError:
                     raise
