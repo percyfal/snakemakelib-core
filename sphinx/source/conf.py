@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.graphviz',
+    'bokeh.sphinxext.bokeh_plot',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

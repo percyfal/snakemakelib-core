@@ -34,14 +34,18 @@ Contents
 ---------
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
    docs/quickstart
    docs/targets
    docs/datahandling
    docs/tutorial
-   docs/release_notes
    docs/reference
+   docs/reference/application
+   docs/reference/graphics
+   docs/reference/io
+   docs/reference/plot
+   docs/release_notes
    
 .. _indices:
 
