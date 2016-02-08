@@ -16,6 +16,7 @@ env:
 
 script:
   - py.test --cov-report= --cov=snakemakelib .
+  - travis-sphinx --source=sphinx/source build
   
 branches:
   only:
@@ -33,7 +34,9 @@ before_install:
 
 install:
   - scripts/travis-setup.sh
+  - pip install --user travis-sphinx
 
 after_success:
-  coveralls
+  - coveralls
+  - travis-sphinx deploy
 
