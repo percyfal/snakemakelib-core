@@ -1,4 +1,0 @@
-0.1-alpha.4 (Dec 12 2015)
-=========================
-
-Bug fixes and minor improvements.

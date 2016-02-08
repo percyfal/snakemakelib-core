@@ -1,7 +1,0 @@
-0.1-alpha.2 (Nov 24 2015)
-=========================
-
-Major changes:
-
-- add graphics module, modelled on statsmodels
-- update pca plots  
