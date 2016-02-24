@@ -15,7 +15,7 @@ env:
 
 
 script:
-  - py.test --cov-report= --cov=snakemakelib .
+  - py.test --cov-report= --cov=snakemakelib snakemakelib
   - travis-sphinx --source=sphinx/source build
   
 branches:
