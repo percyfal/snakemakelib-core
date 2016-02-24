@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>snakemakelib.graphics &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="up" title="Reference Guide" href="../reference.html" />
+    <link rel="next" title="snakemakelib.io" href="io.html" />
+    <link rel="prev" title="snakemakelib.application" href="application.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="../../index.html">snakemakelib</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../targets.html">Targets and applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datahandling.html">Data handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datahandling.html#odo">odo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datahandling.html#bokeh-plots">bokeh plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#a-simple-application">A simple application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#building-workflows">Building workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="application.html"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="application.html#application">Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="application.html#sampleapplication">SampleApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="application.html#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#color">Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#facet">Facet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geom">Geom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mgeom">Mgeom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scatter">Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#target-classes">Target classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html"><code class="docutils literal"><span class="pre">snakemakelib.plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#releases">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#pre-releases">Pre-releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.2.html">0.1-alpha.2 (Nov 24 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.1.html">0.1-alpha.1 (Oct 27 2015)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li><a class="reference internal" href="#axes">Axes</a></li>
+<li><a class="reference internal" href="#color">Color</a></li>
+<li><a class="reference internal" href="#facet">Facet</a></li>
+<li><a class="reference internal" href="#geom">Geom</a></li>
+<li><a class="reference internal" href="#mgeom">Mgeom</a></li>
+<li><a class="reference internal" href="#scatter">Scatter</a></li>
+<li><a class="reference internal" href="#utils">Utils</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="snakemakelib-graphics">
+<span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code><a class="headerlink" href="#snakemakelib-graphics" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-snakemakelib.graphics"></span><div class="section" id="axes">
+<span id="snakemakelib-graphics-axes"></span><h2>Axes<a class="headerlink" href="#axes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.xaxis">
+<code class="descname">xaxis</code><span class="sig-paren">(</span><em>fig</em>, <em>i=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/axes.html#xaxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.xaxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>xaxis - modify the xaxis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure xaxis</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python" id="graphics.rst.bokeh-plot-0"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">points</span><span class="p">,</span> <span class="n">xaxis</span><span class="p">,</span> <span class="n">yaxis</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="n">legend</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">points</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">points</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="n">xaxis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">axis_label</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">major_label_orientation</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">yaxis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">axis_label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">axis_line_color</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">grid_line_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My plot&quot;</span><span class="p">,</span> <span class="n">title_text_font_style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">,</span>
+      <span class="n">title_text_color</span><span class="o">=</span><span class="s2">&quot;olive&quot;</span><span class="p">,</span> <span class="n">title_text_font</span><span class="o">=</span><span class="s2">&quot;times&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;bottom_left&quot;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="graphics.rst.bokeh-plot-0.js"
+        id="2492ec44-7025-42df-a5ff-157926e03182"
+        data-bokeh-model-id="d4a8fa93-19da-49f6-b905-4fc0683b5b1b"
+        data-bokeh-doc-id="c26679e5-88bb-441e-863c-afc6369a4ec3"
+    ></script>
+    </td>
+  </tr>
+</table></dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.yaxis">
+<code class="descname">yaxis</code><span class="sig-paren">(</span><em>fig</em>, <em>i=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/axes.html#yaxis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.yaxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>yaxis - modify the yaxis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; <p>index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></p>
+</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure yaxis</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>see xaxis example</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.main">
+<code class="descname">main</code><span class="sig-paren">(</span><em>fig</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/axes.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>main - modify the title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure.title</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.legend">
+<code class="descname">legend</code><span class="sig-paren">(</span><em>fig</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/axes.html#legend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>legend - modify the legend</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure.legend</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p>See xaxis.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.grid">
+<code class="descname">grid</code><span class="sig-paren">(</span><em>fig</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/axes.html#grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>grid - modify the grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure grid</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>see xaxis example</p>
+</dd></dl>
+
+</div>
+<div class="section" id="color">
+<span id="snakemakelib-graphics-color"></span><h2>Color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.colorbrewer">
+<code class="descname">colorbrewer</code><span class="sig-paren">(</span><em>size=3</em>, <em>palette='Paired'</em>, <em>datalen=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/color.html#colorbrewer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.colorbrewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a color palette following colorbrewer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>size</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; size of desired palette</li>
+<li><strong>palette</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; name of palette</li>
+<li><strong>datalen</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; length of data vector. If None, the palette size
+will equal size, else the colors will be reused to fill
+up a vector of length datalen</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>palette</strong> &#8211;
+list of colors</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#list" title="(in Python v3.5)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="facet">
+<span id="snakemakelib-graphics-facet"></span><h2>Facet<a class="headerlink" href="#facet" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.facet_grid">
+<code class="descname">facet_grid</code><span class="sig-paren">(</span><em>fig</em>, <em>x</em>, <em>y</em>, <em>df=None</em>, <em>source=None</em>, <em>groups=None</em>, <em>ncol=3</em>, <em>share_x_range=False</em>, <em>share_y_range=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/facet.html#facet_grid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.facet_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>facet_grid - generate a simple gridplot from a figure</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>y</strong> (<em>str, list</em>) &#8211; string or list of strings for y component</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>groups</strong> (<em>str, list(str</em>) &#8211; groups to group by</li>
+<li><strong>ncol</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; number of columns to use in gridplot</li>
+<li><strong>share_x_range</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; share x range across plots</li>
+<li><strong>share_y_range</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; share y range across plots</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">class:~bokeh.models.GridPlot` object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="geom">
+<span id="snakemakelib-graphics-geom"></span><h2>Geom<a class="headerlink" href="#geom" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.dotplot">
+<code class="descname">dotplot</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>df</em>, <em>return_source=False</em>, <em>marker='circle'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/geom.html#dotplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.dotplot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.lines">
+<code class="descname">lines</code><span class="sig-paren">(</span><em>fig</em>, <em>x</em>, <em>y</em>, <em>df</em>, <em>groups=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/geom.html#lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>lines: add lines to a figure</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for y component</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>source</strong> (<code class="xref py py-class docutils literal"><span class="pre">ColumnDataSource</span></code>) &#8211; bokeh ColumnDataSource object</li>
+<li><strong>groups</strong> (<em>str, list(str</em>) &#8211; string or list of strings for columns to group by</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to fig.line</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python" id="graphics.rst.bokeh-plot-1"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">lines</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="graphics.rst.bokeh-plot-1.js"
+        id="af8f73e9-58d3-4d5b-a098-72f22b2f38a8"
+        data-bokeh-model-id="2cd294a6-0baf-40c3-9254-512f52307944"
+        data-bokeh-doc-id="68f797fd-d823-4337-9f94-d952a0effaba"
+    ></script>
+    </td>
+  </tr>
+</table></dd></dl>
+
+</div>
+<div class="section" id="mgeom">
+<span id="snakemakelib-graphics-mgeom"></span><h2>Mgeom<a class="headerlink" href="#mgeom" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.mlines">
+<code class="descname">mlines</code><span class="sig-paren">(</span><em>fig</em>, <em>x</em>, <em>y</em>, <em>df</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/mgeom.html#mlines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.mlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>mlines: add lines to a figure</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for y component</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>color</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; set color</li>
+<li><strong>legend</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; set legend</li>
+<li><strong>kwargs</strong> &#8211; keyword arguments to pass to fig.line</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python" id="graphics.rst.bokeh-plot-2"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">mlines</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">])</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">mlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">])</span>
+
+<span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<table>
+  <tr>
+    <td>
+    
+    <script
+        src="graphics.rst.bokeh-plot-2.js"
+        id="3711bd23-714d-4700-abf6-7417e80153df"
+        data-bokeh-model-id="6c433593-ef3e-4462-b90a-73564098530a"
+        data-bokeh-doc-id="956c93d5-85c5-412b-a769-ed799131a654"
+    ></script>
+    </td>
+  </tr>
+</table></dd></dl>
+
+</div>
+<div class="section" id="scatter">
+<span id="snakemakelib-graphics-scatter"></span><h2>Scatter<a class="headerlink" href="#scatter" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.graphics.scatter">
+<code class="descname">scatter</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>df</em>, <em>return_source=False</em>, <em>marker='circle'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/scatter.html#scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.scatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for fig.scatter. Note that this function only supports a
+limited number of markers. For plotting e.g. text points, use
+points.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.graphics.points">
+<code class="descname">points</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>df</em>, <em>return_source=False</em>, <em>marker='circle'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/graphics/geom.html#points"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.graphics.points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add points to a figure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; x column name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="utils">
+<span id="snakemakelib-graphics-utils"></span><h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/docs/reference/graphics.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Per Unneberg.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

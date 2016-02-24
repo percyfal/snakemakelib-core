@@ -1,0 +1,8 @@
+0.1-alpha.1 (Oct 27 2015)
+=========================
+
+- initial commit and release
+- add odo parsers
+- add tool utilities
+- add db utilities
+- add conda build recipe

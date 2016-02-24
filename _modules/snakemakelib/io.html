@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>snakemakelib.io &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="../../index.html">snakemakelib</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/targets.html">Targets and applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/datahandling.html">Data handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/datahandling.html#odo">odo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/datahandling.html#bokeh-plots">bokeh plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/tutorial.html#a-simple-application">A simple application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/tutorial.html#building-workflows">Building workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/reference.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/application.html"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#application">Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#sampleapplication">SampleApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/graphics.html"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#color">Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#facet">Facet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#geom">Geom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#mgeom">Mgeom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#scatter">Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#target-classes">Target classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/plot.html"><code class="docutils literal"><span class="pre">snakemakelib.plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/plot.html#sklearn">sklearn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#releases">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#pre-releases">Pre-releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.2.html">0.1-alpha.2 (Nov 24 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.1.html">0.1-alpha.1 (Oct 27 2015)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <h1>Source code for snakemakelib.io</h1><div class="highlight"><pre>
+<span class="c1"># Copyright (C) 2015 by Per Unneberg</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span class="kn">import</span> <span class="nn">snakemake.workflow</span>
+<span class="kn">from</span> <span class="nn">snakemake.io</span> <span class="kn">import</span> <span class="n">_wildcard_regex</span><span class="p">,</span> <span class="n">regex</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="kn">import</span> <span class="n">LoggerManager</span>
+
+<span class="n">smllogger</span> <span class="o">=</span> <span class="n">LoggerManager</span><span class="p">()</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MissingRequiredKeyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception if required key is missing&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="make_targets"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.make_targets">[docs]</a><span class="k">def</span> <span class="nf">make_targets</span><span class="p">(</span><span class="n">tgt_re</span><span class="p">,</span> <span class="n">samples</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make targets</span>
+<span class="sd">    </span>
+<span class="sd">    Create target names based on the target regular expression.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      tgt_re (IOTarget): IOTarget object corresponding to the target</span>
+<span class="sd">                           regular expression</span>
+
+<span class="sd">      samples (list): list of dicts where each dict is an annotated</span>
+<span class="sd">                      sample. The keys correspond to read group labels.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      targets (list): list of target names</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">tgts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tgt_re</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">tgts</span></div>
+
+
+<span class="c1"># Based on snakemake.io.regex</span>
+<span class="k">def</span> <span class="nf">string_format</span><span class="p">(</span><span class="n">filepattern</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">_wildcard_regex</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">filepattern</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filepattern</span><span class="p">[</span><span class="n">last</span><span class="p">:</span><span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()])</span>
+        <span class="n">wildcard</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;{{{}}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wildcard</span><span class="p">))</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filepattern</span><span class="p">[</span><span class="n">last</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+
+
+<div class="viewcode-block" id="IOTarget"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOTarget">[docs]</a><span class="k">class</span> <span class="nc">IOTarget</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class for generating and parsing target file names.</span>
+
+<span class="sd">    Overrides standard string format function.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_required_keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">_concat_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;(?P&lt;NAME&gt;[A-Za-z]+)(?P&lt;INDEX&gt;[0-9]+)$&quot;</span><span class="p">)</span>
+    <span class="n">_concat</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">file</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_regex</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_suffix</span> <span class="o">=</span> <span class="n">suffix</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_groupdict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_concat_groupdict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
+
+
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_format_ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">regex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c1"># compile a regular expression; we remove the $ at end</span>
+            <span class="n">pattern</span> <span class="o">=</span> <span class="n">regex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="bp">None</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="o">.</span><span class="n">groupindex</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_required_keys</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="n">MissingRequiredKeyException</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;some of the required keys {reqkeys} not in regexp {regexp}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">reqkeys</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_required_keys</span><span class="p">),</span>
+                    <span class="n">regexp</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">pattern</span>
+    
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">basename_pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pattern</span><span class="p">)</span>
+    
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fmt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c1"># Set the format</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="n">string_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_suffix</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_suffix</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span>
+
+
+    <span class="k">def</span> <span class="nf">_check_format_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Wrong format for &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+
+    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_concat_indexed_keys</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">return_instance</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span>
+
+
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_concat_indexed_keys</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">return_instance</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span>
+            
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">groupdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">concat_groupdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_concat_groupdict</span>
+
+
+    <span class="k">def</span> <span class="nf">_concat_indexed_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Concatenate indexed keys&quot;&quot;&quot;</span>
+        <span class="n">keylist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="o">.</span><span class="n">keys</span><span class="p">())])</span>
+        <span class="n">keymap</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+                  <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">keylist</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_concat_groupdict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_concat</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="p">[</span><span class="n">mkey</span><span class="p">]</span> <span class="k">for</span> <span class="n">mkey</span> <span class="ow">in</span> <span class="n">group</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">keymap</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_concat_groupdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># Special targets with required key names</span>
+<div class="viewcode-block" id="IOSampleTarget"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOSampleTarget">[docs]</a><span class="k">class</span> <span class="nc">IOSampleTarget</span><span class="p">(</span><span class="n">IOTarget</span><span class="p">):</span>
+    <span class="n">_required_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SM&#39;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="IOAggregateTarget"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOAggregateTarget">[docs]</a><span class="k">class</span> <span class="nc">IOAggregateTarget</span><span class="p">(</span><span class="n">IOTarget</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Per Unneberg.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>snakemakelib.application &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="up" title="Reference Guide" href="../reference.html" />
+    <link rel="next" title="snakemakelib.graphics" href="graphics.html" />
+    <link rel="prev" title="Reference Guide" href="../reference.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="../../index.html">snakemakelib</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../targets.html">Targets and applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datahandling.html">Data handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../datahandling.html#odo">odo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../datahandling.html#bokeh-plots">bokeh plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#a-simple-application">A simple application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#building-workflows">Building workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#application">Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sampleapplication">SampleApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graphics.html"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#color">Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#facet">Facet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#geom">Geom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#mgeom">Mgeom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#scatter">Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphics.html#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#target-classes">Target classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plot.html"><code class="docutils literal"><span class="pre">snakemakelib.plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#releases">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#pre-releases">Pre-releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.2.html">0.1-alpha.2 (Nov 24 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.1.html">0.1-alpha.1 (Oct 27 2015)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li><a class="reference internal" href="#application">Application</a></li>
+<li><a class="reference internal" href="#sampleapplication">SampleApplication</a></li>
+<li><a class="reference internal" href="#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="snakemakelib-application">
+<span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.application</span></code><a class="headerlink" href="#snakemakelib-application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="application">
+<span id="snakemakelib-application-application"></span><h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="snakemakelib.application.Application">
+<em class="property">class </em><code class="descname">Application</code><span class="sig-paren">(</span><em>name</em>, <em>iotargets</em>, <em>units=None</em>, <em>run=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Container class for an application.</p>
+<p>NB: this is still WIP and it is likely that this class should be
+split into several subclasses, and/or be implemented as a
+meta-class.</p>
+<p>An application in this context is more or less equivalent to a
+rule in the snakemake workflow. The Application class has
+functionality to</p>
+<ol class="arabic simple">
+<li>generate target names</li>
+<li>collect data output via odo</li>
+<li>plot results</li>
+<li>configuration options, e.g. for running</li>
+</ol>
+<dl class="method">
+<dt id="snakemakelib.application.Application.aggregate">
+<code class="descname">aggregate</code><span class="sig-paren">(</span><em>key=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.aggregate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate targets to aggregate_targets, if present.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; aggregate targets for key, if None all targets are aggregated</li>
+<li><strong>kwargs</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; additional arguments, passed to <em>all</em> hooks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create plots for plotkey.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.read_aggregate_data">
+<code class="descname">read_aggregate_data</code><span class="sig-paren">(</span><em>datakey=None</em>, <em>backend='csv'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.read_aggregate_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.read_aggregate_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read aggregate data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.register_aggregate_post_processing_hook">
+<code class="descname">register_aggregate_post_processing_hook</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_aggregate_post_processing_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.register_aggregate_post_processing_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for registering post processing hook to be run on
+aggregate data.</p>
+<p>Sometimes the data needs to be transformed in some way, e.g.
+pivoted into wide format. This decorator registers a post
+processing hook that is run on the aggregated data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.register_annotation_fn">
+<code class="descname">register_annotation_fn</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_annotation_fn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.register_annotation_fn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for registering annotation functions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.register_plot">
+<code class="descname">register_plot</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.register_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for registering plot</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.register_post_processing_hook">
+<code class="descname">register_post_processing_hook</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_post_processing_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.register_post_processing_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for registering post processing hook.</p>
+<p>Sometimes the data needs to be transformed in some way, e.g.
+pivoted into wide format. This decorator registers a post
+processing hook that is run once the data has been read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.reset_plot_func">
+<code class="descname">reset_plot_func</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.reset_plot_func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.reset_plot_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove plotting functions for a key</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sampleapplication">
+<span id="snakemakelib-application-sampleapplication"></span><h2>SampleApplication<a class="headerlink" href="#sampleapplication" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="snakemakelib.application.SampleApplication">
+<em class="property">class </em><code class="descname">SampleApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#SampleApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.SampleApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>SampleApplication class</p>
+<p>Automagically adds annotation function that annotates data frames
+by sample unit.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="platformunitapplication">
+<span id="snakemakelib-application-platformunitapplication"></span><h2>PlatformUnitApplication<a class="headerlink" href="#platformunitapplication" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="snakemakelib.application.PlatformUnitApplication">
+<em class="property">class </em><code class="descname">PlatformUnitApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>pukey='PU'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#PlatformUnitApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.PlatformUnitApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>PlatformUnitApplication class</p>
+<p>Automagically adds annotation function that annotates data frames
+by sample and platform unit (i.e. run level)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/docs/reference/application.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Per Unneberg.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
