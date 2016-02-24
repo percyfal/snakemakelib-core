@@ -3,6 +3,8 @@
 ``snakemakelib.graphics``
 ============================
 
+.. automodule:: snakemakelib.graphics
+
 .. _snakemakelib_graphics_axes:
 
 Axes
