@@ -17,43 +17,30 @@ utilities for working with `Snakemake
 Features
 ^^^^^^^^
 
-1. **IOTarget classes**. These classes utilize the power regular
-   expressions to find input and define output targets.
-2. **Application classes**. Application classes group targets at the
-   application level. Hooks makes it easy to add custom functionality,
-   such as plot and annotation functions.
-3. **odo parsers**. `odo <http://odo.pydata.org/en/latest/>`__ parsers
+1. **IOTarget classes**. :ref:`IOTarget
+   <snakemakelib_core.targets.iotarget>` classes utilize the power of
+   regular expressions to find input and define output targets.
+2. **Application classes**. :ref:`Application
+   <snakemakelib_core.targets.applications>` classes group targets at the
+   application level.
+3. **Application hooks**. :ref:`Hooks <snakemakelib_core.targets.hooks>`
+   makes it easy to add custom functionality, such as plot and annotation
+   functions, to applications.
+4. **odo parsers**. `odo <http://odo.pydata.org/en/latest/>`__ parsers
    are used for parsing program outputs, thereby making it easy to
    transform between many data formats
-4. **bokeh plots**. Customized `bokeh
+5. **bokeh plots**. Customized `bokeh
    <http://bokeh.pydata.org/en/latest/>`__ plots for making
    interactive graphics
 
-
-Contents
----------
 
 .. toctree::
    :hidden:
 
    docs/quickstart
    docs/targets
+   docs/hooks
    docs/datahandling
    docs/tutorial
    docs/reference
-   docs/reference/application
-   docs/reference/graphics
-   docs/reference/io
-   docs/reference/plot
    docs/release_notes
-   
-.. _indices:
-
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
