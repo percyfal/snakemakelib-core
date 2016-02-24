@@ -192,7 +192,7 @@ pseudoxml:
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
-GH_PAGES_SOURCES = sphinx/source sphinx/Makefile snakemake_rules
+GH_PAGES_SOURCES = sphinx/source sphinx/Makefile snakemakelib
 GH_PAGES_DOCS = *.html *.inv *.js _* docs
 ## NB: Requires call from root directory
 gh-pages:
