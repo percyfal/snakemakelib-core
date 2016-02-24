@@ -34,7 +34,8 @@ def create_bokeh_fig(fig=None, plot_height=None, plot_width=None, **kw):
 def create_bokeh_fig_set_props(fig=None, plot_height=None, plot_width=None, **kwargs):
     """Create bokeh figure and set properties"""
     kwfig = fig_args(kwargs)
-    fig = create_bokeh_fig(plot_height=kwargs.pop('plot_height', plot_height),
+    fig = create_bokeh_fig(fig=fig,
+                           plot_height=kwargs.pop('plot_height', plot_height),
                            plot_width=kwargs.pop('plot_width', plot_width),
                            **kwfig)
     fig_props = set(fig.properties())

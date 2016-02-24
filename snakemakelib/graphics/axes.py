@@ -31,8 +31,8 @@ def xaxis(fig, i=None, **kwargs):
 
           df = pd.DataFrame([[1,2], [2,5], [3,9]], columns=["x", "y"])
           f = figure(title="Test", plot_width=300, plot_height=300)
-          points(f, "x", "y", df, color="red")
-          points(f, "y", "x", df, legend="y")
+          points("x", "y", df, fig=f, color="red")
+          points("y", "x", df, fig=f, legend="y")
           
           xaxis(f, axis_label="x", major_label_orientation=np.pi/3)
           yaxis(f, axis_label=None, axis_line_color=None)

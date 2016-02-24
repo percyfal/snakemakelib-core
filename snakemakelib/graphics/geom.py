@@ -50,11 +50,13 @@ def points(x, y, df, return_source=False, marker='circle',
     """Add points to a figure.
 
     Args:
+      x (str): x column name
 
     """
     # setup figure
     fig = utils.create_bokeh_fig_set_props(plot_height=kwargs.pop('plot_height', None),
                                            plot_width=kwargs.pop('plot_width', None),
+                                           fig=kwargs.pop('fig', None),
                                            **kwargs)
     xaxis(fig, **kwargs)
     yaxis(fig, **kwargs)
