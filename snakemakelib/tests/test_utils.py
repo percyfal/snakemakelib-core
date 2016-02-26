@@ -18,14 +18,14 @@ class TestFindFiles:
         """Find fastq files using match"""
         mock_walk = mocker.patch('os.walk')
         mock_walk.return_value = walk
-        f = find_files(regexp="\w+.fastq.gz")
+        f = find_files(regex="\w+.fastq.gz")
         assert f == ['./1_121023_FLOWCELL_FOO.fastq.gz', './foo/1_121023_FLOWCELL_BAR.fastq.gz']
 
     def test_find_files_search(self, walk, mocker):
         """Find files using search"""
         mock_walk = mocker.patch('os.walk')
         mock_walk.return_value = walk
-        f = find_files(regexp=".fastq", search=True)
+        f = find_files(regex=".fastq", search=True)
         assert f == ['./1_121023_FLOWCELL_FOO.fastq.gz', './foo/1_121023_FLOWCELL_BAR.fastq.gz']
 
         
