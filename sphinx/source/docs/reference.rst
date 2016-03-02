@@ -10,6 +10,8 @@ Reference Guide
    reference/graphics
    reference/io
    reference/plot
+   reference/sample
+   reference/utils
    
 .. _indices:
 
