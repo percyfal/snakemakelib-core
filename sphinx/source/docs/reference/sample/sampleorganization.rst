@@ -5,8 +5,13 @@
 
 .. automodule:: snakemakelib.sample.organization
 
+
+``snakemakelib.sample.organization.utils``
+---------------------------------------------
+
+.. automodule:: snakemakelib.sample.organization.utils
+
 .. autoclass:: SampleOrganization
-   :members:
 
 
 ``snakemakelib.sample.organization.illumina_scilife``
@@ -24,12 +29,15 @@
    :members:
    :undoc-members:
 
-``snakemakelib.sample.organization.sample_run_illumina``
-----------------------------------------------------------
 
-.. automodule:: snakemakelib.sample.organization.sample_run_illumina
-   :members:
-   :undoc-members:
+
+..
+   ``snakemakelib.sample.organization.sample_run_illumina``
+   ----------------------------------------------------------
+
+   .. automodule:: snakemakelib.sample.organization.sample_run_illumina
+      :members:
+      :undoc-members:
 
 
 ``snakemakelib.sample.organization.sample_run_sra``

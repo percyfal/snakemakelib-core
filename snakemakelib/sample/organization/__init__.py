@@ -1,16 +1,22 @@
 # Copyright (C) 2015 by Per Unneberg
+"""Provide :class:`SampleOrganization` objects with  predefined
+:class:`~snakemakelib.io.IOTarget` objects that define what input and
+output file prefixes should look like at given levels of organization.
+
+A specific sample organization is activated by importing a submodule
+from :mod:`snakemakelib.sample.organization` that reflects the file
+naming conventions. Upon loading, the ``sample_organization`` key is
+updated and set to a :class:`SampleOrganization` instance.
+"""
 from os.path import join
-from collections import namedtuple
 from snakemake.utils import update_config
 try:
     from snakemake.workflow import config
 except:
     config = {}
 from ...io import IOTarget, IOSampleTarget
+from .utils import SampleOrganization
 
-# Define named tuple that holds regular expressions for raw run names,
-# run id, and sample identifier
-sample_org = namedtuple('sample_organization', 'raw_run_re run_id_re sample_re')
 
 # Add samples configuration string
 config['samples'] = config.get("samples", [])

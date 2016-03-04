@@ -15,6 +15,12 @@ def convert_samples_to_list(samples=None):
     """Convert samples to list.
 
     Passing --config samples=["S1", "S2"] will set samples to a string.
+
+    Args:
+      samples(list|str): a string representation of a list or a list
+
+    Returns:
+      (list): a list of sample names
     """
     if not samples:
         return None
@@ -22,7 +28,8 @@ def convert_samples_to_list(samples=None):
         return re.sub("[\"\'\[\]\s+]", "", samples).split(",")
     assert isinstance(samples, list), "samples configuration setting must be a list of sample names"
     return samples
-    
+
+
 def initialize_input(src_re=None, sampleinfo=None, metadata=None,
                      metadata_filter=None, filter_suffix="",
                      sample_column_map=None, sample_filter=None):
@@ -36,7 +43,7 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
                            regular expression
       sampleinfo (str): sampleinfo file name
       metadata (str): metadata file name
-      metadata (dict): dictionary of filters where the key corresponds
+      metadata_filter (dict): dictionary of filters where the key corresponds
                        to a column and the value the regular expression
                        to match against
       filter_suffix (str): only use given suffix to filter for input
@@ -48,10 +55,43 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
       sample_filter (list): list of sample names to use as subset
 
     Returns:
-      samples (list): list of dicts where each dict corresponds to
-                      sample information. The keys are read group
-                      identifiers and additional arbitrary metadata
-                      information (e.g. factor levels)
+      samples (list): list of dicts where each dict corresponds to\
+        sample information. The keys are read group\
+        identifiers and additional arbitrary metadata\
+        information (e.g. factor levels)
+
+    
+    Example:
+
+      The function requires as input either a sampleinfo file or an
+      :class:`~snakemakelib.io.IOTarget` object that defines what the
+      input should look like. For instance, the following code
+
+      .. code-block:: python
+
+         from snakemakelib.io import IOTarget
+         from snakemakelib.input import initialize_input
+         from os.path import join
+         tgt = IOTarget(join("{SM,[a-zA-Z0-9]+}", "{PU,[a-zA-Z0-9]+}")
+         samples = initialize_input(src_re = tgt)
+
+      will find inputs in directories that define sample (SM) and
+      whose basenames are prefixed by a platform unit (PU). As an
+      alternative, given a sampleinfo file "sampleinfo.csv" with the
+      following content
+
+      .. code-block:: text
+
+         SM,PU
+         Sample1,PlatformUnit1
+         Sample1,PlatformUnit2
+         Sample2,PlatformUnit1
+
+      the samples could be generated with the following code:
+
+      .. code-block:: python
+
+         samples = initialize_input(sampleinfo = "sampleinfo.csv")
 
     """
     if sampleinfo is None and src_re is None:
@@ -83,6 +123,7 @@ def initialize_input(src_re=None, sampleinfo=None, metadata=None,
 
     return samples
 
+
 def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
 
     """Parse sample information file
@@ -98,8 +139,8 @@ def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
       fmt (str): input file format
 
     Returns:
-      samples (list): list of dictionaries, where the keys of each
-        dictionary correspond to read group identifiers
+      samples (list): list of dictionaries, where the keys of each\
+                      dictionary correspond to read group identifiers
     """
     smllogger.debug("trying to gather target information from configuration key config['settings']['sampleinfo']")
     if isinstance(sampleinfo, str) and not os.path.exists(sampleinfo):
@@ -122,15 +163,16 @@ def _parse_sampleinfo(sampleinfo, sample_column_map=None, fmt="csv"):
 def _samples_from_input_files(src_re, filter_suffix="", **kwargs):
     """Generate sample names from input files.
 
-    src_re (IOTarget): IOTarget object corresponding to the source
+    Args:
+      src_re (IOTarget): IOTarget object corresponding to the source
                          regular expression
-    filter_suffix (str): only use given suffix to filter for input
-                         file names. Useful if many result files exist
-                         for a sample
+      filter_suffix (str): only use given suffix to filter for input
+                           file names. Useful if many result files exist
+                           for a sample
 
     Returns:
-      samples (list): list of dictionaries, where the keys of each
-        dictionary correspond to read group identifiers
+      samples (list): list of dictionaries, where the keys of each\
+                      dictionary correspond to read group identifiers
 
     """
     smllogger.debug("Getting sample information from input files")
