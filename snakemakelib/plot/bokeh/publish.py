@@ -5,7 +5,7 @@ import base64
 from bokeh.resources import INLINE
 from bokeh.core.templates import JS_RESOURCES, CSS_RESOURCES
 from bokeh.embed import components
-from bokeh.models import Component
+from bokeh.models import Model
 from bokeh.util.string import encode_utf8
 
 
@@ -15,7 +15,7 @@ def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE
     This is a minor modification of :py:meth:`bokeh.embed.file_html`.
 
     Args:
-      template (Template): a Jinja2 HTML document template
+      template (Template): a Jtinja2 HTML document template
       title (str): a title for the HTML document ``<title>`` tags.
       resources (Resources): a resource configuration for BokehJS assets
       css_raw (list): a list of file names for inclusion in the raw css
@@ -69,7 +69,7 @@ def static_html(template, title="snakemakelib-core bokeh plot", resources=INLINE
     def _update(template_variables):
         tmp = {}
         for k, v in template_variables.items():
-            if (isinstance(v, Component)):
+            if (isinstance(v, Model)):
                 tmp.update({k: [{'script': s, 'div': d}
                                 for s, d in [components(v, resources)]][0]})
             elif (isinstance(v, dict)):
