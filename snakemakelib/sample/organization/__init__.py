@@ -13,7 +13,8 @@ from snakemake.utils import update_config
 try:
     from snakemake.workflow import config
 except:
-    config = {}
+    global config
+    config = dict()
 from ...io import IOTarget, IOSampleTarget
 from .utils import SampleOrganization
 
