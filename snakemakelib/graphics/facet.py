@@ -4,6 +4,7 @@ Author: Per Unneberg
 Created: Tue Dec  1 07:50:34 2015
 
 '''
+import re
 from bokeh.plotting import figure, gridplot
 from bokeh.models import ColumnDataSource, GlyphRenderer, Legend
 from snakemakelib.log import LoggerManager
@@ -48,7 +49,7 @@ def facet_grid(fig, x, y, df=None, source=None, groups=None, ncol=3,
     for name, group in grouped:
         subfig = figure(title=str(name), **kwargs)
         for glyph, yy in zip(gr, y):
-            plotfn = str(glyph.glyph).split(", ")[0].lower()
+            plotfn = re.findall(r"^\w+", str(glyph.glyph))[0].lower()
             kw = glyph.glyph.properties_with_values()
             kw.pop('x', None)
             kw.pop('y', None)
