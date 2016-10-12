@@ -3,11 +3,7 @@ import os
 import re
 from datetime import datetime, date
 from snakemakelib.log import LoggerManager
-# Circular import issue here!
-#
-# from snakemakelib.sample.regexp import RegexpDict
-# from snakemakelib.sample.regexp import *
-import snakemakelib.sample.regexp
+from snakemakelib.io import IOTarget
 
 smllogger = LoggerManager().getLogger(__name__)
 
@@ -58,12 +54,12 @@ def safe_makedir(dname):
 
 
 
-def find_files(regexp, path=os.curdir, search=False, limit=None, use_full_path=False):
+def find_files(regex, path=os.curdir, search=False, limit=None, use_full_path=False):
     """Find files in path that comply with a regular expression.
 
     Args:
-      regexp (RegexpDict | str): regular expression object of class
-                               <RegexpDict> or <str>
+      regex (IOTarget | str): regular expression object of class
+                               :class:`~snakemakelib.io.IOTarget` or :py:class:`str`
       path (str):   path to search
       search (bool): use re.search instead of re.match for pattern matching
       limit (dict): dictionary where keys correspond to regular expression
@@ -121,7 +117,7 @@ def find_files(regexp, path=os.curdir, search=False, limit=None, use_full_path=F
     return sorted(flist)
 
 
-def dict_to_R(d, as_string=True):
+def dict_to_R(d):
     """Translate a python dictionary to an R option string
 
     Args:
@@ -153,7 +149,8 @@ def dict_to_R(d, as_string=True):
             outlist.append("{k}='{v}'".format(k=k, v=v))
     return ",".join(outlist)
 
-def dict_to_Rdict(d, as_string=True):
+
+def dict_to_Rdict(d):
     """Translate a python dictionary to a dict with R-compatible entries
 
     Args:
@@ -184,3 +181,25 @@ def dict_to_Rdict(d, as_string=True):
         else:
             dout[k] = '{v}'.format(v=v)
     return dout
+
+
+def dictlist_to_dict(l):
+    """Convert list of dict objects to dict where key values are lists.
+
+    See http://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists.
+
+    Args:
+      l (list): list of dict objects
+
+    Returns:
+      nd (dict): dictionary where key values are lists
+
+    """
+    nd={}
+    for d in l:
+        for k,v in d.items():
+            try:
+                nd[k].append(v)
+            except KeyError:
+                nd[k]=[v]
+    return nd
