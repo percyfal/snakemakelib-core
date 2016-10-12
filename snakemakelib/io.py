@@ -19,20 +19,66 @@ def make_targets(tgt_re, samples):
 
     Args:
       tgt_re (IOTarget): IOTarget object corresponding to the target
-                           regular expression
+                         regular expression
 
-      samples (list): list of dicts where each dict is an annotated
-                      sample. The keys correspond to read group labels.
+      samples (list): list of dicts where each dict contains labeling information
+                      related to a sample. The keys correspond to wildcard group
+                      lables.
 
     Returns:
       targets (list): list of target names
+
+    Example:
+
+      The following code block generates a list of formatted target
+      names from a list of sample dictionaries. Here, the dictionary
+      keys specify SM and PU wildcard group lables.
+
+      .. code-block:: python
+
+         samples = [{"SM":"foo", "PU":"bar"}, {"SM":"bar", "PU":"foo"}]
+         tgt_re = IOTarget("{SM}/{SM}_{PU}.txt")
+         tgts = make_targets(tgt_re, samples)
+         # tgts is now ['foo/foo_bar.txt', 'bar/bar_foo.txt']
+
+      Note that the same result could be obtained using
+      :func:`snakemake.io.expand` and the global :func:`zip` function:
+
+      .. code-block:: python
+
+         from snakemake.io import expand
+         tgts = expand("{SM}/{SM}_{PU}.txt", zip, SM=[d["SM"] for d in samples], PU=[d["PU"] for d in samples])
+
     """
     tgts = list(set(tgt_re.fmt.format(**unit) for unit in samples))
     return tgts
 
 
 # Based on snakemake.io.regex
-def string_format(filepattern):
+def remove_wildcard_restrictions(filepattern):
+    """Generate string format without regex restrictions
+
+    Snakemake wildcards are written in the python miniformat language.
+    The wildcard regexes can be restricted. For instance, the
+    expression {SM, [A-W]+} restricts the wildcard SM to the regex
+    [A-W]+. This function returns the wildcards without restrictions.
+
+    The function is a modification of
+    :func:`snakemake.io.regex`.
+
+    Args:
+      filepattern (str): file pattern expressed as wildcard regexes in python miniformat language
+
+    Returns:
+     (str): file pattern without regex restrictions
+
+    Example:
+
+    >>> filepattern = "{key1}_{key2,[0-9]+}"
+    >>> remove_wildcard_restrictions(filepattern)
+    '{key1}_{key2}'
+
+    """
     f = []
     last = 0
     for match in _wildcard_regex.finditer(filepattern):
@@ -50,6 +96,15 @@ class IOTarget(str):
 
     Overrides standard string format function.
 
+    The class is modelled on :class:`snakemake.io._IOFile`.
+
+    Example:
+
+    >>> from snakemakelib.io import IOTarget
+    >>> import os
+    >>> f = IOTarget(os.path.join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}"))
+    >>> f.regex
+    re.compile(r'(?P<SM>[a-zA-Z0-9]+)\/(?P<PU>[a-zA-Z0-9]+)', re.UNICODE)
     """
     _required_keys = []
     _concat_regex = re.compile("(?P<NAME>[A-Za-z]+)(?P<INDEX>[0-9]+)$")
@@ -70,10 +125,25 @@ class IOTarget(str):
 
     @property
     def file(self):
+        """Return file name; basically the string that self refers to"""
         return self._file
 
 
     def format(self, **kw):
+        """Format self according to keyword arguments.
+
+        Checks that format is ok.
+
+        Example:
+
+        >>> f = IOTarget(os.path.join("{SM, [a-zA-Z0-9]+}", "{SM}.{suffix}"))
+        >>> s = f.format(**{'SM':'foo', 'suffix': 'txt'})
+        >>> print(s)
+        'foo/foo.txt'
+        >>>  # The following throws an error due to disallowed _ character
+        >>> s = f.format(**{'SM':'foo_bar', 'suffix': 'txt'})
+        Exception: ('Wrong format for ', 'foo_bar/foo_bar.txt')
+        """
         s = self.fmt.format(**kw)
         self._check_format_ok(s)
         return s
@@ -81,6 +151,18 @@ class IOTarget(str):
 
     @property
     def regex(self):
+        """Compile a regular expression of self.file.
+
+        Utilizes :func:`snakemake.io.regex` which adds "$" to the
+        pattern. Since `IOTarget` allows suffixes, $ is stripped from
+        the regex.
+
+        The groupindex keys are stored in self._groupdict for easy
+        access.
+
+        Returns:
+          :py:mod:`re`: Compiled regular expression.
+        """
         if self._regex is None:
             # compile a regular expression; we remove the $ at end
             pattern = regex(self.file)[:-1]
@@ -88,43 +170,68 @@ class IOTarget(str):
         self._groupdict = {k:None for k in self._regex.groupindex.keys()}
         if any([k not in self.keys() for k in self._required_keys]):
             raise MissingRequiredKeyException(
-                """some of the required keys {reqkeys} not in regexp {regexp}""".format(
+                """some of the required keys {reqkeys} not in regex {regex}""".format(
                     reqkeys=",".join(self._required_keys),
-                    regexp=self._regex))
+                    regex=self._regex))
         return self._regex
 
 
     @property
     def pattern(self):
+        """Get the regex pattern."""
         return self.regex.pattern
     
 
     @property
     def basename_pattern(self):
+        """Get the basename pattern, excluding path"""
         return os.path.basename(self.pattern)
     
 
     @property
     def fmt(self):
+        """Return the format for string formatting"""
         if self._format is None:
             # Set the format
-            self._format = string_format(self.file)
+            self._format = remove_wildcard_restrictions(self.file)
             if self._suffix:
                 self._format += self._suffix
         return self._format
 
 
     def _check_format_ok(self, s):
+        """Make sure the format complies to the regex"""
         m = self.regex.search(s)
         if m is None:
             raise Exception("Wrong format for ", s)
 
 
     def keys(self):
+        """Get the regex groupdict keys"""
         return set(self.groupdict.keys())
 
 
     def match(self, file, return_instance=False):
+        """Match file to regex.
+
+        Args:
+          file (str): file name to match against
+          return_instance (bool): return self
+
+        Returns:
+          (re): match object
+
+
+        Example:
+
+          .. code-block:: python
+
+             >>> s = "GSM123456/SRR123456_1.fastq.gz"
+             >>> f = IOTarget(os.path.join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}"))
+             >>> f.match(s)
+             >>> print(f.groupdict)
+             {'PU': 'SRR123456', 'SM': 'GSM123456'}
+        """
         self._match = self.regex.match(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
@@ -135,6 +242,26 @@ class IOTarget(str):
 
 
     def search(self, file, return_instance=False):
+        """Search file with regex.
+
+        Args:
+          file (str): file name to search
+          return_instance (bool): return self
+
+        Returns:
+          (re): match object
+
+        Example:
+
+          .. code-block:: python
+
+             >>> s = "GSM123456/SRR123456_1.fastq.gz"
+             >>> f = IOTarget(os.path.join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}"))
+             >>> f.search(s)
+             >>> print(f.groupdict)
+             {'PU': 'SRR123456', 'SM': 'GSM123456'}
+
+        """
         self._match = self.regex.search(file)
         if self._match:
             self._groupdict.update(self._match.groupdict())
@@ -144,13 +271,23 @@ class IOTarget(str):
         return self._match
             
 
+    # NB: for consistency with the re module, this should be a function
     @property
     def groupdict(self):
+        """Get the groupdict.        """
         return self._groupdict
 
 
     @property
     def concat_groupdict(self):
+        """Get the concatenated groupdict.
+
+        It is possible to index wildcard groups, e.g. SM1, SM2, ...
+        The concat_groupdict contains concatenated versions of indexed
+        groups so that SM would return the concatenated version of the
+        values of SM1, SM2, ...
+
+        """
         return self._concat_groupdict
 
 

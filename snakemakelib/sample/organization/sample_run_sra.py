@@ -19,7 +19,7 @@ A specific sequencing run is identified by a specific `SRA accession
 type
 <http://www.ncbi.nlm.nih.gov/books/NBK56913/#search.what_do_the_different_sra_accessi>`_,
 where the interesting one from a sample organization perspective is
-the Sequencing Run Accession (SRR). The SRR is associated with the PU
+the SRA Run Accession (SRR). The SRR is associated with the PU
 read group tag, where each sequencing run resides in a separate
 subdirectory of a sample. The sample is often identified by the `GEO
 accession number
@@ -28,7 +28,7 @@ accession number
 There is a `rule for downloading srastudy metadata
 <https://github.com/percyfal/snakemake-rules/blob/master/snakemake_rules/bio/ngs/tools/sratools.rules>`_
 in the `snakemake-rules
-<https://github.com/percyfal/snakemake-rules>`_. Typically, the
+<https://github.com/percyfal/snakemake-rules>`_ library. Typically, the
 downloaded metadata will consist of a csv file with the run identified
 by the ``Run`` column, and sample by the ``source`` column, if
 present.

@@ -385,5 +385,5 @@ intersphinx_mapping = {
     'numpy': ('http://docs.scipy.org/doc/numpy/', None),
     'bokeh': ('http://bokeh.pydata.org/en/latest/docs/', None),
     'snakemake': ('http://snakemake.readthedocs.org/', None),
-    'snakemake-rules': ('http://percyfal.github.io/snakemake-rules/', None),
+    'snakemakerules': ('http://percyfal.github.io/snakemake-rules/', None),
 }

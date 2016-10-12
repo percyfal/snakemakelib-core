@@ -1,3 +1,4 @@
 0.1-alpha.6 (Feb 9 2016)
 =========================
 
+Rename snakemakelib.io.string_format to snakemakelib.io.remove_wildcard_restrictions

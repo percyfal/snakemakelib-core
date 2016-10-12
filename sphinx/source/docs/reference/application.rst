@@ -3,6 +3,11 @@
 ``snakemakelib.application``
 ============================
 
+.. automodule:: snakemakelib.application
+   :members:
+   :undoc-members:
+
+
 .. _snakemakelib_application_application:
 
 Application

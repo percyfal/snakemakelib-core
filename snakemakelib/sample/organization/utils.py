@@ -1,12 +1,12 @@
 from collections import namedtuple
-from . import IOTarget
+from . import IOTarget, IOSampleTarget
 
 class SampleOrganization(namedtuple('SampleOrganization', 'raw_run_re run_id_re sample_re')):
     """
 Collect :class:`~snakemakelib.io.IOTarget` objects for organization
 of input/output file names
 
-Subclasses :py:class:`namedtuple`. In the current
+Subclasses :py:class:`collections.namedtuple`. In the current
 implementation, three levels of organization are defined.
 
 Raw data

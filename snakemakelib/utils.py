@@ -41,6 +41,10 @@ def safe_makedir(dname):
     """Make a directory if it doesn't exist, handling concurrent race
     conditions.
 
+    Copied from `bcbio nextgen <https://github.com/chapmanb/bcbio-nextgen>`_
+
+    Args:
+      dname (str): directory name
     """
     if not os.path.exists(dname):
         try:
@@ -69,15 +73,33 @@ def find_files(regexp, path=os.curdir, search=False, limit=None, use_full_path=F
 
     Returns:
       flist: list of file names, prepended with root path
+
+    Example:
+
+      The following code block would recursively search for files with
+      suffix '.fastq.gz' from the current directory.
+
+      .. code-block:: python
+
+         f = find_files(regex="\w+.fastq.gz")
+
+      By adding the search parameter re.search is used instead of
+      re.match. In this case, the following code would find files with
+      suffix '.fastq.+':
+
+      .. code-block:: python
+
+         f = find_files(regex="\w+.fastq.gz", search=True)
+
     """
-    if isinstance(regexp, snakemakelib.sample.regexp.RegexpDict):
-        file_re = regexp.re
+    if isinstance(regex, IOTarget):
+        file_re = regex.re
     else:
-        if not regexp:
+        if not regex:
             return []
-        file_re = re.compile(regexp)
+        file_re = re.compile(regex)
     if not limit is None and any(k not in file_re.groupindex.keys() for k in limit.keys()):
-        smllogger.warning("""Some limit keys '{}' not in regexp
+        smllogger.warning("""Some limit keys '{}' not in regex
         groupindex '{}'; disregarding limit option for these
         keys""".format(list(limit.keys()), list(file_re.groupindex.keys())))
     re_fn = file_re.search if search else file_re.match

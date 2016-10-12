@@ -1,4 +1,6 @@
-# Copyright (C) 2015 by Per Unneberg
+""" Container classes for applications.
+
+"""
 import os
 import pandas as pd
 from blaze import odo
@@ -55,21 +57,48 @@ class Application(object):
 
     @property
     def run(self):
+        """Variable that states whether the application is run or not.
+
+        Returns:
+          bool:
+        """
         return self._run
 
         
     @property
     def name(self):
+        """Get the application name.
+
+        Returns:
+          str:
+            application name
+        """
         return self._name
 
 
     @property
     def iotargets(self):
+        """Get the application input/output (io) targets.
+
+        Returns:
+          dict:
+            Returns a dictionary where keys correspond to
+            groups of targets and values lists
+            :class:`snakemakelib.io.IOTarget` objects.
+
+        """
         return self._iotargets
         
 
     @property
     def targets(self):
+        """Get the application targets, which is a list of snakemake target
+        names. If list is empty, try to create targets.
+
+        Returns:
+          dict:
+            key-value mapping where keys correspond to groups of targets, values to lists of snakemake target names
+        """
         if not self._run:
             return {k:[] for k in self.iotargets.keys()}
         if not self._targets:
@@ -78,6 +107,11 @@ class Application(object):
         
             
     def _make_targets(self):
+        """Create targets from iotargets.
+
+        Returns:
+          None:
+        """
         for k,v in self.iotargets.items():
             if v[0]:
                 self._targets[k] = list(set([v[0].format(**u) for u in self.units]))
@@ -87,6 +121,12 @@ class Application(object):
 
     @property
     def aggregate_targets(self):
+        """Aggregate targets and return results.
+
+        Returns:
+          dict:
+            key value mapping where keys correspond to application groups, values to :class:`snakemakelib.io.IOTarget` objects
+        """
         if not self._run:
             return {k:[] for k in self.iotargets.keys()}
         if not self._aggregate_targets:
@@ -95,6 +135,8 @@ class Application(object):
 
 
     def _make_aggregate_targets(self):
+        """Utility function to create aggregate targets.
+        """
         for k,v in self.iotargets.items():
             if v[1] is None:
                 self._aggregate_targets[k] = []
