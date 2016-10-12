@@ -20,7 +20,7 @@
 
 Utility functions and modules for snakemake rules. 
 
-See [the documentation](http://snakemakelib-core.readthedocs.org/en/latest/index.html)
+See [the documentation](http://percyfal.github.io/snakemakelib-core/index.html)
 for more information.
 
 ## Installation
