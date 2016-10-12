@@ -36,9 +36,8 @@ present.
 """
 from . import update_config, config, SampleOrganization, join, IOTarget, IOSampleTarget
 
-update_config(
-    config, {'settings': {
-        'sample_organization': SampleOrganization(IOTarget(join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}", "{PU}")),
-                                                  IOTarget(join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}", "{PU}")),
-                                                  IOSampleTarget(join("{SM, [a-zA-Z0-9]+}", "{SM}")))}})
+sample_org =  SampleOrganization(IOTarget(join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}", "{PU}")),
+                                 IOTarget(join("{SM, [a-zA-Z0-9]+}", "{PU, [a-zA-Z0-9]+}", "{PU}")),
+                                 IOSampleTarget(join("{SM, [a-zA-Z0-9]+}", "{SM}")))
 
+update_config(config, {'settings': {'sample_organization': sample_org}})

@@ -21,6 +21,9 @@ Details
 The delivery note carries the following information on naming
 conventions:
 
+
+.. code-block:: text
+
   The data is delivered in fastq format using Illumina 1.8 quality
   scores. There will be one file for the forward reads and one file for
   the reverse reads (if the run was a paired-end run). The naming of the
@@ -31,6 +34,8 @@ structure [SCILIFENAME]/[DATE]_[FLOWCELL]. Equating SCILIFENAME with
 sample, the top directory corresponds to the sample, and a
 subdirectory to a specific flowcell run. The entire file name
 including directory structure is therefore
+
+.. code-block:: text
 
   [SCILIFENAME]/[DATE]_[FLOWCELL]/[LANE]_[DATE]_[FLOWCELL]_[SCILIFENAME]_[READ].fastq.gz
 
@@ -51,8 +56,8 @@ tag.
 """
 from . import update_config, config, SampleOrganization, join, IOTarget, IOSampleTarget
 
-update_config(
-    config, {'settings': {
-        'sample_organization': SampleOrganization(IOTarget(join("{SM, P[0-9]+_[0-9]+}", "{DT, [0-9]+}_{PU1, [A-Z0-9]+XX}", "{PU2, [0-9]}_{DT}_{PU1}_{SM}")),
-                                          IOTarget(join("{SM, P[0-9]+_[0-9]+}", "{DT,[0-9]+}_{PU1,[A-Z0-9]+XX}", "{PU2,[0-9]}_{DT}_{PU1}_{SM}")),
-                                          IOSampleTarget(join("{SM,P[0-9]+_[0-9]+}", "{SM}")))}})
+sample_org = SampleOrganization(IOTarget(join("{SM, P[0-9]+_[0-9]+}", "{DT, [0-9]+}_{PU1, [A-Z0-9]+XX}", "{PU2, [0-9]}_{DT}_{PU1}_{SM}")),
+                                IOTarget(join("{SM, P[0-9]+_[0-9]+}", "{DT,[0-9]+}_{PU1,[A-Z0-9]+XX}", "{PU2,[0-9]}_{DT}_{PU1}_{SM}")),
+                                IOSampleTarget(join("{SM,P[0-9]+_[0-9]+}", "{SM}")))
+
+update_config(config, {'settings': {'sample_organization': sample_org}})
