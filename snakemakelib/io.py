@@ -313,3 +313,92 @@ class IOSampleTarget(IOTarget):
 
 class IOAggregateTarget(IOTarget):
     pass
+
+
+
+# TODO: update class for use case - use mixin class?
+class IOReadGroup(dict):
+    """Container class for read group information.
+
+        The labels are named following the conventions of the
+    `SAM format specification <http://samtools.github.io/hts-specs/SAMv1.pdf>`_.
+    To summarize, the class provides the following keys:
+
+    RG
+      Read group. Unordered multiple @RG lines are allowed.
+    ID*
+      Read group identifer. Each @RG line must have a unique ID. The
+      value of ID is used in the RG tags of alignment records. Must be
+      unique among all read groups in header section. Read group IDs may
+      be modified when merging SAMfiles in order to handle collisions.
+    CN
+      Name of sequencing center producing the read.
+    DS
+      Description.
+    DT
+      Date the run was produced (ISO8601 date or date/time).
+
+    FO
+      Flow order. The array of nucleotide bases that correspond to
+      the nucleotides used for each ow of each read. Multi-base rows are
+      encoded in IUPAC format, and non-nucleotide rows by various other
+      characters. Format: /\*|[ACMGRSVTWYHKDBN]+/
+    KS
+      The array of nucleotide bases that correspond to the key
+      sequence of each read.
+    LB
+      Library.
+    PG
+      Programs used for processing the read group.
+    PI
+      Predicted median insert size.
+    PL
+      Platform/technology used to produce the reads. Valid values:
+      CAPILLARY, LS454, ILLUMINA, SOLID, HELICOS, IONTORRENT, ONT, and
+      PACBIO.
+    PM
+      Platform model. Free-form text providing further details of the
+      platform/technology used.
+    PU
+      Platform unit (e.g. flowcell-barcode.lane for Illumina or slide
+      for SOLiD). Unique identifier.
+    SM
+      Sample. Use pool name where a pool is being sequenced.
+
+    """
+    _group_keys = ['ID', 'CN', 'DS', 'DT', 'FO', 'KS',
+                   'LB', 'PG', 'PI', 'PL', 'PU', 'SM']
+    _group_dict = {'ID': 'identifier', 'CN': 'center', 'DS': 'description',
+                   'DT': 'date', 'FO': 'floworder', 'KS': 'keysequence',
+                   'LB': 'library', 'PG': 'program', 'PI': 'insertsize',
+                   'PL': 'platform', 'PU': 'platform-unit', 'SM': 'sample'}
+
+
+    def __init__(self, iotarget=None, opt_prefix="--", *args, **kwargs):
+        if not iotarget is None:
+            super(IOReadGroup, self).__init__(iotarget, *args, **kwargs)
+        self._opt_prefix = opt_prefix
+        self._iotarget = iotarget
+        if 'ID' not in self.keys() or not self.get('ID', ""):
+            # inv_map = {v: k for (k, v) in list(self.re.groupindex.items())}
+            try:
+                self['ID'] = os.path.basename(self._iotarget.fmt.format(**self._iotarget))
+            except:
+                self['ID'] = "unknown"
+
+
+    def _fmt_string(self, k):
+        """Take care of date string"""
+        if k == 'DT':
+            return snakemakelib.utils.isoformat(self[k])
+        return self[k]
+
+
+    def __str__(self):
+        """Return a generic program string"""
+        return " ".join([
+            "{dash}{key} {value}".format(dash=self._opt_prefix,
+                                         key=self._group_dict[k],
+                                         value=self._fmt_string(k))
+            for k in sorted(list(self.keys())) if not self[k] is None
+            and k in self._group_keys])
