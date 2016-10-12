@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.io &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.io &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Reference Guide" href="../reference.html" />
     <link rel="next" title="snakemakelib.plot" href="plot.html" />
     <link rel="prev" title="snakemakelib.graphics" href="graphics.html" />
@@ -57,7 +59,7 @@
         </button>
 
         <a class="navbar-brand" href="../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -80,8 +82,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -112,8 +116,8 @@
 <li class="toctree-l3"><a class="reference internal" href="graphics.html#utils">Utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#make-targets">Make targets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -121,13 +125,19 @@
 <li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -151,7 +161,7 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li><a class="reference internal" href="#make-targets">Make targets</a></li>
+<li><a class="reference internal" href="#helper-functions">Helper functions</a></li>
 <li><a class="reference internal" href="#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -172,12 +182,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="snakemakelib-io">
 <span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.io</span></code><a class="headerlink" href="#snakemakelib-io" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="make-targets">
-<span id="snakemakelib-io-make-targets"></span><h2>Make targets<a class="headerlink" href="#make-targets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="helper-functions">
+<span id="snakemakelib-io-helper-functions"></span><h2>Helper functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="snakemakelib.io.make_targets">
 <code class="descname">make_targets</code><span class="sig-paren">(</span><em>tgt_re</em>, <em>samples</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#make_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.make_targets" title="Permalink to this definition">¶</a></dt>
@@ -190,20 +200,66 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>tgt_re</strong> (<a class="reference internal" href="#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><em>IOTarget</em></a>) &#8211; IOTarget object corresponding to the target
 regular expression</li>
-<li><strong>samples</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#list" title="(in Python v3.5)"><em>list</em></a>) &#8211; list of dicts where each dict is an annotated
-sample. The keys correspond to read group labels.</li>
+<li><strong>samples</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) &#8211; list of dicts where each dict contains labeling information
+related to a sample. The keys correspond to wildcard group
+lables.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>targets</strong> &#8211;
-list of target names</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>targets</strong> &#8211; list of target names</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#list" title="(in Python v3.5)">list</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Example</p>
+<p>The following code block generates a list of formatted target
+names from a list of sample dictionaries. Here, the dictionary
+keys specify SM and PU wildcard group lables.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">samples</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&quot;SM&quot;</span><span class="p">:</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;PU&quot;</span><span class="p">:</span><span class="s">&quot;bar&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s">&quot;SM&quot;</span><span class="p">:</span><span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;PU&quot;</span><span class="p">:</span><span class="s">&quot;foo&quot;</span><span class="p">}]</span>
+<span class="n">tgt_re</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="s">&quot;{SM}/{SM}_{PU}.txt&quot;</span><span class="p">)</span>
+<span class="n">tgts</span> <span class="o">=</span> <span class="n">make_targets</span><span class="p">(</span><span class="n">tgt_re</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+<span class="c"># tgts is now [&#39;foo/foo_bar.txt&#39;, &#39;bar/bar_foo.txt&#39;]</span>
+</pre></div>
+</div>
+<p>Note that the same result could be obtained using
+<code class="xref py py-func docutils literal"><span class="pre">snakemake.io.expand()</span></code> and the global <a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#zip" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">zip()</span></code></a> function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">snakemake.io</span> <span class="kn">import</span> <span class="n">expand</span>
+<span class="n">tgts</span> <span class="o">=</span> <span class="n">expand</span><span class="p">(</span><span class="s">&quot;{SM}/{SM}_{PU}.txt&quot;</span><span class="p">,</span> <span class="nb">zip</span><span class="p">,</span> <span class="n">SM</span><span class="o">=</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s">&quot;SM&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">],</span> <span class="n">PU</span><span class="o">=</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s">&quot;PU&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.io.remove_wildcard_restrictions">
+<code class="descname">remove_wildcard_restrictions</code><span class="sig-paren">(</span><em>filepattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#remove_wildcard_restrictions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.remove_wildcard_restrictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate string format without regex restrictions</p>
+<p>Snakemake wildcards are written in the python miniformat language.
+The wildcard regexes can be restricted. For instance, the
+expression {SM, [A-W]+} restricts the wildcard SM to the regex
+[A-W]+. This function returns the wildcards without restrictions.</p>
+<p>The function is a modification of
+<code class="xref py py-func docutils literal"><span class="pre">snakemake.io.regex()</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filepattern</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; file pattern expressed as wildcard regexes in python miniformat language</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">file pattern without regex restrictions</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(str)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filepattern</span> <span class="o">=</span> <span class="s">&quot;{key1}_{key2,[0-9]+}&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">remove_wildcard_restrictions</span><span class="p">(</span><span class="n">filepattern</span><span class="p">)</span>
+<span class="go">&#39;{key1}_{key2}&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -214,6 +270,163 @@ list of target names</p>
 <em class="property">class </em><code class="descname">IOTarget</code><a class="reference internal" href="../../_modules/snakemakelib/io.html#IOTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.IOTarget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for generating and parsing target file names.</p>
 <p>Overrides standard string format function.</p>
+<p>The class is modelled on <code class="xref py py-class docutils literal"><span class="pre">snakemake.io._IOFile</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">snakemakelib.io</span> <span class="k">import</span> <span class="n">IOTarget</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{SM, [a-zA-Z0-9]+}&quot;</span><span class="p">,</span> <span class="s">&quot;{PU, [a-zA-Z0-9]+}&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">regex</span>
+<span class="go">re.compile(r&#39;(?P&lt;SM&gt;[a-zA-Z0-9]+)\/(?P&lt;PU&gt;[a-zA-Z0-9]+)&#39;, re.UNICODE)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="snakemakelib.io.IOTarget.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#IOTarget.format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.IOTarget.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format self according to keyword arguments.</p>
+<p>Checks that format is ok.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{SM, [a-zA-Z0-9]+}&quot;</span><span class="p">,</span> <span class="s">&quot;{SM}.{suffix}&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">&#39;SM&#39;</span><span class="p">:</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;suffix&#39;</span><span class="p">:</span> <span class="s">&#39;txt&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">&#39;foo/foo.txt&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="c"># The following throws an error due to disallowed _ character</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s">&#39;SM&#39;</span><span class="p">:</span><span class="s">&#39;foo_bar&#39;</span><span class="p">,</span> <span class="s">&#39;suffix&#39;</span><span class="p">:</span> <span class="s">&#39;txt&#39;</span><span class="p">})</span>
+<span class="go">Exception: (&#39;Wrong format for &#39;, &#39;foo_bar/foo_bar.txt&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.io.IOTarget.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#IOTarget.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.IOTarget.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the regex groupdict keys</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.io.IOTarget.match">
+<code class="descname">match</code><span class="sig-paren">(</span><em>file</em>, <em>return_instance=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#IOTarget.match"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.IOTarget.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Match file to regex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; file name to match against</li>
+<li><strong>return_instance</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; return self</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">match object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(re)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;GSM123456/SRR123456_1.fastq.gz&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{SM, [a-zA-Z0-9]+}&quot;</span><span class="p">,</span> <span class="s">&quot;{PU, [a-zA-Z0-9]+}&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">groupdict</span><span class="p">)</span>
+<span class="go">{&#39;PU&#39;: &#39;SRR123456&#39;, &#39;SM&#39;: &#39;GSM123456&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.io.IOTarget.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>file</em>, <em>return_instance=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/io.html#IOTarget.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.io.IOTarget.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search file with regex.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; file name to search</li>
+<li><strong>return_instance</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; return self</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">match object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(re)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;GSM123456/SRR123456_1.fastq.gz&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{SM, [a-zA-Z0-9]+}&quot;</span><span class="p">,</span> <span class="s">&quot;{PU, [a-zA-Z0-9]+}&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">groupdict</span><span class="p">)</span>
+<span class="go">{&#39;PU&#39;: &#39;SRR123456&#39;, &#39;SM&#39;: &#39;GSM123456&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.basename_pattern">
+<code class="descname">basename_pattern</code><a class="headerlink" href="#snakemakelib.io.IOTarget.basename_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the basename pattern, excluding path</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.concat_groupdict">
+<code class="descname">concat_groupdict</code><a class="headerlink" href="#snakemakelib.io.IOTarget.concat_groupdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the concatenated groupdict.</p>
+<p>It is possible to index wildcard groups, e.g. SM1, SM2, ...
+The concat_groupdict contains concatenated versions of indexed
+groups so that SM would return the concatenated version of the
+values of SM1, SM2, ...</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.file">
+<code class="descname">file</code><a class="headerlink" href="#snakemakelib.io.IOTarget.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return file name; basically the string that self refers to</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.fmt">
+<code class="descname">fmt</code><a class="headerlink" href="#snakemakelib.io.IOTarget.fmt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the format for string formatting</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.groupdict">
+<code class="descname">groupdict</code><a class="headerlink" href="#snakemakelib.io.IOTarget.groupdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the groupdict.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.pattern">
+<code class="descname">pattern</code><a class="headerlink" href="#snakemakelib.io.IOTarget.pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the regex pattern.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.io.IOTarget.regex">
+<code class="descname">regex</code><a class="headerlink" href="#snakemakelib.io.IOTarget.regex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile a regular expression of self.file.</p>
+<p>Utilizes <code class="xref py py-func docutils literal"><span class="pre">snakemake.io.regex()</span></code> which adds &#8220;$&#8221; to the
+pattern. Since <cite>IOTarget</cite> allows suffixes, $ is stripped from
+the regex.</p>
+<p>The groupindex keys are stored in self._groupdict for easy
+access.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Compiled regular expression.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/re.html#module-re" title="(in Python v3.6)"><code class="xref py py-mod docutils literal"><span class="pre">re</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -249,7 +462,7 @@ list of target names</p>
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

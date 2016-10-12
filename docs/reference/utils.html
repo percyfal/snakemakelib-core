@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sample organization &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
+    <title>snakemakelib.utils &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -34,8 +34,8 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Reference Guide" href="../reference.html" />
-    <link rel="next" title="snakemakelib.sample.input" href="sample/input.html" />
-    <link rel="prev" title="snakemakelib.plot" href="plot.html" />
+    <link rel="next" title="Release notes" href="../release_notes.html" />
+    <link rel="prev" title="snakemakelib.sample.organization" href="sample/sampleorganization.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -125,12 +125,12 @@
 <li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Sample organization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sample.html">Sample organization</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -160,7 +160,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Sample organization</a></li>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 </ul>
 </ul>
 </li>
@@ -180,27 +180,105 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="sample-organization">
-<span id="snakemakelib-sample"></span><h1>Sample organization<a class="headerlink" href="#sample-organization" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">sample</span></code> module provides functionality for working with sample-based
-data, such as finding input files and organization of input and output
-file names.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sample/input.html#utility-functions">Utility functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample/input.html#input-initialization">Input initialization</a></li>
+  <div class="section" id="snakemakelib-utils">
+<span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code><a class="headerlink" href="#snakemakelib-utils" title="Permalink to this headline">¶</a></h1>
+<p>Various utility functions.</p>
+<dl class="function">
+<dt id="snakemakelib.utils.utc_time">
+<code class="descname">utc_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#utc_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.utc_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make an utc_time with appended &#8216;Z&#8217;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.utils.isoformat">
+<code class="descname">isoformat</code><span class="sig-paren">(</span><em>s=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#isoformat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.isoformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return isoformat date from string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.utils.rreplace">
+<code class="descname">rreplace</code><span class="sig-paren">(</span><em>string</em>, <em>old</em>, <em>new</em>, <em>occurrence</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#rreplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.rreplace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the last occurrence of an expression in a string.</p>
+<p>See <a class="reference external" href="http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string">http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.utils.safe_makedir">
+<code class="descname">safe_makedir</code><span class="sig-paren">(</span><em>dname</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#safe_makedir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.safe_makedir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a directory if it doesn&#8217;t exist, handling concurrent race
+conditions.</p>
+<p>Copied from <a class="reference external" href="https://github.com/chapmanb/bcbio-nextgen">bcbio nextgen</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dname</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; directory name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.utils.find_files">
+<code class="descname">find_files</code><span class="sig-paren">(</span><em>regex</em>, <em>path='.'</em>, <em>search=False</em>, <em>limit=None</em>, <em>use_full_path=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#find_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.find_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find files in path that comply with a regular expression.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>regex</strong> (<em>IOTarget | str</em>) &#8211; regular expression object of class
+<a class="reference internal" href="io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> or <a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">str</span></code></a></li>
+<li><strong>path</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; path to search</li>
+<li><strong>search</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; use re.search instead of re.match for pattern matching</li>
+<li><strong>limit</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; dictionary where keys correspond to regular expression
+grouping labels and values are lists that limit the
+returned pattern</li>
+<li><strong>use_full_path</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; use full path in match/search</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sample/sampleorganization.html#module-snakemakelib.sample.organization.utils"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.utils</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample/sampleorganization.html#module-snakemakelib.sample.organization.illumina_scilife"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.illumina_scilife</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample/sampleorganization.html#module-snakemakelib.sample.organization.sample"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample/sampleorganization.html#module-snakemakelib.sample.organization.sample_run_sra"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample_run_sra</span></code></a></li>
-</ul>
-</li>
-</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of file names, prepended with root path</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">flist</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>The following code block would recursively search for files with
+suffix &#8216;.fastq.gz&#8217; from the current directory.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">find_files</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s">&quot;\w+.fastq.gz&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+<p>By adding the search parameter re.search is used instead of
+re.match. In this case, the following code would find files with
+suffix &#8216;.fastq.+&#8217;:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">find_files</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s">&quot;\w+.fastq.gz&quot;</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.utils.dictlist_to_dict">
+<code class="descname">dictlist_to_dict</code><span class="sig-paren">(</span><em>l</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/utils.html#dictlist_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.utils.dictlist_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert list of dict objects to dict where key values are lists.</p>
+<p>See <a class="reference external" href="http://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists">http://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>l</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) &#8211; list of dict objects</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>nd</strong> &#8211; dictionary where key values are lists</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -216,7 +294,7 @@ file names.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../_sources/docs/reference/sample.txt"
+  <a href="../../_sources/docs/reference/utils.txt"
      rel="nofollow">Source</a>
 </div>
       

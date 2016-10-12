@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>snakemakelib.sample.input &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../../index.html" />
+    <link rel="up" title="Sample organization" href="../sample.html" />
+    <link rel="next" title="snakemakelib.sample.organization" href="sampleorganization.html" />
+    <link rel="prev" title="Sample organization" href="../sample.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="../../../index.html">snakemakelib</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../targets.html">Targets and applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#finding-input">Finding input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datahandling.html">Data handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../datahandling.html#odo">odo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../datahandling.html#bokeh-plots">bokeh plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial.html#a-simple-application">A simple application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorial.html#building-workflows">Building workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../application.html"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../application.html#application">Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../application.html#sampleapplication">SampleApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../application.html#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../graphics.html"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#color">Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#facet">Facet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#geom">Geom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#mgeom">Mgeom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#scatter">Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../graphics.html#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../io.html#helper-functions">Helper functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io.html#target-classes">Target classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plot.html"><code class="docutils literal"><span class="pre">snakemakelib.plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../plot.html#sklearn">sklearn</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sample.html">Sample organization</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../release_notes.html#releases">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_notes.html#pre-releases">Pre-releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.2.html">0.1-alpha.2 (Nov 24 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.1.html">0.1-alpha.1 (Oct 27 2015)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a><ul>
+<li><a class="reference internal" href="#utility-functions">Utility functions</a></li>
+<li><a class="reference internal" href="#input-initialization">Input initialization</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="snakemakelib-sample-input">
+<span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code><a class="headerlink" href="#snakemakelib-sample-input" title="Permalink to this headline">¶</a></h1>
+<p>Functions for dealing with sample input information.</p>
+<div class="section" id="utility-functions">
+<span id="snakemakelib-sample-input-utility-functions"></span><h2>Utility functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="snakemakelib.sample.input.convert_samples_to_list">
+<code class="descname">convert_samples_to_list</code><span class="sig-paren">(</span><em>samples=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/snakemakelib/sample/input.html#convert_samples_to_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.sample.input.convert_samples_to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert samples to list.</p>
+<p>Passing &#8211;config samples=[&#8220;S1&#8221;, &#8220;S2&#8221;] will set samples to a string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>samples</strong> (<em>list|str</em>) &#8211; a string representation of a list or a list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a list of sample names</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(list)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="input-initialization">
+<h2>Input initialization<a class="headerlink" href="#input-initialization" title="Permalink to this headline">¶</a></h2>
+<p>These functions are used to generate lists of inputs to a workflow.
+Input information is either read from a sampleinfo file, or parsed
+directly from input file names.</p>
+<dl class="function">
+<dt id="snakemakelib.sample.input.initialize_input">
+<code class="descname">initialize_input</code><span class="sig-paren">(</span><em>src_re=None</em>, <em>sampleinfo=None</em>, <em>metadata=None</em>, <em>metadata_filter=None</em>, <em>filter_suffix=''</em>, <em>sample_column_map=None</em>, <em>sample_filter=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/snakemakelib/sample/input.html#initialize_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.sample.input.initialize_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize inputs.</p>
+<p>Try reading sampleinfo file if present. Returns list of annotated
+dicts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>src_re</strong> (<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><em>IOTarget</em></a>) &#8211; IOTarget object corresponding to the source
+regular expression</li>
+<li><strong>sampleinfo</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; sampleinfo file name</li>
+<li><strong>metadata</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; metadata file name</li>
+<li><strong>metadata_filter</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; dictionary of filters where the key corresponds
+to a column and the value the regular expression
+to match against</li>
+<li><strong>filter_suffix</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; only use given suffix to filter for input
+file names. Useful if many result files
+exist for a sample</li>
+<li><strong>sample_column_map</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; mapping from sampleinfo column names
+to read group names, e.g.
+{&#8216;Sample&#8217;:&#8217;SM&#8217;}</li>
+<li><strong>sample_filter</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) &#8211; list of sample names to use as subset</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>samples</strong> &#8211; list of dicts where each dict corresponds to        sample information. The keys are read group        identifiers and additional arbitrary metadata        information (e.g. factor levels)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>The function requires as input either a sampleinfo file or an
+<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> object that defines what the
+input should look like. For instance, the following code</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">snakemakelib.io</span> <span class="kn">import</span> <span class="n">IOTarget</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.input</span> <span class="kn">import</span> <span class="n">initialize_input</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="n">tgt</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{SM,[a-zA-Z0-9]+}&quot;</span><span class="p">,</span> <span class="s">&quot;{PU,[a-zA-Z0-9]+}&quot;</span><span class="p">)</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="n">initialize_input</span><span class="p">(</span><span class="n">src_re</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will find inputs in directories that define sample (SM) and
+whose basenames are prefixed by a platform unit (PU). As an
+alternative, given a sampleinfo file &#8220;sampleinfo.csv&#8221; with the
+following content</p>
+<div class="highlight-text"><div class="highlight"><pre>SM,PU
+Sample1,PlatformUnit1
+Sample1,PlatformUnit2
+Sample2,PlatformUnit1
+</pre></div>
+</div>
+<p>the samples could be generated with the following code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">samples</span> <span class="o">=</span> <span class="n">initialize_input</span><span class="p">(</span><span class="n">sampleinfo</span> <span class="o">=</span> <span class="s">&quot;sampleinfo.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.sample.input._parse_sampleinfo">
+<code class="descname">_parse_sampleinfo</code><span class="sig-paren">(</span><em>sampleinfo</em>, <em>sample_column_map=None</em>, <em>fmt='csv'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/snakemakelib/sample/input.html#_parse_sampleinfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.sample.input._parse_sampleinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse sample information file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sampleinfo</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; sampleinfo file name. Each line in the file
+should correspond to one input unit, where columns represent
+read group identifiers used be the sample organization regular
+expressions.</li>
+<li><strong>sample_column_map</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; mapping from sampleinfo column names to
+regexp group names, e.g.
+{&#8216;SampleID&#8217;:&#8217;SM&#8217;, &#8216;Lane&#8217;:&#8217;PU1&#8217;}</li>
+<li><strong>fmt</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; input file format</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>samples</strong> &#8211; list of dictionaries, where the keys of each                      dictionary correspond to read group identifiers</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="snakemakelib.sample.input._samples_from_input_files">
+<code class="descname">_samples_from_input_files</code><span class="sig-paren">(</span><em>src_re</em>, <em>filter_suffix=''</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/snakemakelib/sample/input.html#_samples_from_input_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.sample.input._samples_from_input_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate sample names from input files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>src_re</strong> (<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><em>IOTarget</em></a>) &#8211; IOTarget object corresponding to the source
+regular expression</li>
+<li><strong>filter_suffix</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; only use given suffix to filter for input
+file names. Useful if many result files exist
+for a sample</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>samples</strong> &#8211; list of dictionaries, where the keys of each                      dictionary correspond to read group identifiers</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../../_sources/docs/reference/sample/input.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Per Unneberg.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

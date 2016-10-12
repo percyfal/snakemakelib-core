@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Targets and applications &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>Targets and applications &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../index.html" />
     <link rel="next" title="Data handling" href="datahandling.html" />
     <link rel="prev" title="Quickstart" href="quickstart.html" />
 <meta charset='utf-8'>
@@ -56,7 +58,7 @@
         </button>
 
         <a class="navbar-brand" href="../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -78,9 +80,11 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#finding-input">Finding input</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Targets and applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -112,7 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -120,13 +124,19 @@
 <li class="toctree-l3"><a class="reference internal" href="reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -150,8 +160,10 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Targets and applications</a><ul>
-<li><a class="reference internal" href="#finding-input">Finding input</a></li>
 <li><a class="reference internal" href="#the-iotarget-class">The IOTarget class</a></li>
+<li><a class="reference internal" href="#sample-organization">Sample organization</a></li>
+<li><a class="reference internal" href="#organization-levels">Organization levels</a></li>
+<li><a class="reference internal" href="#finding-input">Finding input</a></li>
 <li><a class="reference internal" href="#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -175,9 +187,11 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#finding-input">Finding input</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Targets and applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -200,24 +214,164 @@
 </form>
         </div>
       </div>
-    <div class="col-md-9 content">
+    <div class="col-md-9">
       
   <div class="section" id="targets-and-applications">
 <span id="snakemakelib-core-targets"></span><h1>Targets and applications<a class="headerlink" href="#targets-and-applications" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="finding-input">
-<h2>Finding input<a class="headerlink" href="#finding-input" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="the-iotarget-class">
 <span id="snakemakelib-core-targets-iotarget"></span><h2>The IOTarget class<a class="headerlink" href="#the-iotarget-class" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="reference/io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> class provides a means to
-define what the input looks like. It is modeled on the
+<p>Snakemake identifies rule input and output dependencies by means of
+file name patterns. Inputs and outputs are defined via the
 <code class="xref py py-class docutils literal"><span class="pre">snakemake.io.IOFile</span></code> class which uses python mini format
-strings to setup regular expressions for string matching.</p>
-<div class="highlight-text"><div class="highlight"><pre>2_141414_AOXX.fastq.gz
-
-LANE_FLOWCEL
+strings to setup regular expressions for string matching. Typically,
+an input is of the form <code class="docutils literal"><span class="pre">{prefix}.suffix</span></code> and the output
+<code class="docutils literal"><span class="pre">{prefix}.outsuffix</span></code>.</p>
+<p>The <a class="reference internal" href="reference/io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">snakemakelib.io.IOTarget</span></code></a> class adds an interface to
+define in more detail what the common prefix should look like. Inputs
+and outputs relating to a given unit (e.g. sample) can be identified
+by a common file name prefix. The basic idea of
+<a class="reference internal" href="reference/io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> is to assign regular expression
+groups to the string prefixes themselves. Take for example an input
+file called <code class="docutils literal"><span class="pre">foo_bar.fastq.gz</span></code> which when aligned to a reference
+sequence generates an output file called <code class="docutils literal"><span class="pre">foo_bar.bam</span></code>. One way to
+identify the unit is to simply assign a regular expression to
+<code class="docutils literal"><span class="pre">foo_bar</span></code>, such as <code class="docutils literal"><span class="pre">[a-z_]+</span></code>. This construct would correspond to
+the <code class="docutils literal"><span class="pre">prefix</span></code> wildcard in the previous paragraph. Alternatively, one
+could assign regular expressions to <code class="docutils literal"><span class="pre">foo</span></code> and <code class="docutils literal"><span class="pre">bar</span></code> separately by
+<code class="docutils literal"><span class="pre">([a-z]+)_([a-z]+)</span></code>.</p>
+<p>By using the construct <code class="docutils literal"><span class="pre">(?P&lt;name&gt;...)</span></code> the substring matched by a
+group is accessible via the symbolic group name <cite>name</cite>.
+<code class="xref py py-class docutils literal"><span class="pre">snakemake.io.IOFile</span></code> uses these constructs together with the
+python mini format language for generating regular expression groups
+in a readable way. Instead of writing <code class="docutils literal"><span class="pre">(?P&lt;name&gt;...)</span></code> one simply
+writes <code class="docutils literal"><span class="pre">{name...}</span></code>. Consequently, one could assign group names to
+<code class="docutils literal"><span class="pre">foo</span></code> and <code class="docutils literal"><span class="pre">bar</span></code> in the previous section by for instance writing
+<code class="docutils literal"><span class="pre">{SM,[a-z]+}_{PU,[a-z]+}</span></code>, with <code class="docutils literal"><span class="pre">foo</span></code> being identified by the
+<code class="docutils literal"><span class="pre">SM</span></code> group, and <code class="docutils literal"><span class="pre">bar</span></code> by the <code class="docutils literal"><span class="pre">PU</span></code> group, as the following code
+block shows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">snakemakelib.io</span> <span class="kn">import</span> <span class="n">IOTarget</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">target</span> <span class="o">=</span> <span class="n">IOTarget</span><span class="p">(</span><span class="s">&quot;{SM,[a-z]+}_{PU,[a-z]+}&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Although any group names can be used, wherever applicable
+<code class="docutils literal"><span class="pre">snakemakelib</span></code> uses read group identifiers as defined by the <a class="reference external" href="http://samtools.github.io/hts-specs/SAMv1.pdf">SAM
+format specification</a>. An excerpt from the
+description follows below:</p>
+<div class="highlight-text"><div class="highlight"><pre>RG
+  Read group. Unordered multiple @RG lines are allowed.
+ID*
+  Read group identifer. Each @RG line must have a unique ID. The
+  value of ID is used in the RG tags of alignment records. Must be
+  unique among all read groups in header section. Read group IDs may
+  be modified when merging SAMfiles in order to handle collisions.
+ ...
+ PU
+   Platform unit (e.g. flowcell-barcode.lane for Illumina or slide
+   for SOLiD). Unique identifier.
+ SM
+   Sample. Use pool name where a pool is being sequenced.
+</pre></div>
+</div>
+<p>Throughout, then, <code class="docutils literal"><span class="pre">SM</span></code> is used to identify the sample unit, <code class="docutils literal"><span class="pre">PU</span></code>
+the platform unit, and so on.</p>
+</div>
+<div class="section" id="sample-organization">
+<span id="snakemakelib-core-targets-sample-organization"></span><h2>Sample organization<a class="headerlink" href="#sample-organization" title="Permalink to this headline">¶</a></h2>
+<p>Since Snakemake rule definitions make use of wildcards already, you
+may wonder what the use of <code class="docutils literal"><span class="pre">IOTarget</span></code> is. The main reason is that
+sequencing data from different sources have different naming
+conventions. The file names often carry metadata about the sample
+and/or sequencing run, but since naming conventions differ, they would
+need to be parsed differently depending on the source. The
+<code class="docutils literal"><span class="pre">IOTarget</span></code> class takes care of this issue, thus enabling <strong>reuse</strong>
+of rules that use generic prefix names, such as snakemake-rules.</p>
+<p>To give an example, consider the following two input files:</p>
+<div class="highlight-text"><div class="highlight"><pre>GSM123456/SRR123456_1.fastq.gz
+P001_101/121014_AC003CCCXX/1_121014_AC003CCCXX_P001_101_1.fastq.gz
+</pre></div>
+</div>
+<p>A typical alignment rule would treat everything up to the read index
+(<code class="docutils literal"><span class="pre">_1</span></code>) as the prefix. The metadata that is encoded in the filenames
+would be lost, however. For instance, <code class="docutils literal"><span class="pre">GSM123456</span></code> corresponds to a
+<a class="reference external" href="http://www.ncbi.nlm.nih.gov/geo/info/overview.html">GEO accession number</a> and
+<code class="docutils literal"><span class="pre">SRR123456</span></code> to a <a class="reference external" href="http://www.ncbi.nlm.nih.gov/books/NBK56913/#search.what_do_the_different_sra_accessi">SRA Run Accession (SRR)</a>.The
+second example corresponds to a file name as delivered by <a class="reference external" href="https://www.scilifelab.se/facilities/genomics-production/">NGI
+Stockholm (Genomics Production)</a>. Here,
+<code class="docutils literal"><span class="pre">P001_101</span></code> is a sample, <code class="docutils literal"><span class="pre">121014</span></code> the date, and so on.</p>
+<p>The module <a class="reference internal" href="reference/sample/sampleorganization.html#module-snakemakelib.sample.organization" title="snakemakelib.sample.organization"><code class="xref py py-mod docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a> contains submodules
+that define <code class="docutils literal"><span class="pre">IOTarget</span></code> objects for use in typical cases. The objects
+are used to parse the prefixes for extraction of metadata information.
+Upon importing a submodule, the configuration setting
+<code class="docutils literal"><span class="pre">config['settings']['sample_organization']</span></code> is set to a
+<a class="reference internal" href="reference/sample/sampleorganization.html#snakemakelib.sample.organization.utils.SampleOrganization" title="snakemakelib.sample.organization.utils.SampleOrganization"><code class="xref py py-class docutils literal"><span class="pre">SampleOrganization</span></code></a>
+object that defines <code class="docutils literal"><span class="pre">IOTarget</span></code> objects for different input
+organization levels (see
+<a class="reference internal" href="#snakemakelib-core-targets-organization-levels"><span class="std std-ref">Organization levels</span></a> for more
+information).</p>
+<p>As an example, importing <code class="docutils literal"><span class="pre">config</span></code> from
+<a class="reference internal" href="reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.sample_run_sra" title="snakemakelib.sample.organization.sample_run_sra"><code class="xref py py-mod docutils literal"><span class="pre">snakemakelib.sample.organization.sample_run_sra</span></code></a> gives</p>
+<div class="highlight-python"><div class="highlight"><pre>  <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">snakemakelib.sample.organization.sample_run_sra</span> <span class="kn">import</span> <span class="n">config</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">config</span>
+  <span class="p">{</span><span class="s">&#39;samples&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<span class="s">&#39;settings&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;sample_organization&#39;</span><span class="p">:</span> <span class="n">SampleOrganization</span><span class="p">(</span><span class="n">raw_run_re</span><span class="o">=</span><span class="s">&#39;{SM,[a-zA-Z0-9]+}/{SM}&#39;</span><span class="p">,</span> <span class="n">run_id_re</span><span class="o">=</span><span class="s">&#39;{SM,[a-zA-Z0-9]+}/{SM}&#39;</span><span class="p">,</span> <span class="n">sample_re</span><span class="o">=</span><span class="s">&#39;{SM,[a-zA-Z0-9]+}/{SM}&#39;</span><span class="p">)}}</span>
+</pre></div>
+</div>
+<p>whereas importing <code class="docutils literal"><span class="pre">config</span></code> from
+<a class="reference internal" href="reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.illumina_scilife" title="snakemakelib.sample.organization.illumina_scilife"><code class="xref py py-mod docutils literal"><span class="pre">snakemakelib.sample.organization.illumina_scilife</span></code></a> produces:</p>
+<div class="highlight-python"><div class="highlight"><pre> <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">snakemakelib.sample.organization.illumina_scilife</span> <span class="kn">import</span> <span class="n">config</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">config</span>
+ <span class="p">{</span><span class="s">&#39;samples&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<span class="s">&#39;settings&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;sample_organization&#39;</span><span class="p">:</span> <span class="n">SampleOrganization</span><span class="p">(</span><span class="n">raw_run_re</span><span class="o">=</span><span class="s">&#39;{SM, P[0-9]+_[0-9]+}/{DT, [0-9]+}_{PU1, [A-Z0-9]+XX}/{PU2, [0-9]}_{DT}_{PU1}_{SM}&#39;</span><span class="p">,</span> <span class="n">run_id_re</span><span class="o">=</span><span class="s">&#39;{SM, P[0-9]+_[0-9]+}/{DT,[0-9]+}_{PU1,[A-Z0-9]+XX}/{PU2,[0-9]}_{DT}_{PU1}_{SM}&#39;</span><span class="p">,</span> <span class="n">sample_re</span><span class="o">=</span><span class="s">&#39;{SM,P[0-9]+_[0-9]+}/{SM}&#39;</span><span class="p">)}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="organization-levels">
+<span id="snakemakelib-core-targets-organization-levels"></span><h2>Organization levels<a class="headerlink" href="#organization-levels" title="Permalink to this headline">¶</a></h2>
+<p>You may have noticed that
+<a class="reference internal" href="reference/sample/sampleorganization.html#snakemakelib.sample.organization.utils.SampleOrganization" title="snakemakelib.sample.organization.utils.SampleOrganization"><code class="xref py py-class docutils literal"><span class="pre">SampleOrganization</span></code></a>
+has three <a class="reference internal" href="reference/io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> objects referenced by
+<code class="docutils literal"><span class="pre">raw_run_re</span></code>, <code class="docutils literal"><span class="pre">run_id_re</span></code> and <code class="docutils literal"><span class="pre">sample_re</span></code>.</p>
+<img src="../_images/graphviz-f7f307985d18dad9921eacefbf0e43155e70b203.png" alt="digraph G {
+a-&gt;b;
+subgraph G1 {a;}
+}" />
+<img src="../_images/graphviz-18d471bf90dcc725607833ef76a8e87342f64c0b.png" alt="digraph orglevels {
+  graph[bgcolor=white, margin=0];
+  node [shape=box, style=rounded, fontname=sans, fontsize=10, penwidth=2];
+  edge[penwidth=2, color=grey];
+  rawid1 -&gt; runid1
+  rawid2 -&gt; runid2
+  rawid3 -&gt; runid3
+  runid1 -&gt; sample1
+  runid2 -&gt; sample1
+  runid3 -&gt; sample2
+  subgraph &quot;raw_run_re&quot; {rawid1;  rawid2;  rawid3; label=&quot;Raw run-level names&quot;; }
+  subgraph &quot;run_id_re&quot; {runid1; runid2; runid3;  label=&quot;Run-level names&quot;; }
+  subgraph &quot;sample_re&quot; {sample1; sample2; label=&quot;Sample-level names&quot;; }
+}" />
+<img src="../_images/graphviz-56c147e8eec4b048a9ed3b0d6870213dbbc88760.png" alt="digraph G {
+compound=true;
+subgraph cluster0 {
+a -&gt; b;
+a -&gt; c;
+b -&gt; d;
+c -&gt; d;
+label=&quot;cluster 0&quot;;
+}
+subgraph cluster1 {
+e -&gt; g;
+e -&gt; f;
+}
+b -&gt; f [lhead=cluster1];
+d -&gt; e;
+c -&gt; g [ltail=cluster0,
+lhead=cluster1];
+c -&gt; e [ltail=cluster0];
+d -&gt; h;
+}" />
+</div>
+<div class="section" id="finding-input">
+<span id="snakemakelib-core-targets-finding-input"></span><h2>Finding input<a class="headerlink" href="#finding-input" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="applications-grouping-iotargets-together">
 <span id="snakemakelib-core-targets-applications"></span><h2>Applications - grouping IOTargets together<a class="headerlink" href="#applications-grouping-iotargets-together" title="Permalink to this headline">¶</a></h2>
@@ -244,7 +398,7 @@ LANE_FLOWCEL
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>snakemakelib.utils &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+
+<div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+      <div class="navbar-header">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="../../index.html">snakemakelib</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
+      </div>
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/quickstart.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/targets.html">Targets and applications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/datahandling.html">Data handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/datahandling.html#odo">odo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/datahandling.html#bokeh-plots">bokeh plots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/tutorial.html#a-simple-application">A simple application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/tutorial.html#building-workflows">Building workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/reference.html">Reference Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/application.html"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#application">Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#sampleapplication">SampleApplication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/application.html#platformunitapplication">PlatformUnitApplication</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/graphics.html"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#axes">Axes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#color">Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#facet">Facet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#geom">Geom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#mgeom">Mgeom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#scatter">Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/graphics.html#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#helper-functions">Helper functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#target-classes">Target classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/plot.html"><code class="docutils literal"><span class="pre">snakemakelib.plot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/plot.html#sklearn">sklearn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#releases">Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#pre-releases">Pre-releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.2.html">0.1-alpha.2 (Nov 24 2015)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.1.html">0.1-alpha.1 (Oct 27 2015)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <h1>Source code for snakemakelib.utils</h1><div class="highlight"><pre>
+<span class="c"># Copyright (c) 2014 Per Unneberg</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="k">import</span> <span class="n">LoggerManager</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.io</span> <span class="k">import</span> <span class="n">IOTarget</span>
+
+<span class="n">smllogger</span> <span class="o">=</span> <span class="n">LoggerManager</span><span class="p">()</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="utc_time"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.utc_time">[docs]</a><span class="k">def</span> <span class="nf">utc_time</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Make an utc_time with appended &#39;Z&#39;&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">())</span> <span class="o">+</span> <span class="s">&#39;Z&#39;</span></div>
+
+
+<div class="viewcode-block" id="isoformat"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.isoformat">[docs]</a><span class="k">def</span> <span class="nf">isoformat</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return isoformat date from string&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c"># Assume YYMMDD format</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">YY</span><span class="p">,</span> <span class="n">MM</span><span class="p">,</span> <span class="n">DD</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">date</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s">&quot;20{YY}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">YY</span><span class="o">=</span><span class="n">YY</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">MM</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">DD</span><span class="p">))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="rreplace"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.rreplace">[docs]</a><span class="k">def</span> <span class="nf">rreplace</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">,</span> <span class="n">occurrence</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replace the last occurrence of an expression in a string.</span>
+
+<span class="sd">    See http://stackoverflow.com/questions/2556108/how-to-replace-the-last-occurence-of-an-expression-in-a-string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">li</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">occurrence</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">li</span><span class="p">)</span></div>
+
+
+<span class="c">## From bcbb</span>
+<div class="viewcode-block" id="safe_makedir"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.safe_makedir">[docs]</a><span class="k">def</span> <span class="nf">safe_makedir</span><span class="p">(</span><span class="n">dname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a directory if it doesn&#39;t exist, handling concurrent race</span>
+<span class="sd">    conditions.</span>
+
+<span class="sd">    Copied from `bcbio nextgen &lt;https://github.com/chapmanb/bcbio-nextgen&gt;`_</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      dname (str): directory name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dname</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">dname</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">dname</span><span class="p">):</span>
+                <span class="k">raise</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">smllogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;Directory {} already exists; not making directory&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dname</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dname</span></div>
+
+
+
+<div class="viewcode-block" id="find_files"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.find_files">[docs]</a><span class="k">def</span> <span class="nf">find_files</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="k">False</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">use_full_path</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Find files in path that comply with a regular expression.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      regex (IOTarget | str): regular expression object of class</span>
+<span class="sd">                               :class:`~snakemakelib.io.IOTarget` or :py:class:`str`</span>
+<span class="sd">      path (str):   path to search</span>
+<span class="sd">      search (bool): use re.search instead of re.match for pattern matching</span>
+<span class="sd">      limit (dict): dictionary where keys correspond to regular expression</span>
+<span class="sd">             grouping labels and values are lists that limit the</span>
+<span class="sd">             returned pattern</span>
+<span class="sd">      use_full_path (bool): use full path in match/search</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      flist: list of file names, prepended with root path</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">      The following code block would recursively search for files with</span>
+<span class="sd">      suffix &#39;.fastq.gz&#39; from the current directory.</span>
+
+<span class="sd">      .. code-block:: python</span>
+
+<span class="sd">         f = find_files(regex=&quot;\w+.fastq.gz&quot;)</span>
+
+<span class="sd">      By adding the search parameter re.search is used instead of</span>
+<span class="sd">      re.match. In this case, the following code would find files with</span>
+<span class="sd">      suffix &#39;.fastq.+&#39;:</span>
+
+<span class="sd">      .. code-block:: python</span>
+
+<span class="sd">         f = find_files(regex=&quot;\w+.fastq.gz&quot;, search=True)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">IOTarget</span><span class="p">):</span>
+        <span class="n">file_re</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">re</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">regex</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">file_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">regex</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">limit</span> <span class="ow">is</span> <span class="k">None</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">file_re</span><span class="o">.</span><span class="n">groupindex</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">limit</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">smllogger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;&quot;&quot;Some limit keys &#39;{}&#39; not in regex</span>
+<span class="s">        groupindex &#39;{}&#39;; disregarding limit option for these</span>
+<span class="s">        keys&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">limit</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_re</span><span class="o">.</span><span class="n">groupindex</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="n">re_fn</span> <span class="o">=</span> <span class="n">file_re</span><span class="o">.</span><span class="n">search</span> <span class="k">if</span> <span class="n">search</span> <span class="k">else</span> <span class="n">file_re</span><span class="o">.</span><span class="n">match</span>
+    <span class="n">flist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">use_full_path</span><span class="p">:</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">re_fn</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">root</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">re_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">limit</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">in</span> <span class="n">limit</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">limit</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()]):</span>
+                    <span class="n">flist</span> <span class="o">+=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">x</span><span class="p">)]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">flist</span> <span class="o">+=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">x</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">flist</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">dict_to_R</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Translate a python dictionary to an R option string</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      d: dictionary</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      A string representing an option string of the dictionary in R</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">outlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k} = c(&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{vv}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="n">vv</span> <span class="ow">in</span> <span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k} = c(&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;&#39;{vv}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="n">vv</span> <span class="ow">in</span> <span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>     
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k} = c(&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{kk}={vv}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="o">=</span><span class="n">kk</span><span class="p">,</span> <span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">kk</span><span class="p">,</span><span class="n">vv</span><span class="p">)</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">True</span><span class="p">:</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}=TRUE&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">False</span><span class="p">:</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}=FALSE&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}=NULL&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}={v}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}={v}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">outlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{k}=&#39;{v}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">))</span>
+    <span class="k">return</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outlist</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dict_to_Rdict</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Translate a python dictionary to a dict with R-compatible entries</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      d: dictionary</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      A dictionare where values comply with R</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dout</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;c(&quot;</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{vv}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="n">vv</span> <span class="ow">in</span> <span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;c(&quot;</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;&#39;{vv}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="n">vv</span> <span class="ow">in</span> <span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;c(&quot;</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;{kk}={vv}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="o">=</span><span class="n">kk</span><span class="p">,</span> <span class="n">vv</span><span class="o">=</span><span class="n">vv</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">kk</span><span class="p">,</span><span class="n">vv</span><span class="p">)</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">True</span><span class="p">:</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;TRUE&quot;</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">False</span><span class="p">:</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;FALSE&quot;</span>
+        <span class="k">elif</span> <span class="n">v</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;NULL&quot;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dout</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;{v}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dout</span>
+
+
+<div class="viewcode-block" id="dictlist_to_dict"><a class="viewcode-back" href="../../docs/reference/utils.html#snakemakelib.utils.dictlist_to_dict">[docs]</a><span class="k">def</span> <span class="nf">dictlist_to_dict</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert list of dict objects to dict where key values are lists.</span>
+
+<span class="sd">    See http://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      l (list): list of dict objects</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      nd (dict): dictionary where key values are lists</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nd</span><span class="o">=</span><span class="p">{}</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">nd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="n">nd</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">nd</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Per Unneberg.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

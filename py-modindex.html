@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Python Module Index &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>Python Module Index &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="index.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -57,7 +59,7 @@
         </button>
 
         <a class="navbar-brand" href="index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -80,8 +82,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -113,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -121,13 +125,19 @@
 <li class="toctree-l3"><a class="reference internal" href="docs/reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="docs/release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -184,7 +194,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-9 content">
+    <div class="col-md-9">
       
 
    <h1>Python Module Index</h1>
@@ -194,7 +204,7 @@
    </div>
 
    <table class="indextable modindextable" cellspacing="0" cellpadding="2">
-     <tr class="pcap"><td></td><td>&nbsp;</td><td></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-s"><td></td><td>
        <strong>s</strong></td><td></td></tr>
      <tr>
@@ -205,18 +215,38 @@
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
+       <td>&#160;&#160;&#160;
+       <a href="docs/reference/application.html#module-snakemakelib.application"><code class="xref">snakemakelib.application</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="docs/reference/graphics.html#module-snakemakelib.graphics"><code class="xref">snakemakelib.graphics</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
+       <td>&#160;&#160;&#160;
        <a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization"><code class="xref">snakemakelib.sample.organization</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
-       <td>&nbsp;&nbsp;&nbsp;
-       <a href="docs/reference/sample/regexp.html#module-snakemakelib.sample.regexp"><code class="xref">snakemakelib.sample.regexp</code></a></td><td>
+       <td>&#160;&#160;&#160;
+       <a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.illumina_scilife"><code class="xref">snakemakelib.sample.organization.illumina_scilife</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.sample"><code class="xref">snakemakelib.sample.organization.sample</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.sample_run_sra"><code class="xref">snakemakelib.sample.organization.sample_run_sra</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.utils"><code class="xref">snakemakelib.sample.organization.utils</code></a></td><td>
        <em></em></td></tr>
    </table>
 
@@ -236,7 +266,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

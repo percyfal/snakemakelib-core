@@ -3,18 +3,22 @@
 ``snakemakelib.io``
 ===================
 
-.. _snakemakelib_io_make_targets:
+.. _snakemakelib_io_helper_functions:
 
-Make targets
-------------
+Helper functions
+-----------------
 
 .. autofunction:: snakemakelib.io.make_targets
 
-.. _snakemakelib_io_target_classes:
+.. autofunction:: snakemakelib.io.remove_wildcard_restrictions
 		  
+.. _snakemakelib_io_target_classes:
+
 Target classes
 --------------
 
 .. autoclass:: snakemakelib.io.IOTarget
+   :members:
+      
 .. autoclass:: snakemakelib.io.IOSampleTarget
 .. autoclass:: snakemakelib.io.IOAggregateTarget   

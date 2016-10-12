@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.plot.sklearn &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.plot.sklearn &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../../index.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../../index.html" />
     <link rel="up" title="Module code" href="../../index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -55,7 +57,7 @@
         </button>
 
         <a class="navbar-brand" href="../../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -78,8 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../docs/targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -111,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -119,13 +123,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../docs/release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -163,31 +173,31 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <h1>Source code for snakemakelib.plot.sklearn</h1><div class="highlight"><pre>
-<span class="c1"># Copyright (C) 2015 by Per Unneberg</span>
+<span class="c"># Copyright (C) 2015 by Per Unneberg</span>
 <span class="sd">&quot;&quot;&quot;Plotting functions for sklearn output&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">snakemakelib.plot.bokeh</span> <span class="kn">import</span> <span class="n">colorbrewer</span>
-<span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">tooltips</span><span class="p">,</span> <span class="n">xaxis</span><span class="p">,</span> <span class="n">yaxis</span><span class="p">,</span> <span class="n">dotplot</span><span class="p">,</span> <span class="n">points</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.plot.bokeh</span> <span class="k">import</span> <span class="n">colorbrewer</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="k">import</span> <span class="n">tooltips</span><span class="p">,</span> <span class="n">xaxis</span><span class="p">,</span> <span class="n">yaxis</span><span class="p">,</span> <span class="n">dotplot</span><span class="p">,</span> <span class="n">points</span>
 <span class="kn">import</span> <span class="nn">snakemakelib.graphics.utils</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">gridplot</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">CustomJS</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">OpenURL</span><span class="p">,</span> <span class="n">TapTool</span>
-<span class="kn">from</span> <span class="nn">bokeh.charts</span> <span class="kn">import</span> <span class="n">Scatter</span>
-<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">vform</span>
-<span class="kn">from</span> <span class="nn">bokeh.models.widgets</span> <span class="kn">import</span> <span class="n">Select</span><span class="p">,</span> <span class="n">Toggle</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">gridplot</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="k">import</span> <span class="n">ColumnDataSource</span><span class="p">,</span> <span class="n">CustomJS</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">OpenURL</span><span class="p">,</span> <span class="n">TapTool</span>
+<span class="kn">from</span> <span class="nn">bokeh.charts</span> <span class="k">import</span> <span class="n">Scatter</span>
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">vform</span>
+<span class="kn">from</span> <span class="nn">bokeh.models.widgets</span> <span class="k">import</span> <span class="n">Select</span><span class="p">,</span> <span class="n">Toggle</span>
 
-<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="kn">import</span> <span class="n">LoggerManager</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="k">import</span> <span class="n">LoggerManager</span>
 
 <span class="n">smllogger</span> <span class="o">=</span> <span class="n">LoggerManager</span><span class="p">()</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
-<span class="n">TOOLS</span> <span class="o">=</span> <span class="s2">&quot;pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover&quot;</span>
+<span class="n">TOOLS</span> <span class="o">=</span> <span class="s">&quot;pan,wheel_zoom,box_zoom,box_select,lasso_select,resize,reset,save,hover&quot;</span>
 
-<div class="viewcode-block" id="plot_pca"><a class="viewcode-back" href="../../../docs/reference/plot.html#snakemakelib.plot.sklearn.plot_pca">[docs]</a><span class="k">def</span> <span class="nf">plot_pca</span><span class="p">(</span><span class="n">pcaobjfile</span><span class="p">,</span> <span class="n">pca_results_file</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">taptool_url</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="plot_pca"><a class="viewcode-back" href="../../../docs/reference/plot.html#snakemakelib.plot.sklearn.plot_pca">[docs]</a><span class="k">def</span> <span class="nf">plot_pca</span><span class="p">(</span><span class="n">pcaobjfile</span><span class="p">,</span> <span class="n">pca_results_file</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">taptool_url</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Make PCA plot</span>
 
 <span class="sd">    Args:</span>
@@ -200,108 +210,108 @@
 <span class="sd">      dict: dictionary with keys &#39;fig&#39; pointing to a (:py:class:`~bokeh.models.GridPlot`) Bokeh GridPlot object and key &#39;table&#39; pointing to a (:py:class:`~bokeh.widgets.DataTable`) DataTable</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pcaobjfile</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pcaobjfile</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
         <span class="n">pcaobj</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
-    <span class="n">md</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="n">md</span> <span class="o">=</span> <span class="k">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
         <span class="n">md</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">df_pca</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pca_results_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index_col&#39;</span><span class="p">,</span> <span class="s2">&quot;SM&quot;</span><span class="p">))</span>
-    <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)]</span> <span class="o">*</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span>
-    <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span>
-    <span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df_pca</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pca_results_file</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;index_col&#39;</span><span class="p">,</span> <span class="s">&quot;SM&quot;</span><span class="p">))</span>
+    <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">)]</span> <span class="o">*</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span>
+    <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span>
+    <span class="n">df_pca</span><span class="p">[</span><span class="s">&#39;size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;size&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">pca_source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">df_pca</span><span class="p">)</span>
     <span class="n">cmap</span> <span class="o">=</span> <span class="n">colorbrewer</span><span class="p">(</span><span class="n">datalen</span> <span class="o">=</span> <span class="n">df_pca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="n">callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pca_source</span><span class="p">),</span>
-                        <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;pca_callback(source, cb_obj, &quot;SM&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+                        <span class="n">code</span><span class="o">=</span><span class="s">&quot;&quot;&quot;pca_callback(source, cb_obj, &quot;SM&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
     <span class="n">xcallback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pca_source</span><span class="p">),</span>
-                         <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;pca_component(source, cb_obj, &quot;x&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+                         <span class="n">code</span><span class="o">=</span><span class="s">&quot;&quot;&quot;pca_component(source, cb_obj, &quot;x&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
     <span class="n">ycallback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pca_source</span><span class="p">),</span>
-                         <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;pca_component(source, cb_obj, &quot;y&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+                         <span class="n">code</span><span class="o">=</span><span class="s">&quot;&quot;&quot;pca_component(source, cb_obj, &quot;y&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">md</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="c1"># Waiting for callbacks to be implemented upstream in bokeh</span>
-        <span class="c1"># rbg = RadioButtonGroup(labels=list(md.columns),</span>
-        <span class="c1">#                        callback=callback)</span>
-        <span class="n">toggle_buttons</span> <span class="o">=</span> <span class="p">[</span><span class="n">Toggle</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;TPM&quot;</span><span class="p">,</span> <span class="s2">&quot;FPKM&quot;</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">md</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+        <span class="c"># Waiting for callbacks to be implemented upstream in bokeh</span>
+        <span class="c"># rbg = RadioButtonGroup(labels=list(md.columns),</span>
+        <span class="c">#                        callback=callback)</span>
+        <span class="n">toggle_buttons</span> <span class="o">=</span> <span class="p">[</span><span class="n">Toggle</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s">&quot;TPM&quot;</span><span class="p">,</span> <span class="s">&quot;FPKM&quot;</span><span class="p">]]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">toggle_buttons</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">pca_components</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pca_source</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)])</span>
-    <span class="n">menulist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;{} ({:.2f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)]</span>
-    <span class="n">component_x</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;PCA component x&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">pca_components</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pca_source</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)])</span>
+    <span class="n">menulist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;{} ({:.2f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)]</span>
+    <span class="n">component_x</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;PCA component x&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
                          <span class="n">callback</span><span class="o">=</span><span class="n">xcallback</span><span class="p">)</span>
-    <span class="n">component_y</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;PCA component y&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">component_y</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;PCA component y&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
                          <span class="n">callback</span><span class="o">=</span><span class="n">ycallback</span><span class="p">)</span>
 
-    <span class="c1"># Make the pca plot</span>
-    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
-              <span class="s1">&#39;title_text_font_size&#39;</span><span class="p">:</span> <span class="s2">&quot;12pt&quot;</span><span class="p">,</span>
-              <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s2">&quot;Principal component analysis&quot;</span><span class="p">,</span>
-              <span class="s1">&#39;tools&#39;</span><span class="p">:</span> <span class="n">TOOLS</span><span class="p">,</span>
-              <span class="s1">&#39;x_axis_label_text_font_size&#39;</span><span class="p">:</span> <span class="s1">&#39;10pt&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;x_major_label_orientation&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
-              <span class="s1">&#39;y_axis_label_text_font_size&#39;</span><span class="p">:</span> <span class="s1">&#39;10pt&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;y_major_label_orientation&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
+    <span class="c"># Make the pca plot</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;plot_width&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s">&#39;plot_height&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+              <span class="s">&#39;title_text_font_size&#39;</span><span class="p">:</span> <span class="s">&quot;12pt&quot;</span><span class="p">,</span>
+              <span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&quot;Principal component analysis&quot;</span><span class="p">,</span>
+              <span class="s">&#39;tools&#39;</span><span class="p">:</span> <span class="n">TOOLS</span><span class="p">,</span>
+              <span class="s">&#39;x_axis_label_text_font_size&#39;</span><span class="p">:</span> <span class="s">&#39;10pt&#39;</span><span class="p">,</span>
+              <span class="s">&#39;x_major_label_orientation&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
+              <span class="s">&#39;y_axis_label_text_font_size&#39;</span><span class="p">:</span> <span class="s">&#39;10pt&#39;</span><span class="p">,</span>
+              <span class="s">&#39;y_major_label_orientation&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>
     <span class="p">}</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">points</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">pca_source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">tooltiplist</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span> <span class="s2">&quot;@SM&quot;</span><span class="p">)]</span> <span class="k">if</span> <span class="s2">&quot;SM&quot;</span> <span class="ow">in</span> <span class="n">pca_source</span><span class="o">.</span><span class="n">column_names</span> <span class="k">else</span> <span class="p">[]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">md</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="n">tooltiplist</span> <span class="o">=</span> <span class="n">tooltiplist</span> <span class="o">+</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;@{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">points</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">pca_source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">&#39;size&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">tooltiplist</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&quot;sample&quot;</span><span class="p">,</span> <span class="s">&quot;@SM&quot;</span><span class="p">)]</span> <span class="k">if</span> <span class="s">&quot;SM&quot;</span> <span class="ow">in</span> <span class="n">pca_source</span><span class="o">.</span><span class="n">column_names</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">md</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+        <span class="n">tooltiplist</span> <span class="o">=</span> <span class="n">tooltiplist</span> <span class="o">+</span> <span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s">&quot;@{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span>
                                      <span class="ow">in</span> <span class="n">md</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">+</span> \
-        <span class="p">[(</span><span class="s2">&quot;Detected genes (TPM)&quot;</span><span class="p">,</span> <span class="s2">&quot;@TPM&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Detected genes (FPKM)&quot;</span><span class="p">,</span> <span class="s2">&quot;@FPKM&quot;</span><span class="p">)]</span>
+        <span class="p">[(</span><span class="s">&quot;Detected genes (TPM)&quot;</span><span class="p">,</span> <span class="s">&quot;@TPM&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;Detected genes (FPKM)&quot;</span><span class="p">,</span> <span class="s">&quot;@FPKM&quot;</span><span class="p">)]</span>
     <span class="n">tooltips</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">tooltiplist</span><span class="p">)</span>
 
-    <span class="c1"># Loadings</span>
+    <span class="c"># Loadings</span>
     <span class="n">loadings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pcaobj</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
     <span class="n">loadings</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">loadings</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
-    <span class="n">loadings</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loadings</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span>
-    <span class="n">loadings</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loadings</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span>
+    <span class="n">loadings</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loadings</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span>
+    <span class="n">loadings</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loadings</span><span class="p">[</span><span class="s">&#39;1&#39;</span><span class="p">]</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">loadings</span><span class="p">[</span><span class="s2">&quot;gene_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">features</span>
+        <span class="n">loadings</span><span class="p">[</span><span class="s">&quot;gene_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">features</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;failed to set gene_id&quot;</span><span class="p">)</span>
+        <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;failed to set gene_id&quot;</span><span class="p">)</span>
         <span class="k">raise</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">loadings</span><span class="p">[</span><span class="s2">&quot;gene_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pcaobj</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">loadings</span><span class="p">[</span><span class="s2">&quot;gene_id&quot;</span><span class="p">]]</span>
+        <span class="n">loadings</span><span class="p">[</span><span class="s">&quot;gene_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pcaobj</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">loadings</span><span class="p">[</span><span class="s">&quot;gene_id&quot;</span><span class="p">]]</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;failed to set gene_name&quot;</span><span class="p">)</span>
+        <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;failed to set gene_name&quot;</span><span class="p">)</span>
         <span class="k">raise</span>
     <span class="n">loadings_source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">loadings</span><span class="p">)</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s2">&quot;Loadings&quot;</span><span class="p">})</span>
-    <span class="n">loadings_fig</span> <span class="o">=</span> <span class="n">points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">loadings_source</span><span class="p">,</span>
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&quot;Loadings&quot;</span><span class="p">})</span>
+    <span class="n">loadings_fig</span> <span class="o">=</span> <span class="n">points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">loadings_source</span><span class="p">,</span>
                           <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-    <span class="n">tooltips</span><span class="p">(</span><span class="n">loadings_fig</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;gene_id&#39;</span><span class="p">,</span> <span class="s1">&#39;@gene_id&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;gene_name&#39;</span><span class="p">,</span> <span class="s1">&#39;@gene_name&#39;</span><span class="p">)])</span>
+    <span class="n">tooltips</span><span class="p">(</span><span class="n">loadings_fig</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="p">[(</span><span class="s">&#39;gene_id&#39;</span><span class="p">,</span> <span class="s">&#39;@gene_id&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;gene_name&#39;</span><span class="p">,</span> <span class="s">&#39;@gene_name&#39;</span><span class="p">)])</span>
     <span class="n">x_loadings_callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">loadings_source</span><span class="p">),</span>
-                                   <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;pca_loadings(source, cb_obj, &quot;x&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+                                   <span class="n">code</span><span class="o">=</span><span class="s">&quot;&quot;&quot;pca_loadings(source, cb_obj, &quot;x&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
     <span class="n">y_loadings_callback</span> <span class="o">=</span> <span class="n">CustomJS</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">loadings_source</span><span class="p">),</span>
-                                   <span class="n">code</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;pca_loadings(source, cb_obj, &quot;y&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
-    <span class="n">menulist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;{} ({:.2f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)]</span>
-    <span class="n">loadings_component_x</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;PCA loading x&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                   <span class="n">code</span><span class="o">=</span><span class="s">&quot;&quot;&quot;pca_loadings(source, cb_obj, &quot;y&quot;);&quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">menulist</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;{} ({:.2f}%)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">100.0</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pca_components</span><span class="p">,</span> <span class="n">pcaobj</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)]</span>
+    <span class="n">loadings_component_x</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;PCA loading x&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
                          <span class="n">callback</span><span class="o">=</span><span class="n">x_loadings_callback</span><span class="p">)</span>
-    <span class="n">loadings_component_y</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;PCA loading y&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">loadings_component_y</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;PCA loading y&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="n">menulist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">menulist</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
                          <span class="n">callback</span><span class="o">=</span><span class="n">y_loadings_callback</span><span class="p">)</span>
 
 
-    <span class="c1"># Add taptool url if present</span>
+    <span class="c"># Add taptool url if present</span>
     <span class="k">if</span> <span class="n">taptool_url</span><span class="p">:</span>
         <span class="n">loadings_fig</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">TapTool</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="n">OpenURL</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">taptool_url</span><span class="p">)))</span>
 
-    <span class="c1"># Detected genes, FPKM and TPM</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of detected genes&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s2">&quot;Sample&quot;</span><span class="p">,</span>
-                   <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s2">&quot;Detected genes&quot;</span><span class="p">,</span>
-                   <span class="s1">&#39;x_range&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">pca_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;SM&quot;</span><span class="p">])})</span>
-    <span class="n">n_genes_fig</span> <span class="o">=</span> <span class="n">dotplot</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">pca_source</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;SM&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;TPM&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">tooltips</span><span class="p">(</span><span class="n">n_genes_fig</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;@SM&#39;</span><span class="p">),</span>
-                                      <span class="p">(</span><span class="s1">&#39;# genes (TPM)&#39;</span><span class="p">,</span> <span class="s1">&#39;@TPM&#39;</span><span class="p">),</span>
-                                      <span class="p">(</span><span class="s1">&#39;# genes (FPKM)&#39;</span><span class="p">,</span> <span class="s1">&#39;@FPKM&#39;</span><span class="p">)])</span>
+    <span class="c"># Detected genes, FPKM and TPM</span>
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;title&#39;</span><span class="p">:</span> <span class="s">&#39;Number of detected genes&#39;</span><span class="p">,</span>
+                   <span class="s">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s">&quot;Sample&quot;</span><span class="p">,</span>
+                   <span class="s">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s">&quot;Detected genes&quot;</span><span class="p">,</span>
+                   <span class="s">&#39;x_range&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">pca_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&quot;SM&quot;</span><span class="p">])})</span>
+    <span class="n">n_genes_fig</span> <span class="o">=</span> <span class="n">dotplot</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">pca_source</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">&quot;SM&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&quot;TPM&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">tooltips</span><span class="p">(</span><span class="n">n_genes_fig</span><span class="p">,</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="p">[(</span><span class="s">&#39;sample&#39;</span><span class="p">,</span> <span class="s">&#39;@SM&#39;</span><span class="p">),</span>
+                                      <span class="p">(</span><span class="s">&#39;# genes (TPM)&#39;</span><span class="p">,</span> <span class="s">&#39;@TPM&#39;</span><span class="p">),</span>
+                                      <span class="p">(</span><span class="s">&#39;# genes (FPKM)&#39;</span><span class="p">,</span> <span class="s">&#39;@FPKM&#39;</span><span class="p">)])</span>
 
     <span class="n">buttons</span> <span class="o">=</span> <span class="n">toggle_buttons</span> <span class="o">+</span> <span class="p">[</span><span class="n">component_x</span><span class="p">,</span> <span class="n">component_y</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">loadings_component_x</span><span class="p">,</span> <span class="n">loadings_component_y</span><span class="p">]</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;pca&#39;</span> <span class="p">:</span> <span class="n">vform</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">buttons</span> <span class="o">+</span> <span class="p">[</span><span class="n">gridplot</span><span class="p">([[</span><span class="n">fig</span><span class="p">,</span> <span class="n">loadings_fig</span><span class="p">,</span> <span class="n">n_genes_fig</span><span class="p">]])]))}</span></div>
+    <span class="k">return</span> <span class="p">{</span><span class="s">&#39;pca&#39;</span> <span class="p">:</span> <span class="n">vform</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">buttons</span> <span class="o">+</span> <span class="p">[</span><span class="n">gridplot</span><span class="p">([[</span><span class="n">fig</span><span class="p">,</span> <span class="n">loadings_fig</span><span class="p">,</span> <span class="n">n_genes_fig</span><span class="p">]])]))}</span></div>
 </pre></div>
 
     </div>
@@ -319,7 +329,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

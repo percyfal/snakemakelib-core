@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.io &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.io &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -55,7 +57,7 @@
         </button>
 
         <a class="navbar-brand" href="../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -78,8 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../docs/targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -111,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -119,13 +123,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../docs/reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../docs/release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -163,16 +173,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <h1>Source code for snakemakelib.io</h1><div class="highlight"><pre>
-<span class="c1"># Copyright (C) 2015 by Per Unneberg</span>
+<span class="c"># Copyright (C) 2015 by Per Unneberg</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">groupby</span>
 <span class="kn">import</span> <span class="nn">snakemake.workflow</span>
-<span class="kn">from</span> <span class="nn">snakemake.io</span> <span class="kn">import</span> <span class="n">_wildcard_regex</span><span class="p">,</span> <span class="n">regex</span>
-<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="kn">import</span> <span class="n">LoggerManager</span>
+<span class="kn">from</span> <span class="nn">snakemake.io</span> <span class="k">import</span> <span class="n">_wildcard_regex</span><span class="p">,</span> <span class="n">regex</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="k">import</span> <span class="n">LoggerManager</span>
 
 <span class="n">smllogger</span> <span class="o">=</span> <span class="n">LoggerManager</span><span class="p">()</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
@@ -187,29 +197,75 @@
 
 <span class="sd">    Args:</span>
 <span class="sd">      tgt_re (IOTarget): IOTarget object corresponding to the target</span>
-<span class="sd">                           regular expression</span>
+<span class="sd">                         regular expression</span>
 
-<span class="sd">      samples (list): list of dicts where each dict is an annotated</span>
-<span class="sd">                      sample. The keys correspond to read group labels.</span>
+<span class="sd">      samples (list): list of dicts where each dict contains labeling information</span>
+<span class="sd">                      related to a sample. The keys correspond to wildcard group</span>
+<span class="sd">                      lables.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">      targets (list): list of target names</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">      The following code block generates a list of formatted target</span>
+<span class="sd">      names from a list of sample dictionaries. Here, the dictionary</span>
+<span class="sd">      keys specify SM and PU wildcard group lables.</span>
+
+<span class="sd">      .. code-block:: python</span>
+
+<span class="sd">         samples = [{&quot;SM&quot;:&quot;foo&quot;, &quot;PU&quot;:&quot;bar&quot;}, {&quot;SM&quot;:&quot;bar&quot;, &quot;PU&quot;:&quot;foo&quot;}]</span>
+<span class="sd">         tgt_re = IOTarget(&quot;{SM}/{SM}_{PU}.txt&quot;)</span>
+<span class="sd">         tgts = make_targets(tgt_re, samples)</span>
+<span class="sd">         # tgts is now [&#39;foo/foo_bar.txt&#39;, &#39;bar/bar_foo.txt&#39;]</span>
+
+<span class="sd">      Note that the same result could be obtained using</span>
+<span class="sd">      :func:`snakemake.io.expand` and the global :func:`zip` function:</span>
+
+<span class="sd">      .. code-block:: python</span>
+
+<span class="sd">         from snakemake.io import expand</span>
+<span class="sd">         tgts = expand(&quot;{SM}/{SM}_{PU}.txt&quot;, zip, SM=[d[&quot;SM&quot;] for d in samples], PU=[d[&quot;PU&quot;] for d in samples])</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">tgts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tgt_re</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">tgts</span></div>
 
 
-<span class="c1"># Based on snakemake.io.regex</span>
-<span class="k">def</span> <span class="nf">string_format</span><span class="p">(</span><span class="n">filepattern</span><span class="p">):</span>
+<span class="c"># Based on snakemake.io.regex</span>
+<div class="viewcode-block" id="remove_wildcard_restrictions"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.remove_wildcard_restrictions">[docs]</a><span class="k">def</span> <span class="nf">remove_wildcard_restrictions</span><span class="p">(</span><span class="n">filepattern</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate string format without regex restrictions</span>
+
+<span class="sd">    Snakemake wildcards are written in the python miniformat language.</span>
+<span class="sd">    The wildcard regexes can be restricted. For instance, the</span>
+<span class="sd">    expression {SM, [A-W]+} restricts the wildcard SM to the regex</span>
+<span class="sd">    [A-W]+. This function returns the wildcards without restrictions.</span>
+
+<span class="sd">    The function is a modification of</span>
+<span class="sd">    :func:`snakemake.io.regex`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      filepattern (str): file pattern expressed as wildcard regexes in python miniformat language</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">     (str): file pattern without regex restrictions</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; filepattern = &quot;{key1}_{key2,[0-9]+}&quot;</span>
+<span class="sd">    &gt;&gt;&gt; remove_wildcard_restrictions(filepattern)</span>
+<span class="sd">    &#39;{key1}_{key2}&#39;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">_wildcard_regex</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">filepattern</span><span class="p">):</span>
         <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filepattern</span><span class="p">[</span><span class="n">last</span><span class="p">:</span><span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">()])</span>
-        <span class="n">wildcard</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;{{{}}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wildcard</span><span class="p">))</span>
+        <span class="n">wildcard</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;{{{}}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wildcard</span><span class="p">))</span>
         <span class="n">last</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
     <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filepattern</span><span class="p">[</span><span class="n">last</span><span class="p">:])</span>
-    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></div>
 
 
 
@@ -218,18 +274,27 @@
 
 <span class="sd">    Overrides standard string format function.</span>
 
+<span class="sd">    The class is modelled on :class:`snakemake.io._IOFile`.</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; from snakemakelib.io import IOTarget</span>
+<span class="sd">    &gt;&gt;&gt; import os</span>
+<span class="sd">    &gt;&gt;&gt; f = IOTarget(os.path.join(&quot;{SM, [a-zA-Z0-9]+}&quot;, &quot;{PU, [a-zA-Z0-9]+}&quot;))</span>
+<span class="sd">    &gt;&gt;&gt; f.regex</span>
+<span class="sd">    re.compile(r&#39;(?P&lt;SM&gt;[a-zA-Z0-9]+)\/(?P&lt;PU&gt;[a-zA-Z0-9]+)&#39;, re.UNICODE)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_required_keys</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">_concat_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;(?P&lt;NAME&gt;[A-Za-z]+)(?P&lt;INDEX&gt;[0-9]+)$&quot;</span><span class="p">)</span>
-    <span class="n">_concat</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
+    <span class="n">_concat_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;(?P&lt;NAME&gt;[A-Za-z]+)(?P&lt;INDEX&gt;[0-9]+)$&quot;</span><span class="p">)</span>
+    <span class="n">_concat</span> <span class="o">=</span> <span class="s">&quot;_&quot;</span>
 
 
-    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
-        <span class="n">obj</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">file</span>
-        <span class="n">obj</span><span class="o">.</span><span class="n">_regex</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="n">obj</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="n">obj</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_regex</span> <span class="o">=</span> <span class="k">None</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="k">None</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="k">None</span>
         <span class="n">obj</span><span class="o">.</span><span class="n">_suffix</span> <span class="o">=</span> <span class="n">suffix</span>
         <span class="n">obj</span><span class="o">.</span><span class="n">_groupdict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">obj</span><span class="o">.</span><span class="n">_concat_groupdict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
@@ -238,94 +303,176 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return file name; basically the string that self refers to&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_file</span>
 
 
-    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<div class="viewcode-block" id="IOTarget.format"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOTarget.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Format self according to keyword arguments.</span>
+
+<span class="sd">        Checks that format is ok.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; f = IOTarget(os.path.join(&quot;{SM, [a-zA-Z0-9]+}&quot;, &quot;{SM}.{suffix}&quot;))</span>
+<span class="sd">        &gt;&gt;&gt; s = f.format(**{&#39;SM&#39;:&#39;foo&#39;, &#39;suffix&#39;: &#39;txt&#39;})</span>
+<span class="sd">        &gt;&gt;&gt; print(s)</span>
+<span class="sd">        &#39;foo/foo.txt&#39;</span>
+<span class="sd">        &gt;&gt;&gt;  # The following throws an error due to disallowed _ character</span>
+<span class="sd">        &gt;&gt;&gt; s = f.format(**{&#39;SM&#39;:&#39;foo_bar&#39;, &#39;suffix&#39;: &#39;txt&#39;})</span>
+<span class="sd">        Exception: (&#39;Wrong format for &#39;, &#39;foo_bar/foo_bar.txt&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_format_ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">s</span>
+        <span class="k">return</span> <span class="n">s</span></div>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">regex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="c1"># compile a regular expression; we remove the $ at end</span>
+        <span class="sd">&quot;&quot;&quot;Compile a regular expression of self.file.</span>
+
+<span class="sd">        Utilizes :func:`snakemake.io.regex` which adds &quot;$&quot; to the</span>
+<span class="sd">        pattern. Since `IOTarget` allows suffixes, $ is stripped from</span>
+<span class="sd">        the regex.</span>
+
+<span class="sd">        The groupindex keys are stored in self._groupdict for easy</span>
+<span class="sd">        access.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          :py:mod:`re`: Compiled regular expression.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="c"># compile a regular expression; we remove the $ at end</span>
             <span class="n">pattern</span> <span class="o">=</span> <span class="n">regex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="bp">None</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="o">.</span><span class="n">groupindex</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="k">None</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="o">.</span><span class="n">groupindex</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_required_keys</span><span class="p">]):</span>
             <span class="k">raise</span> <span class="n">MissingRequiredKeyException</span><span class="p">(</span>
-                <span class="sd">&quot;&quot;&quot;some of the required keys {reqkeys} not in regexp {regexp}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">reqkeys</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_required_keys</span><span class="p">),</span>
-                    <span class="n">regexp</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="p">))</span>
+                <span class="sd">&quot;&quot;&quot;some of the required keys {reqkeys} not in regex {regex}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">reqkeys</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_required_keys</span><span class="p">),</span>
+                    <span class="n">regex</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_regex</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the regex pattern.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">pattern</span>
     
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">basename_pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the basename pattern, excluding path&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pattern</span><span class="p">)</span>
     
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">fmt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="c1"># Set the format</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="n">string_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;Return the format for string formatting&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="c"># Set the format</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="n">remove_wildcard_restrictions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_suffix</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_suffix</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span>
 
 
     <span class="k">def</span> <span class="nf">_check_format_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make sure the format complies to the regex&quot;&quot;&quot;</span>
         <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Wrong format for &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Wrong format for &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="viewcode-block" id="IOTarget.keys"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOTarget.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the regex groupdict keys&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
 
 
-    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<div class="viewcode-block" id="IOTarget.match"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOTarget.match">[docs]</a>    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Match file to regex.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">          file (str): file name to match against</span>
+<span class="sd">          return_instance (bool): return self</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          (re): match object</span>
+
+
+<span class="sd">        Example:</span>
+
+<span class="sd">          .. code-block:: python</span>
+
+<span class="sd">             &gt;&gt;&gt; s = &quot;GSM123456/SRR123456_1.fastq.gz&quot;</span>
+<span class="sd">             &gt;&gt;&gt; f = IOTarget(os.path.join(&quot;{SM, [a-zA-Z0-9]+}&quot;, &quot;{PU, [a-zA-Z0-9]+}&quot;))</span>
+<span class="sd">             &gt;&gt;&gt; f.match(s)</span>
+<span class="sd">             &gt;&gt;&gt; print(f.groupdict)</span>
+<span class="sd">             {&#39;PU&#39;: &#39;SRR123456&#39;, &#39;SM&#39;: &#39;GSM123456&#39;}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_concat_indexed_keys</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">return_instance</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span></div>
 
 
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<div class="viewcode-block" id="IOTarget.search"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOTarget.search">[docs]</a>    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">return_instance</span><span class="o">=</span><span class="k">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Search file with regex.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">          file (str): file name to search</span>
+<span class="sd">          return_instance (bool): return self</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          (re): match object</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">          .. code-block:: python</span>
+
+<span class="sd">             &gt;&gt;&gt; s = &quot;GSM123456/SRR123456_1.fastq.gz&quot;</span>
+<span class="sd">             &gt;&gt;&gt; f = IOTarget(os.path.join(&quot;{SM, [a-zA-Z0-9]+}&quot;, &quot;{PU, [a-zA-Z0-9]+}&quot;))</span>
+<span class="sd">             &gt;&gt;&gt; f.search(s)</span>
+<span class="sd">             &gt;&gt;&gt; print(f.groupdict)</span>
+<span class="sd">             {&#39;PU&#39;: &#39;SRR123456&#39;, &#39;SM&#39;: &#39;GSM123456&#39;}</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_concat_indexed_keys</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">return_instance</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_match</span></div>
             
 
+    <span class="c"># NB: for consistency with the re module, this should be a function</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">groupdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the groupdict.        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groupdict</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">concat_groupdict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the concatenated groupdict.</span>
+
+<span class="sd">        It is possible to index wildcard groups, e.g. SM1, SM2, ...</span>
+<span class="sd">        The concat_groupdict contains concatenated versions of indexed</span>
+<span class="sd">        groups so that SM would return the concatenated version of the</span>
+<span class="sd">        values of SM1, SM2, ...</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_concat_groupdict</span>
 
 
     <span class="k">def</span> <span class="nf">_concat_indexed_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Concatenate indexed keys&quot;&quot;&quot;</span>
-        <span class="n">keylist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
-                          <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">keylist</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">k</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">&quot;[0-9]+$&quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
                           <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">groupdict</span><span class="o">.</span><span class="n">keys</span><span class="p">())])</span>
         <span class="n">keymap</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
                   <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">keylist</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])}</span>
@@ -336,14 +483,103 @@
 
 
 
-<span class="c1"># Special targets with required key names</span>
+<span class="c"># Special targets with required key names</span>
 <div class="viewcode-block" id="IOSampleTarget"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOSampleTarget">[docs]</a><span class="k">class</span> <span class="nc">IOSampleTarget</span><span class="p">(</span><span class="n">IOTarget</span><span class="p">):</span>
-    <span class="n">_required_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SM&#39;</span><span class="p">]</span></div>
+    <span class="n">_required_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;SM&#39;</span><span class="p">]</span></div>
 
 
 
 <div class="viewcode-block" id="IOAggregateTarget"><a class="viewcode-back" href="../../docs/reference/io.html#snakemakelib.io.IOAggregateTarget">[docs]</a><span class="k">class</span> <span class="nc">IOAggregateTarget</span><span class="p">(</span><span class="n">IOTarget</span><span class="p">):</span>
     <span class="k">pass</span></div>
+
+
+
+<span class="c"># TODO: update class for use case - use mixin class?</span>
+<span class="k">class</span> <span class="nc">IOReadGroup</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Container class for read group information.</span>
+
+<span class="sd">        The labels are named following the conventions of the</span>
+<span class="sd">    `SAM format specification &lt;http://samtools.github.io/hts-specs/SAMv1.pdf&gt;`_.</span>
+<span class="sd">    To summarize, the class provides the following keys:</span>
+
+<span class="sd">    RG</span>
+<span class="sd">      Read group. Unordered multiple @RG lines are allowed.</span>
+<span class="sd">    ID*</span>
+<span class="sd">      Read group identifer. Each @RG line must have a unique ID. The</span>
+<span class="sd">      value of ID is used in the RG tags of alignment records. Must be</span>
+<span class="sd">      unique among all read groups in header section. Read group IDs may</span>
+<span class="sd">      be modified when merging SAMfiles in order to handle collisions.</span>
+<span class="sd">    CN</span>
+<span class="sd">      Name of sequencing center producing the read.</span>
+<span class="sd">    DS</span>
+<span class="sd">      Description.</span>
+<span class="sd">    DT</span>
+<span class="sd">      Date the run was produced (ISO8601 date or date/time).</span>
+
+<span class="sd">    FO</span>
+<span class="sd">      Flow order. The array of nucleotide bases that correspond to</span>
+<span class="sd">      the nucleotides used for each ow of each read. Multi-base rows are</span>
+<span class="sd">      encoded in IUPAC format, and non-nucleotide rows by various other</span>
+<span class="sd">      characters. Format: /\*|[ACMGRSVTWYHKDBN]+/</span>
+<span class="sd">    KS</span>
+<span class="sd">      The array of nucleotide bases that correspond to the key</span>
+<span class="sd">      sequence of each read.</span>
+<span class="sd">    LB</span>
+<span class="sd">      Library.</span>
+<span class="sd">    PG</span>
+<span class="sd">      Programs used for processing the read group.</span>
+<span class="sd">    PI</span>
+<span class="sd">      Predicted median insert size.</span>
+<span class="sd">    PL</span>
+<span class="sd">      Platform/technology used to produce the reads. Valid values:</span>
+<span class="sd">      CAPILLARY, LS454, ILLUMINA, SOLID, HELICOS, IONTORRENT, ONT, and</span>
+<span class="sd">      PACBIO.</span>
+<span class="sd">    PM</span>
+<span class="sd">      Platform model. Free-form text providing further details of the</span>
+<span class="sd">      platform/technology used.</span>
+<span class="sd">    PU</span>
+<span class="sd">      Platform unit (e.g. flowcell-barcode.lane for Illumina or slide</span>
+<span class="sd">      for SOLiD). Unique identifier.</span>
+<span class="sd">    SM</span>
+<span class="sd">      Sample. Use pool name where a pool is being sequenced.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_group_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="s">&#39;CN&#39;</span><span class="p">,</span> <span class="s">&#39;DS&#39;</span><span class="p">,</span> <span class="s">&#39;DT&#39;</span><span class="p">,</span> <span class="s">&#39;FO&#39;</span><span class="p">,</span> <span class="s">&#39;KS&#39;</span><span class="p">,</span>
+                   <span class="s">&#39;LB&#39;</span><span class="p">,</span> <span class="s">&#39;PG&#39;</span><span class="p">,</span> <span class="s">&#39;PI&#39;</span><span class="p">,</span> <span class="s">&#39;PL&#39;</span><span class="p">,</span> <span class="s">&#39;PU&#39;</span><span class="p">,</span> <span class="s">&#39;SM&#39;</span><span class="p">]</span>
+    <span class="n">_group_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;ID&#39;</span><span class="p">:</span> <span class="s">&#39;identifier&#39;</span><span class="p">,</span> <span class="s">&#39;CN&#39;</span><span class="p">:</span> <span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="s">&#39;DS&#39;</span><span class="p">:</span> <span class="s">&#39;description&#39;</span><span class="p">,</span>
+                   <span class="s">&#39;DT&#39;</span><span class="p">:</span> <span class="s">&#39;date&#39;</span><span class="p">,</span> <span class="s">&#39;FO&#39;</span><span class="p">:</span> <span class="s">&#39;floworder&#39;</span><span class="p">,</span> <span class="s">&#39;KS&#39;</span><span class="p">:</span> <span class="s">&#39;keysequence&#39;</span><span class="p">,</span>
+                   <span class="s">&#39;LB&#39;</span><span class="p">:</span> <span class="s">&#39;library&#39;</span><span class="p">,</span> <span class="s">&#39;PG&#39;</span><span class="p">:</span> <span class="s">&#39;program&#39;</span><span class="p">,</span> <span class="s">&#39;PI&#39;</span><span class="p">:</span> <span class="s">&#39;insertsize&#39;</span><span class="p">,</span>
+                   <span class="s">&#39;PL&#39;</span><span class="p">:</span> <span class="s">&#39;platform&#39;</span><span class="p">,</span> <span class="s">&#39;PU&#39;</span><span class="p">:</span> <span class="s">&#39;platform-unit&#39;</span><span class="p">,</span> <span class="s">&#39;SM&#39;</span><span class="p">:</span> <span class="s">&#39;sample&#39;</span><span class="p">}</span>
+
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iotarget</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">opt_prefix</span><span class="o">=</span><span class="s">&quot;--&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">iotarget</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">IOReadGroup</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">iotarget</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_opt_prefix</span> <span class="o">=</span> <span class="n">opt_prefix</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_iotarget</span> <span class="o">=</span> <span class="n">iotarget</span>
+        <span class="k">if</span> <span class="s">&#39;ID&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;ID&#39;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">):</span>
+            <span class="c"># inv_map = {v: k for (k, v) in list(self.re.groupindex.items())}</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s">&#39;ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_iotarget</span><span class="o">.</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_iotarget</span><span class="p">))</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s">&#39;ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">_fmt_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Take care of date string&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#39;DT&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">snakemakelib</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a generic program string&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+            <span class="s">&quot;{dash}{key} {value}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dash</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_opt_prefix</span><span class="p">,</span>
+                                         <span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_group_dict</span><span class="p">[</span><span class="n">k</span><span class="p">],</span>
+                                         <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fmt_string</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span>
+            <span class="ow">and</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_keys</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -361,7 +597,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

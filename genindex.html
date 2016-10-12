@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Index &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>Index &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -31,7 +31,9 @@
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="index.html" />
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -55,7 +57,7 @@
         </button>
 
         <a class="navbar-brand" href="index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -78,8 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -111,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -119,13 +123,19 @@
 <li class="toctree-l3"><a class="reference internal" href="docs/reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="docs/release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docs/release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -182,7 +192,7 @@
 </form>
         </div>
       </div>
-    <div class="col-md-9 content">
+    <div class="col-md-9">
       
 
 <h1 id="index">Index</h1>
@@ -196,11 +206,14 @@
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#X"><strong>X</strong></a>
  | <a href="#Y"><strong>Y</strong></a>
@@ -210,7 +223,13 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.ReadGroup.__str__">__str__() (ReadGroup method)</a>
+  <dt><a href="docs/reference/sample/input.html#snakemakelib.sample.input._parse_sampleinfo">_parse_sampleinfo() (in module snakemakelib.sample.input)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/sample/input.html#snakemakelib.sample.input._samples_from_input_files">_samples_from_input_files() (in module snakemakelib.sample.input)</a>
   </dt>
 
   </dl></td>
@@ -220,17 +239,37 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.aggregate">aggregate() (Application method)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.add_aggregate_post_processing_hook">add_aggregate_post_processing_hook() (Application method)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.allowed_keys">allowed_keys (RegexpDict attribute)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.add_annotation_fn">add_annotation_fn() (Application method)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.add_plot_func">add_plot_func() (Application method)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.add_post_processing_hook">add_post_processing_hook() (Application method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application">Application (class in snakemakelib.application)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.aggregate">aggregate() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.aggregate">[1]</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.aggregate_data">aggregate_data (Application attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.aggregate_targets">aggregate_targets (Application attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application">Application (class in snakemakelib.application)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application">[1]</a>
   </dt>
 
   </dl></td>
@@ -240,7 +279,7 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.basename_pattern">basename_pattern (RegexpDict attribute)</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.basename_pattern">basename_pattern (IOTarget attribute)</a>
   </dt>
 
   </dl></td>
@@ -254,13 +293,23 @@
   </dt>
 
   </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.concat_groupdict">concat_groupdict (IOTarget attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/sample/input.html#snakemakelib.sample.input.convert_samples_to_list">convert_samples_to_list() (in module snakemakelib.sample.input)</a>
+  </dt>
+
+  </dl></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.DisallowedKeyException">DisallowedKeyException</a>
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.dictlist_to_dict">dictlist_to_dict() (in module snakemakelib.utils)</a>
   </dt>
 
   </dl></td>
@@ -280,13 +329,25 @@
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.fmt">fmt (RegexpDict attribute)</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.file">file (IOTarget attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.filter_aggregate_data">filter_aggregate_data() (Application method)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.FormatException">FormatException</a>
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.find_files">find_files() (in module snakemakelib.utils)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.fmt">fmt (IOTarget attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.format">format() (IOTarget method)</a>
   </dt>
 
   </dl></td>
@@ -300,11 +361,21 @@
   </dt>
 
   </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.groupdict">groupdict (IOTarget attribute)</a>
+  </dt>
+
+  </dl></td>
 </tr></table>
 
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/sample/input.html#snakemakelib.sample.input.initialize_input">initialize_input() (in module snakemakelib.sample.input)</a>
+  </dt>
+
       
   <dt><a href="docs/reference/io.html#snakemakelib.io.IOAggregateTarget">IOAggregateTarget (class in snakemakelib.io)</a>
   </dt>
@@ -317,6 +388,24 @@
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget">IOTarget (class in snakemakelib.io)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.iotargets">iotargets (Application attribute)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.isoformat">isoformat() (in module snakemakelib.utils)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.keys">keys() (IOTarget method)</a>
   </dt>
 
   </dl></td>
@@ -352,7 +441,7 @@
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.MissingRequiredKeyException">MissingRequiredKeyException</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.match">match() (IOTarget method)</a>
   </dt>
 
       
@@ -362,25 +451,31 @@
   </dl></td>
 </tr></table>
 
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.name">name (Application attribute)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.parse">parse() (RegexpDict method)</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.pattern">pattern (IOTarget attribute)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.pattern">pattern (RegexpDict attribute)</a>
-  </dt>
-
-      
-  <dt><a href="docs/reference/application.html#snakemakelib.application.PlatformUnitApplication">PlatformUnitApplication (class in snakemakelib.application)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.PlatformUnitApplication">PlatformUnitApplication (class in snakemakelib.application)</a>, <a href="docs/reference/application.html#snakemakelib.application.PlatformUnitApplication">[1]</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.plot">plot() (Application method)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.plot">plot() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.plot">[1]</a>
   </dt>
 
       
@@ -398,45 +493,45 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict.re">re (RegexpDict attribute)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.read_aggregate_data">read_aggregate_data() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.read_aggregate_data">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.read_aggregate_data">read_aggregate_data() (Application method)</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.regex">regex (IOTarget attribute)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.ReadGroup">ReadGroup (class in snakemakelib.sample.regexp)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_aggregate_post_processing_hook">register_aggregate_post_processing_hook() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.register_aggregate_post_processing_hook">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RegexpDict">RegexpDict (class in snakemakelib.sample.regexp)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_annotation_fn">register_annotation_fn() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.register_annotation_fn">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_aggregate_post_processing_hook">register_aggregate_post_processing_hook() (Application method)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_plot">register_plot() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.register_plot">[1]</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_annotation_fn">register_annotation_fn() (Application method)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_post_processing_hook">register_post_processing_hook() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.register_post_processing_hook">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_plot">register_plot() (Application method)</a>
+  <dt><a href="docs/reference/io.html#snakemakelib.io.remove_wildcard_restrictions">remove_wildcard_restrictions() (in module snakemakelib.io)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.register_post_processing_hook">register_post_processing_hook() (Application method)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.reset_plot_func">reset_plot_func() (Application method)</a>, <a href="docs/reference/application.html#snakemakelib.application.Application.reset_plot_func">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.reset_plot_func">reset_plot_func() (Application method)</a>
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.rreplace">rreplace() (in module snakemakelib.utils)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.RunRegexp">RunRegexp (class in snakemakelib.sample.regexp)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.run">run (Application attribute)</a>
   </dt>
 
   </dl></td>
@@ -446,23 +541,39 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/sampleorganization.html#snakemakelib.sample.organization.sample_org">sample_org (in module snakemakelib.sample.organization)</a>
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.safe_makedir">safe_makedir() (in module snakemakelib.utils)</a>
   </dt>
 
       
-  <dt><a href="docs/reference/application.html#snakemakelib.application.SampleApplication">SampleApplication (class in snakemakelib.application)</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.SampleApplication">SampleApplication (class in snakemakelib.application)</a>, <a href="docs/reference/application.html#snakemakelib.application.SampleApplication">[1]</a>
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.SampleRegexp">SampleRegexp (class in snakemakelib.sample.regexp)</a>
+  <dt><a href="docs/reference/sample/sampleorganization.html#snakemakelib.sample.organization.utils.SampleOrganization">SampleOrganization (class in snakemakelib.sample.organization.utils)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.save_aggregate_data">save_aggregate_data() (Application method)</a>
   </dt>
 
       
   <dt><a href="docs/reference/graphics.html#snakemakelib.graphics.scatter">scatter() (in module snakemakelib.graphics)</a>
   </dt>
 
+      
+  <dt><a href="docs/reference/io.html#snakemakelib.io.IOTarget.search">search() (IOTarget method)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.set_units">set_units() (Application method)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/application.html#module-snakemakelib.application">snakemakelib.application (module)</a>
+  </dt>
+
       
   <dt><a href="docs/reference/graphics.html#module-snakemakelib.graphics">snakemakelib.graphics (module)</a>
   </dt>
@@ -472,7 +583,29 @@
   </dt>
 
       
-  <dt><a href="docs/reference/sample/regexp.html#module-snakemakelib.sample.regexp">snakemakelib.sample.regexp (module)</a>
+  <dt><a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.illumina_scilife">snakemakelib.sample.organization.illumina_scilife (module)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.sample">snakemakelib.sample.organization.sample (module)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.sample_run_sra">snakemakelib.sample.organization.sample_run_sra (module)</a>
+  </dt>
+
+      
+  <dt><a href="docs/reference/sample/sampleorganization.html#module-snakemakelib.sample.organization.utils">snakemakelib.sample.organization.utils (module)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.targets">targets (Application attribute)</a>
   </dt>
 
   </dl></td>
@@ -482,7 +615,13 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="docs/reference/sample/regexp.html#snakemakelib.sample.regexp.UnimplementedException">UnimplementedException</a>
+  <dt><a href="docs/reference/application.html#snakemakelib.application.Application.units">units (Application attribute)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="docs/reference/utils.html#snakemakelib.utils.utc_time">utc_time() (in module snakemakelib.utils)</a>
   </dt>
 
   </dl></td>
@@ -525,7 +664,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.sample.organization &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.sample.organization &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,12 @@
     <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../../index.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../../index.html" />
+    <link rel="up" title="Sample organization" href="../sample.html" />
+    <link rel="next" title="snakemakelib.utils" href="../utils.html" />
+    <link rel="prev" title="snakemakelib.sample.input" href="input.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -54,7 +59,7 @@
         </button>
 
         <a class="navbar-brand" href="../../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -69,7 +74,7 @@
      href="../../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#requirements">Requirements</a></li>
@@ -77,8 +82,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -92,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tutorial.html#building-workflows">Building workflows</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../reference.html">Reference Guide</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../../reference.html">Reference Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../application.html"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../application.html#application">Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../application.html#sampleapplication">SampleApplication</a></li>
@@ -110,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -118,13 +125,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sample.html">Sample organization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -147,7 +160,19 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+<li><a class="reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a><ul>
+<li><a class="reference internal" href="#module-snakemakelib.sample.organization.utils"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.utils</span></code></a></li>
+<li><a class="reference internal" href="#module-snakemakelib.sample.organization.illumina_scilife"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.illumina_scilife</span></code></a><ul>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-snakemakelib.sample.organization.sample"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample</span></code></a></li>
+<li><a class="reference internal" href="#module-snakemakelib.sample.organization.sample_run_sra"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample_run_sra</span></code></a><ul>
+<li><a class="reference internal" href="#id2">Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -165,16 +190,159 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="snakemakelib-sample-organization">
 <span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code><a class="headerlink" href="#snakemakelib-sample-organization" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-snakemakelib.sample.organization"></span><dl class="attribute">
-<dt id="snakemakelib.sample.organization.sample_org">
-<code class="descname">sample_org</code><a class="headerlink" href="#snakemakelib.sample.organization.sample_org" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">sample_organization</span></code></p>
+<span class="target" id="module-snakemakelib.sample.organization"></span><p>Provide <code class="xref py py-class docutils literal"><span class="pre">SampleOrganization</span></code> objects with  predefined
+<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> objects that define what input and
+output file prefixes should look like at given levels of organization.</p>
+<p>A specific sample organization is activated by importing a submodule
+from <a class="reference internal" href="#module-snakemakelib.sample.organization" title="snakemakelib.sample.organization"><code class="xref py py-mod docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a> that reflects the file
+naming conventions. Upon loading, the <code class="docutils literal"><span class="pre">sample_organization</span></code> key is
+updated and set to a <code class="xref py py-class docutils literal"><span class="pre">SampleOrganization</span></code> instance.</p>
+<div class="section" id="module-snakemakelib.sample.organization.utils">
+<span id="snakemakelib-sample-organization-utils"></span><h2><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.utils</span></code><a class="headerlink" href="#module-snakemakelib.sample.organization.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="snakemakelib.sample.organization.utils.SampleOrganization">
+<em class="property">class </em><code class="descname">SampleOrganization</code><a class="reference internal" href="../../../_modules/snakemakelib/sample/organization/utils.html#SampleOrganization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.sample.organization.utils.SampleOrganization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect <a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">IOTarget</span></code></a> objects for organization
+of input/output file names</p>
+<p>Subclasses <code class="xref py py-class docutils literal"><span class="pre">collections.namedtuple</span></code>. In the current
+implementation, three levels of organization are defined.</p>
+<dl class="docutils">
+<dt>Raw data</dt>
+<dd>This corresponds to the file format as delivered from sequencing facility or the like</dd>
+<dt>Run id</dt>
+<dd>This corresponds to files at the run level (platform unit level)</dd>
+<dt>Sample</dt>
+<dd>This corresponds to files at the sample level</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_run_re</strong> (<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><em>IOTarget</em></a>) &#8211; raw run prefix. This corresponds to the file format as delivered from sequencing facility or the like</li>
+<li><strong>run_id_re</strong> (<a class="reference internal" href="../io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><em>IOTarget</em></a>) &#8211; run id prefix. Identifies files at the run level (platform unit). This may or may not be different from <code class="docutils literal"><span class="pre">raw_run_re</span></code></li>
+<li><strong>sample_re</strong> (<a class="reference internal" href="../io.html#snakemakelib.io.IOSampleTarget" title="snakemakelib.io.IOSampleTarget"><em>IOSampleTarget</em></a>) &#8211; sample prefix. Prefix used to identify result files on the sample level.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
+</div>
+<div class="section" id="module-snakemakelib.sample.organization.illumina_scilife">
+<span id="snakemakelib-sample-organization-illumina-scilife"></span><h2><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.illumina_scilife</span></code><a class="headerlink" href="#module-snakemakelib.sample.organization.illumina_scilife" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">illumina_scilife</span></code> module defines sample organization for
+dealing with data delivered by the <a class="reference external" href="https://www.scilifelab.se/facilities/genomics-production/">NGI Stockholm (Genomics
+Production)</a>
+sequencing platform hosted at <a class="reference external" href="https://www.scilifelab.se/">SciLifeLab</a>. The sample organization is defined as
+follows:</p>
+<dl class="docutils">
+<dt>raw_run_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">P[0-9]+_[0-9]+}&quot;,</span> <span class="pre">&quot;{DT,</span> <span class="pre">[0-9]+}_{PU1,</span> <span class="pre">[A-Z0-9]+XX}&quot;,</span> <span class="pre">&quot;{PU2,</span> <span class="pre">[0-9]}_{DT}_{PU1}_{SM}&quot;))</span></code></dd>
+<dt>run_id_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">P[0-9]+_[0-9]+}&quot;,</span> <span class="pre">&quot;{DT,[0-9]+}_{PU1,[A-Z0-9]+XX}&quot;,</span> <span class="pre">&quot;{PU2,[0-9]}_{DT}_{PU1}_{SM}&quot;))</span></code></dd>
+<dt>sample_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOSampleTarget(os.path.join(&quot;{SM,P[0-9]+_[0-9]+}&quot;,</span> <span class="pre">&quot;{SM}&quot;))</span></code></dd>
+</dl>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p>The delivery note carries the following information on naming
+conventions:</p>
+<div class="highlight-text"><div class="highlight"><pre>The data is delivered in fastq format using Illumina 1.8 quality
+scores. There will be one file for the forward reads and one file for
+the reverse reads (if the run was a paired-end run). The naming of the
+files follow the convention: [LANE]_[DATE]_[FLOWCELL]_[SCILIFENAME]_[READ].fastq.gz
+</pre></div>
+</div>
+<p>In addition, fastq files are delivered into directories with the
+structure [SCILIFENAME]/[DATE]_[FLOWCELL]. Equating SCILIFENAME with
+sample, the top directory corresponds to the sample, and a
+subdirectory to a specific flowcell run. The entire file name
+including directory structure is therefore</p>
+<div class="highlight-text"><div class="highlight"><pre>[SCILIFENAME]/[DATE]_[FLOWCELL]/[LANE]_[DATE]_[FLOWCELL]_[SCILIFENAME]_[READ].fastq.gz
+</pre></div>
+</div>
+<p>The following translation table relate the tags to the read group tags:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Read group tag</th>
+<th class="head">Tag</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SM</td>
+<td>SCILIFENAME</td>
+</tr>
+<tr class="row-odd"><td>DT</td>
+<td>DATE</td>
+</tr>
+<tr class="row-even"><td>PU1</td>
+<td>FLOWCELL</td>
+</tr>
+<tr class="row-odd"><td>PU2</td>
+<td>LANE</td>
+</tr>
+<tr class="row-even"><td>PU</td>
+<td>FLOWCELL_LANE</td>
+</tr>
+</tbody>
+</table>
+<p>The platform unit tags PU1 and PU2 are concatenated to produce a PU
+tag.</p>
+</div>
+</div>
+<div class="section" id="module-snakemakelib.sample.organization.sample">
+<span id="snakemakelib-sample-organization-sample"></span><h2><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample</span></code><a class="headerlink" href="#module-snakemakelib.sample.organization.sample" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">sample</span></code> module defines a generic sample-oriented sample
+organization without using platform units. The data is organized in
+directories that correspond to samples:</p>
+<dl class="docutils">
+<dt>raw_run_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{SM}&quot;)</span></code></dd>
+<dt>run_id_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{SM}&quot;)</span></code></dd>
+<dt>sample_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{SM}&quot;)</span></code></dd>
+</dl>
+</div>
+<div class="section" id="module-snakemakelib.sample.organization.sample_run_sra">
+<span id="snakemakelib-sample-organization-sample-run-sra"></span><h2><code class="docutils literal"><span class="pre">snakemakelib.sample.organization.sample_run_sra</span></code><a class="headerlink" href="#module-snakemakelib.sample.organization.sample_run_sra" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">sample_run_sra</span></code> module defines sample organization for
+dealing with data from the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a>. The sample organization is
+defined as follows:</p>
+<dl class="docutils">
+<dt>raw_run_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{PU,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{PU}&quot;)</span></code></dd>
+<dt>run_id_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOTarget(os.path.join(&quot;{SM,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{PU,</span> <span class="pre">[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{PU}&quot;)</span></code></dd>
+<dt>sample_re</dt>
+<dd><code class="docutils literal"><span class="pre">IOSampleTarget(os.path.join(&quot;{SM,[a-zA-Z0-9]+}&quot;,</span> <span class="pre">&quot;{SM}&quot;))</span></code></dd>
+</dl>
+<div class="section" id="id2">
+<h3>Details<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>A specific sequencing run is identified by a specific <a class="reference external" href="http://www.ncbi.nlm.nih.gov/books/NBK56913/#search.what_do_the_different_sra_accessi">SRA accession
+type</a>,
+where the interesting one from a sample organization perspective is
+the SRA Run Accession (SRR). The SRR is associated with the PU
+read group tag, where each sequencing run resides in a separate
+subdirectory of a sample. The sample is often identified by the <a class="reference external" href="http://www.ncbi.nlm.nih.gov/geo/info/overview.html">GEO
+accession number</a>.</p>
+<p>There is a <a class="reference external" href="https://github.com/percyfal/snakemake-rules/blob/master/snakemake_rules/bio/ngs/tools/sratools.rules">rule for downloading srastudy metadata</a>
+in the <a class="reference external" href="https://github.com/percyfal/snakemake-rules">snakemake-rules</a> library. Typically, the
+downloaded metadata will consist of a csv file with the run identified
+by the <code class="docutils literal"><span class="pre">Run</span></code> column, and sample by the <code class="docutils literal"><span class="pre">source</span></code> column, if
+present.</p>
+</div>
+</div>
 </div>
 
 
@@ -197,7 +365,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

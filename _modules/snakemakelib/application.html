@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.application &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.application &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -55,7 +57,7 @@
         </button>
 
         <a class="navbar-brand" href="../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -78,8 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../docs/targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -111,7 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/reference/io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/reference/io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -119,13 +123,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../docs/reference/plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/reference/sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../docs/reference/utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../docs/release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -163,16 +173,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <h1>Source code for snakemakelib.application</h1><div class="highlight"><pre>
-<span class="c1"># Copyright (C) 2015 by Per Unneberg</span>
+<span class="sd">&quot;&quot;&quot; Container classes for applications.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">blaze</span> <span class="kn">import</span> <span class="n">odo</span>
-<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span>
-<span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">IOTarget</span><span class="p">,</span> <span class="n">IOAggregateTarget</span>
-<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="kn">import</span> <span class="n">LoggerManager</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">blaze</span> <span class="k">import</span> <span class="n">odo</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span>
+<span class="kn">from</span> <span class="nn">.io</span> <span class="k">import</span> <span class="n">IOTarget</span><span class="p">,</span> <span class="n">IOAggregateTarget</span>
+<span class="kn">from</span> <span class="nn">snakemakelib.log</span> <span class="k">import</span> <span class="n">LoggerManager</span>
 
 <span class="n">smllogger</span> <span class="o">=</span> <span class="n">LoggerManager</span><span class="p">()</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
 
@@ -194,19 +206,19 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">iotargets</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">iotargets</span><span class="p">,</span> <span class="nb">dict</span><span class="p">),</span> <span class="s2">&quot;iotargets must be a dictionary&quot;</span>
-        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;iotargets must not be empty&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">iotargets</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">run</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">iotargets</span><span class="p">,</span> <span class="nb">dict</span><span class="p">),</span> <span class="s">&quot;iotargets must be a dictionary&quot;</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;iotargets must not be empty&quot;</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span> <span class="s2">&quot;iotargets values must be a tuple&quot;</span>
-            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;iotargets values must be of length 2&quot;</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">IOTarget</span><span class="p">),</span> <span class="s2">&quot;first value must be of instance IOTarget or None&quot;</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">IOAggregateTarget</span><span class="p">),</span> <span class="s2">&quot;second value must be of instance IOAggregateTarget or None&quot;</span>
-            <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;first and second value cannot both be None&quot;</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="nb">bool</span><span class="p">),</span> <span class="s2">&quot;run must be a boolean&quot;</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span> <span class="s">&quot;iotargets values must be a tuple&quot;</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;iotargets values must be of length 2&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">IOTarget</span><span class="p">),</span> <span class="s">&quot;first value must be of instance IOTarget or None&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">IOAggregateTarget</span><span class="p">),</span> <span class="s">&quot;second value must be of instance IOAggregateTarget or None&quot;</span>
+            <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;first and second value cannot both be None&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="nb">bool</span><span class="p">),</span> <span class="s">&quot;run must be a boolean&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_units</span> <span class="o">=</span> <span class="n">units</span> <span class="k">if</span> <span class="n">units</span> <span class="k">else</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_iotargets</span> <span class="o">=</span> <span class="n">iotargets</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_targets</span> <span class="o">=</span> <span class="p">{}</span>
@@ -217,27 +229,54 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_targets</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_annotate</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;annotate&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_annotate</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;annotate&quot;</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_run</span> <span class="o">=</span> <span class="n">run</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Variable that states whether the application is run or not.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          bool:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span>
 
         
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the application name.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          str:</span>
+<span class="sd">            application name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">iotargets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the application input/output (io) targets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          dict:</span>
+<span class="sd">            Returns a dictionary where keys correspond to</span>
+<span class="sd">            groups of targets and values lists</span>
+<span class="sd">            :class:`snakemakelib.io.IOTarget` objects.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_iotargets</span>
         
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">targets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the application targets, which is a list of snakemake target</span>
+<span class="sd">        names. If list is empty, try to create targets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          dict:</span>
+<span class="sd">            key-value mapping where keys correspond to groups of targets, values to lists of snakemake target names</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_targets</span><span class="p">:</span>
@@ -246,15 +285,26 @@
         
             
     <span class="k">def</span> <span class="nf">_make_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create targets from iotargets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          None:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_targets</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">]))</span>
-            <span class="c1"># Initialize aggregate_data, even if no target is defined</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="c"># Initialize aggregate_data, even if no target is defined</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="k">None</span>
             
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">aggregate_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Aggregate targets and return results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          dict:</span>
+<span class="sd">            key value mapping where keys correspond to application groups, values to :class:`snakemakelib.io.IOTarget` objects</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_targets</span><span class="p">:</span>
@@ -263,14 +313,16 @@
 
 
     <span class="k">def</span> <span class="nf">_make_aggregate_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Utility function to create aggregate targets.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_targets</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_targets</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">()</span>
 
             
-<div class="viewcode-block" id="Application.aggregate"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Application.aggregate"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Aggregate targets to aggregate_targets, if present.</span>
 
 <span class="sd">        Args:</span>
@@ -282,33 +334,33 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Aggregating key {}, iotargets: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">key</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Aggregating key {}, iotargets: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span> <span class="ow">is</span> <span class="k">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">key</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
                 <span class="k">continue</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Skipping iotarget key &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Skipping iotarget key &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
                 <span class="k">continue</span>
             <span class="n">annotate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotate</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Annotating data&quot;</span><span class="p">)</span>
-                <span class="n">annotate</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="k">None</span><span class="p">)</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Annotating data&quot;</span><span class="p">)</span>
+                <span class="n">annotate</span> <span class="o">=</span> <span class="k">True</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">dflist</span> <span class="o">=</span> <span class="p">[</span>
                     <span class="n">odo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
                         <span class="n">annotate</span><span class="o">=</span><span class="n">annotate</span><span class="p">,</span>
-                        <span class="n">annotation_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+                        <span class="n">annotation_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="k">None</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
                 <span class="p">]</span>
             <span class="k">except</span><span class="p">:</span>
-                <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Unable to generate data frame list; not aggregating results for targets {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+                <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Unable to generate data frame list; not aggregating results for targets {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
                 <span class="k">return</span> <span class="bp">self</span>
-            <span class="c1"># Run post-processing hooks, if any</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post_processing_hooks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Running post processing hook&quot;</span><span class="p">)</span>
+            <span class="c"># Run post-processing hooks, if any</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_post_processing_hooks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="k">None</span><span class="p">)</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Running post processing hook&quot;</span><span class="p">)</span>
                 <span class="n">dflist</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_post_processing_hooks</span><span class="p">[</span><span class="n">k</span><span class="p">](</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">dflist</span><span class="p">]</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dflist</span><span class="p">)</span>
-            <span class="c1"># Run post-processing hook for aggregated data, if any</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_post_processing_hooks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Running post processing hook on aggregated data&quot;</span><span class="p">)</span>
+            <span class="c"># Run post-processing hook for aggregated data, if any</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_post_processing_hooks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="k">None</span><span class="p">)</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="n">smllogger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Running post processing hook on aggregated data&quot;</span><span class="p">)</span>
                 <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_post_processing_hooks</span><span class="p">[</span><span class="n">k</span><span class="p">](</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
         <span class="k">return</span> <span class="bp">self</span></div>
@@ -319,22 +371,22 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span>
 
 
-    <span class="k">def</span> <span class="nf">filter_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Application.filter_aggregate_data"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.filter_aggregate_data">[docs]</a>    <span class="k">def</span> <span class="nf">filter_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="k">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
             <span class="k">return</span>
-        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">datakey</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">datakey</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_data</span><span class="p">[</span><span class="n">datakey</span><span class="p">][</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">values</span><span class="p">)]</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;failed to filter aggregate data on datakey {}, key {} using values {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datakey</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
-        <span class="k">return</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;failed to filter aggregate data on datakey {}, key {} using values {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datakey</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+        <span class="k">return</span></div>
     
 
-    <span class="k">def</span> <span class="nf">set_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
+<div class="viewcode-block" id="Application.set_units"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.set_units">[docs]</a>    <span class="k">def</span> <span class="nf">set_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_units</span> <span class="o">=</span> <span class="n">units</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_make_targets</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
 
 
     <span class="nd">@property</span>
@@ -350,8 +402,8 @@
         <span class="k">return</span> <span class="n">wrap</span></div>
 
 
-    <span class="k">def</span> <span class="nf">add_annotation_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+<div class="viewcode-block" id="Application.add_annotation_fn"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.add_annotation_fn">[docs]</a>    <span class="k">def</span> <span class="nf">add_annotation_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_annotation_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span></div>
 
 
 <div class="viewcode-block" id="Application.register_post_processing_hook"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.register_post_processing_hook">[docs]</a>    <span class="k">def</span> <span class="nf">register_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
@@ -368,8 +420,8 @@
         <span class="k">return</span> <span class="n">wrap</span></div>
 
 
-    <span class="k">def</span> <span class="nf">add_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_post_processing_hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+<div class="viewcode-block" id="Application.add_post_processing_hook"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.add_post_processing_hook">[docs]</a>    <span class="k">def</span> <span class="nf">add_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_post_processing_hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span></div>
 
 
 <div class="viewcode-block" id="Application.register_aggregate_post_processing_hook"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.register_aggregate_post_processing_hook">[docs]</a>    <span class="k">def</span> <span class="nf">register_aggregate_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
@@ -387,8 +439,8 @@
         <span class="k">return</span> <span class="n">wrap</span></div>
 
 
-    <span class="k">def</span> <span class="nf">add_aggregate_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_post_processing_hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+<div class="viewcode-block" id="Application.add_aggregate_post_processing_hook"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.add_aggregate_post_processing_hook">[docs]</a>    <span class="k">def</span> <span class="nf">add_aggregate_post_processing_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_post_processing_hooks</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span></div>
 
         
 <div class="viewcode-block" id="Application.register_plot"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.register_plot">[docs]</a>    <span class="k">def</span> <span class="nf">register_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
@@ -400,11 +452,11 @@
         <span class="k">return</span> <span class="n">wrap</span></div>
 
 
-    <span class="k">def</span> <span class="nf">add_plot_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<div class="viewcode-block" id="Application.add_plot_func"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.add_plot_func">[docs]</a>    <span class="k">def</span> <span class="nf">add_plot_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">func</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Application.reset_plot_func"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.reset_plot_func">[docs]</a>    <span class="k">def</span> <span class="nf">reset_plot_func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
@@ -415,55 +467,55 @@
 <div class="viewcode-block" id="Application.plot"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create plots for plotkey.&quot;&quot;&quot;</span>
         <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">None</span><span class="p">)</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_plot_funcs</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
         <span class="k">return</span></div>
     
 
-    <span class="k">def</span> <span class="nf">save_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Application.save_aggregate_data"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.save_aggregate_data">[docs]</a>    <span class="k">def</span> <span class="nf">save_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s">&quot;csv&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Save aggregate data&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
                 <span class="k">continue</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="c1"># Emulate touch so rule completes</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-                    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
+                <span class="c"># Emulate touch so rule completes</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+                    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
                 <span class="k">continue</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">datakey</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">datakey</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">datakey</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
                     <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
-                <span class="n">index</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s">&quot;csv&quot;</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;index&#39;</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregate_targets</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-            <span class="c1"># FIXME: all hdf5 data should go to same output; would</span>
-            <span class="c1"># need to write text to aggregate_targets[key] so target</span>
-            <span class="c1"># has been created</span>
-            <span class="c1"># elif backend == &quot;hdf5&quot;:</span>
-            <span class="c1">#     self.aggregate_data[key].to_hdf(self.aggregate_targets[key], key=key)</span>
-            <span class="c1"># elif backend == &quot;sql&quot;:</span>
-            <span class="c1">#     self.aggregate_data[key].to_sql(self.aggregate_targets[key], key=key, con=kwargs.get(con, None))</span>
+            <span class="c"># FIXME: all hdf5 data should go to same output; would</span>
+            <span class="c"># need to write text to aggregate_targets[key] so target</span>
+            <span class="c"># has been created</span>
+            <span class="c"># elif backend == &quot;hdf5&quot;:</span>
+            <span class="c">#     self.aggregate_data[key].to_hdf(self.aggregate_targets[key], key=key)</span>
+            <span class="c"># elif backend == &quot;sql&quot;:</span>
+            <span class="c">#     self.aggregate_data[key].to_sql(self.aggregate_targets[key], key=key, con=kwargs.get(con, None))</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unsupported backend &quot;</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;Unsupported backend &quot;</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Application.read_aggregate_data"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.read_aggregate_data">[docs]</a>    <span class="k">def</span> <span class="nf">read_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Application.read_aggregate_data"><a class="viewcode-back" href="../../docs/reference/application.html#snakemakelib.application.Application.read_aggregate_data">[docs]</a>    <span class="k">def</span> <span class="nf">read_aggregate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datakey</span><span class="o">=</span><span class="k">None</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s">&quot;csv&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Read aggregate data&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iotargets</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
                 <span class="k">continue</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">datakey</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">datakey</span> <span class="ow">is</span> <span class="k">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">datakey</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
                     <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s">&quot;csv&quot;</span><span class="p">:</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">aggregate_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregate_targets</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
                 <span class="k">except</span><span class="p">:</span>
-                    <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Failed to read aggregate data for {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregate_targets</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span></div>
+                    <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Failed to read aggregate data for {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aggregate_targets</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span></div>
 
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;; application name: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;; application name: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
     
 
 
@@ -474,7 +526,7 @@
 <span class="sd">    Automagically adds annotation function that annotates data frames</span>
 <span class="sd">    by sample unit.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samplekey</span><span class="o">=</span><span class="s2">&quot;SM&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samplekey</span><span class="o">=</span><span class="s">&quot;SM&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">SampleApplication</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">def</span> <span class="nf">_annotate_fn_factory</span><span class="p">(</span><span class="n">iotarget</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="k">def</span> <span class="nf">_annotate_fn</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -482,7 +534,7 @@
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">=</span> <span class="n">iotarget</span><span class="o">.</span><span class="n">concat_groupdict</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-                    <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="n">samplekey</span><span class="p">],</span> <span class="n">append</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                    <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="n">samplekey</span><span class="p">],</span> <span class="n">append</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
                 <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                     <span class="k">raise</span>
                 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
@@ -501,7 +553,7 @@
 <span class="sd">    Automagically adds annotation function that annotates data frames</span>
 <span class="sd">    by sample and platform unit (i.e. run level)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samplekey</span><span class="o">=</span><span class="s2">&quot;SM&quot;</span><span class="p">,</span> <span class="n">pukey</span><span class="o">=</span><span class="s2">&quot;PU&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">samplekey</span><span class="o">=</span><span class="s">&quot;SM&quot;</span><span class="p">,</span> <span class="n">pukey</span><span class="o">=</span><span class="s">&quot;PU&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">PlatformUnitApplication</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">def</span> <span class="nf">_annotate_fn_factory</span><span class="p">(</span><span class="n">iotarget</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="k">def</span> <span class="nf">_annotate_fn</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -511,12 +563,12 @@
                     <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span> <span class="o">=</span> <span class="n">iotarget</span><span class="o">.</span><span class="n">concat_groupdict</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PlatformUnit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;__&quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s">&#39;PlatformUnit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;__&quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span>
                 <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-                    <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;No platform unit present; using sample unit to identify platform unit&quot;</span><span class="p">)</span>
+                    <span class="n">smllogger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;No platform unit present; using sample unit to identify platform unit&quot;</span><span class="p">)</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span> <span class="o">=</span> <span class="n">iotarget</span><span class="o">.</span><span class="n">concat_groupdict</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span>
                     <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-                    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PlatformUnit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;__&quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span>
+                    <span class="n">df</span><span class="p">[</span><span class="s">&#39;PlatformUnit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">samplekey</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;__&quot;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="n">pukey</span><span class="p">]</span>
                 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
                     <span class="k">raise</span>
                 <span class="k">return</span> <span class="n">df</span>
@@ -541,7 +593,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

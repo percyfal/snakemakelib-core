@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.graphics &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.graphics &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Reference Guide" href="../reference.html" />
     <link rel="next" title="snakemakelib.io" href="io.html" />
     <link rel="prev" title="snakemakelib.application" href="application.html" />
@@ -57,7 +59,7 @@
         </button>
 
         <a class="navbar-brand" href="../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -80,8 +82,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -102,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="application.html#platformunitapplication">PlatformUnitApplication</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#axes">Axes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#color">Color</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#facet">Facet</a></li>
@@ -113,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -121,13 +125,19 @@
 <li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -177,7 +187,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="snakemakelib-graphics">
 <span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.graphics</span></code><a class="headerlink" href="#snakemakelib-graphics" title="Permalink to this headline">¶</a></h1>
@@ -193,7 +203,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
-<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></li>
+<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) &#8211; index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></li>
 <li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure xaxis</li>
 </ul>
 </td>
@@ -206,34 +216,27 @@
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
 <span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">points</span><span class="p">,</span> <span class="n">xaxis</span><span class="p">,</span> <span class="n">yaxis</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">main</span><span class="p">,</span> <span class="n">legend</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">points</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">points</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&quot;Test&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">points</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">points</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
 
-<span class="n">xaxis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">axis_label</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">major_label_orientation</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">xaxis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">axis_label</span><span class="o">=</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">major_label_orientation</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">yaxis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">axis_label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">axis_line_color</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-<span class="n">grid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">grid_line_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">main</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;My plot&quot;</span><span class="p">,</span> <span class="n">title_text_font_style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">,</span>
-      <span class="n">title_text_color</span><span class="o">=</span><span class="s2">&quot;olive&quot;</span><span class="p">,</span> <span class="n">title_text_font</span><span class="o">=</span><span class="s2">&quot;times&quot;</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;bottom_left&quot;</span><span class="p">)</span>
+<span class="n">grid</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">grid_line_color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;My plot&quot;</span><span class="p">,</span> <span class="n">title_text_font_style</span><span class="o">=</span><span class="s">&quot;italic&quot;</span><span class="p">,</span>
+      <span class="n">title_text_color</span><span class="o">=</span><span class="s">&quot;olive&quot;</span><span class="p">,</span> <span class="n">title_text_font</span><span class="o">=</span><span class="s">&quot;times&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">&quot;bottom_left&quot;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 
-<table>
-  <tr>
-    <td>
-    
-    <script
-        src="graphics.rst.bokeh-plot-0.js"
-        id="b8276027-9fa0-4821-9f51-fb71a57fa946"
-        data-bokeh-model-id="923e1a2b-7967-46ed-9c30-37f24c9914d7"
-        data-bokeh-doc-id="3d73f29a-b32f-4d27-925f-6fda2142a874"
-    ></script>
-    </td>
-  </tr>
-</table></dd></dl>
+<script
+    src="graphics.rst.bokeh-plot-0.js"
+    id="9fbca2a1-5cef-4caa-8f06-6134c1d25d27"
+    data-bokeh-model-id="951dfe57-0ed0-4347-a42b-1ef0334a21d7"
+    data-bokeh-doc-id="1f7bc428-8ce8-415e-a32b-48afb9267c2a"
+></script></dd></dl>
 
 <dl class="function">
 <dt id="snakemakelib.graphics.yaxis">
@@ -245,7 +248,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
-<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; <p>index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></p>
+<li><strong>i</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) &#8211; <p>index to use if setting tick formatters and the like; see <a class="reference external" href="http://bokeh.pydata.org/en/latest/docs/user_guide/styling.html#tick-label-formats">tick label formats</a></p>
 </li>
 <li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure yaxis</li>
 </ul>
@@ -328,19 +331,18 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>size</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; size of desired palette</li>
-<li><strong>palette</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; name of palette</li>
-<li><strong>datalen</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; length of data vector. If None, the palette size
+<li><strong>size</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) &#8211; size of desired palette</li>
+<li><strong>palette</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; name of palette</li>
+<li><strong>datalen</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) &#8211; length of data vector. If None, the palette size
 will equal size, else the colors will be reused to fill
 up a vector of length datalen</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>palette</strong> &#8211;
-list of colors</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>palette</strong> &#8211; list of colors</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#list" title="(in Python v3.5)">list</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#list" title="(in Python v3.6)">list</a></p>
 </td>
 </tr>
 </tbody>
@@ -360,13 +362,13 @@ list of colors</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
-<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; string for x component</li>
 <li><strong>y</strong> (<em>str, list</em>) &#8211; string or list of strings for y component</li>
-<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.19.0)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
 <li><strong>groups</strong> (<em>str, list(str</em>) &#8211; groups to group by</li>
-<li><strong>ncol</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#int" title="(in Python v3.5)"><em>int</em></a>) &#8211; number of columns to use in gridplot</li>
-<li><strong>share_x_range</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; share x range across plots</li>
-<li><strong>share_y_range</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; share y range across plots</li>
+<li><strong>ncol</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) &#8211; number of columns to use in gridplot</li>
+<li><strong>share_x_range</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; share x range across plots</li>
+<li><strong>share_y_range</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; share y range across plots</li>
 <li><strong>kwargs</strong> &#8211; keyword arguments to pass to figure</li>
 </ul>
 </td>
@@ -396,9 +398,9 @@ list of colors</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
-<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
-<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for y component</li>
-<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; string for y component</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.19.0)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
 <li><strong>source</strong> (<code class="xref py py-class docutils literal"><span class="pre">ColumnDataSource</span></code>) &#8211; bokeh ColumnDataSource object</li>
 <li><strong>groups</strong> (<em>str, list(str</em>) &#8211; string or list of strings for columns to group by</li>
 <li><strong>kwargs</strong> &#8211; keyword arguments to pass to fig.line</li>
@@ -412,29 +414,22 @@ list of colors</p>
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
 <span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">lines</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">])</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">lines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 
 <span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 
-<table>
-  <tr>
-    <td>
-    
-    <script
-        src="graphics.rst.bokeh-plot-1.js"
-        id="45a0d37d-498c-4e2b-b901-67d1168257fc"
-        data-bokeh-model-id="342062fc-056f-4e7a-a923-c571bc4bfd65"
-        data-bokeh-doc-id="3b737d49-729d-4283-9446-b8e66454b756"
-    ></script>
-    </td>
-  </tr>
-</table></dd></dl>
+<script
+    src="graphics.rst.bokeh-plot-1.js"
+    id="357c3f2c-f6fd-4df8-9b63-40fcaf15f58b"
+    data-bokeh-model-id="ac89c3d1-b10d-4c22-957f-adaffd0062aa"
+    data-bokeh-doc-id="5002b776-5b7c-4084-a531-04ce6af651b5"
+></script></dd></dl>
 
 </div>
 <div class="section" id="mgeom">
@@ -449,11 +444,11 @@ list of colors</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<code class="xref py py-class docutils literal"><span class="pre">Plot</span></code>) &#8211; bokeh Plot object</li>
-<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for x component</li>
-<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; string for y component</li>
-<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.17.1)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
-<li><strong>color</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; set color</li>
-<li><strong>legend</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/functions.html#bool" title="(in Python v3.5)"><em>bool</em></a>) &#8211; set legend</li>
+<li><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; string for x component</li>
+<li><strong>y</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; string for y component</li>
+<li><strong>df</strong> (<a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v0.19.0)"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>) &#8211; pandas DataFram</li>
+<li><strong>color</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; set color</li>
+<li><strong>legend</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; set legend</li>
 <li><strong>kwargs</strong> &#8211; keyword arguments to pass to fig.line</li>
 </ul>
 </td>
@@ -465,28 +460,21 @@ list of colors</p>
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">hplot</span>
 <span class="kn">from</span> <span class="nn">snakemakelib.graphics</span> <span class="kn">import</span> <span class="n">mlines</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">])</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">mlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&quot;Line plot&quot;</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">mlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">],</span> <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">])</span>
 
 <span class="n">show</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 
-<table>
-  <tr>
-    <td>
-    
-    <script
-        src="graphics.rst.bokeh-plot-2.js"
-        id="5476662e-777d-4f15-a8dc-44e1f827b67c"
-        data-bokeh-model-id="82e2eaee-23cd-447a-85c7-2ff1f7c46e83"
-        data-bokeh-doc-id="4e1aa230-8506-49ce-bd88-c46bf4dcf67c"
-    ></script>
-    </td>
-  </tr>
-</table></dd></dl>
+<script
+    src="graphics.rst.bokeh-plot-2.js"
+    id="348d65ef-c653-425e-9c9a-921b1fbd742a"
+    data-bokeh-model-id="b6bf1830-0bba-4508-b4ae-2ea120016cf8"
+    data-bokeh-doc-id="a9c32d1d-f23e-4de4-ae7d-b9b1f65a304f"
+></script></dd></dl>
 
 </div>
 <div class="section" id="scatter">
@@ -507,7 +495,7 @@ points.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; x column name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; x column name</td>
 </tr>
 </tbody>
 </table>
@@ -539,7 +527,7 @@ points.</p>
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>

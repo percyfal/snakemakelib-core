@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snakemakelib.application &mdash; snakemakelib 0.1-alpha.5+9.g55b5d32 documentation</title>
+    <title>snakemakelib.application &#8212; snakemakelib 0.1-alpha.5+25.g4e8f92c documentation</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.1-alpha.5+9.g55b5d32',
+        VERSION:     '0.1-alpha.5+25.g4e8f92c',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -30,7 +30,9 @@
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="snakemakelib 0.1-alpha.5+9.g55b5d32 documentation" href="../../index.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="snakemakelib 0.1-alpha.5+25.g4e8f92c documentation" href="../../index.html" />
     <link rel="up" title="Reference Guide" href="../reference.html" />
     <link rel="next" title="snakemakelib.graphics" href="graphics.html" />
     <link rel="prev" title="Reference Guide" href="../reference.html" />
@@ -57,7 +59,7 @@
         </button>
 
         <a class="navbar-brand" href="../../index.html">snakemakelib</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+9.g55b5d32</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1-alpha.5+25.g4e8f92c</b></span>
       </div>
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
@@ -80,8 +82,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../targets.html">Targets and applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#the-iotarget-class">The IOTarget class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#sample-organization">Sample organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#organization-levels">Organization levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targets.html#finding-input">Finding input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../targets.html#applications-grouping-iotargets-together">Applications - grouping IOTargets together</a></li>
 </ul>
 </li>
@@ -96,7 +100,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../reference.html">Reference Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">snakemakelib.application</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#application">Application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sampleapplication">SampleApplication</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#platformunitapplication">PlatformUnitApplication</a></li>
@@ -113,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="io.html"><code class="docutils literal"><span class="pre">snakemakelib.io</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="io.html#make-targets">Make targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html#helper-functions">Helper functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html#target-classes">Target classes</a></li>
 </ul>
 </li>
@@ -121,13 +125,19 @@
 <li class="toctree-l3"><a class="reference internal" href="plot.html#sklearn">sklearn</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sample.html">Sample organization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sample/input.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.input</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sample/sampleorganization.html"><code class="docutils literal"><span class="pre">snakemakelib.sample.organization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html"><code class="docutils literal"><span class="pre">snakemakelib.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#releases">Releases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../release_notes.html#pre-releases">Pre-releases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Feb 9 2016)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.6.html">0.1-alpha.6 (Oct 12 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.5.html">0.1-alpha.5 (Feb 7 2016)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.4.html">0.1-alpha.4 (Dec 12 2015)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../releases/0.1-alpha.3.html">0.1-alpha.3 (Dec 3 2015)</a></li>
@@ -173,12 +183,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="col-md-12">
       
   <div class="section" id="snakemakelib-application">
 <span id="id1"></span><h1><code class="docutils literal"><span class="pre">snakemakelib.application</span></code><a class="headerlink" href="#snakemakelib-application" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="application">
-<span id="snakemakelib-application-application"></span><h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-snakemakelib.application"></span><p>Container classes for applications.</p>
 <dl class="class">
 <dt id="snakemakelib.application.Application">
 <em class="property">class </em><code class="descname">Application</code><span class="sig-paren">(</span><em>name</em>, <em>iotargets</em>, <em>units=None</em>, <em>run=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application" title="Permalink to this definition">¶</a></dt>
@@ -196,6 +205,26 @@ functionality to</p>
 <li>configuration options, e.g. for running</li>
 </ol>
 <dl class="method">
+<dt id="snakemakelib.application.Application.add_aggregate_post_processing_hook">
+<code class="descname">add_aggregate_post_processing_hook</code><span class="sig-paren">(</span><em>func</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.add_aggregate_post_processing_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.add_aggregate_post_processing_hook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.add_annotation_fn">
+<code class="descname">add_annotation_fn</code><span class="sig-paren">(</span><em>func</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.add_annotation_fn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.add_annotation_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.add_plot_func">
+<code class="descname">add_plot_func</code><span class="sig-paren">(</span><em>func</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.add_plot_func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.add_plot_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.add_post_processing_hook">
+<code class="descname">add_post_processing_hook</code><span class="sig-paren">(</span><em>func</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.add_post_processing_hook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.add_post_processing_hook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="snakemakelib.application.Application.aggregate">
 <code class="descname">aggregate</code><span class="sig-paren">(</span><em>key=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.aggregate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.aggregate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate targets to aggregate_targets, if present.</p>
@@ -204,14 +233,19 @@ functionality to</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#str" title="(in Python v3.5)"><em>str</em></a>) &#8211; aggregate targets for key, if None all targets are aggregated</li>
-<li><strong>kwargs</strong> (<a class="reference external" href="http://python.readthedocs.org/en/latest/library/stdtypes.html#dict" title="(in Python v3.5)"><em>dict</em></a>) &#8211; additional arguments, passed to <em>all</em> hooks</li>
+<li><strong>key</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; aggregate targets for key, if None all targets are aggregated</li>
+<li><strong>kwargs</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; additional arguments, passed to <em>all</em> hooks</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.filter_aggregate_data">
+<code class="descname">filter_aggregate_data</code><span class="sig-paren">(</span><em>datakey</em>, <em>key=None</em>, <em>values=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.filter_aggregate_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.filter_aggregate_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="snakemakelib.application.Application.plot">
@@ -262,14 +296,221 @@ processing hook that is run once the data has been read.</p>
 <dd><p>Remove plotting functions for a key</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="snakemakelib.application.Application.save_aggregate_data">
+<code class="descname">save_aggregate_data</code><span class="sig-paren">(</span><em>datakey=None</em>, <em>backend='csv'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.save_aggregate_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.save_aggregate_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save aggregate data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="snakemakelib.application.Application.set_units">
+<code class="descname">set_units</code><span class="sig-paren">(</span><em>units</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.set_units"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.Application.set_units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.aggregate_data">
+<code class="descname">aggregate_data</code><a class="headerlink" href="#snakemakelib.application.Application.aggregate_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.aggregate_targets">
+<code class="descname">aggregate_targets</code><a class="headerlink" href="#snakemakelib.application.Application.aggregate_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate targets and return results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">key value mapping where keys correspond to application groups, values to <a class="reference internal" href="io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">snakemakelib.io.IOTarget</span></code></a> objects</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.iotargets">
+<code class="descname">iotargets</code><a class="headerlink" href="#snakemakelib.application.Application.iotargets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the application input/output (io) targets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns a dictionary where keys correspond to
+groups of targets and values lists
+<a class="reference internal" href="io.html#snakemakelib.io.IOTarget" title="snakemakelib.io.IOTarget"><code class="xref py py-class docutils literal"><span class="pre">snakemakelib.io.IOTarget</span></code></a> objects.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.name">
+<code class="descname">name</code><a class="headerlink" href="#snakemakelib.application.Application.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the application name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">application name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.run">
+<code class="descname">run</code><a class="headerlink" href="#snakemakelib.application.Application.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable that states whether the application is run or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.targets">
+<code class="descname">targets</code><a class="headerlink" href="#snakemakelib.application.Application.targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the application targets, which is a list of snakemake target
+names. If list is empty, try to create targets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">key-value mapping where keys correspond to groups of targets, values to lists of snakemake target names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="snakemakelib.application.Application.units">
+<code class="descname">units</code><a class="headerlink" href="#snakemakelib.application.Application.units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="snakemakelib.application.PlatformUnitApplication">
+<em class="property">class </em><code class="descname">PlatformUnitApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>pukey='PU'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#PlatformUnitApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.PlatformUnitApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>PlatformUnitApplication class</p>
+<p>Automagically adds annotation function that annotates data frames
+by sample and platform unit (i.e. run level)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="snakemakelib.application.SampleApplication">
+<em class="property">class </em><code class="descname">SampleApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#SampleApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.SampleApplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>SampleApplication class</p>
+<p>Automagically adds annotation function that annotates data frames
+by sample unit.</p>
+</dd></dl>
+
+<div class="section" id="application">
+<span id="snakemakelib-application-application"></span><h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descname">Application</code><span class="sig-paren">(</span><em>name</em>, <em>iotargets</em>, <em>units=None</em>, <em>run=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Container class for an application.</p>
+<p>NB: this is still WIP and it is likely that this class should be
+split into several subclasses, and/or be implemented as a
+meta-class.</p>
+<p>An application in this context is more or less equivalent to a
+rule in the snakemake workflow. The Application class has
+functionality to</p>
+<ol class="arabic simple">
+<li>generate target names</li>
+<li>collect data output via odo</li>
+<li>plot results</li>
+<li>configuration options, e.g. for running</li>
+</ol>
+<dl class="method">
+<dt>
+<code class="descname">aggregate</code><span class="sig-paren">(</span><em>key=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.aggregate"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Aggregate targets to aggregate_targets, if present.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) &#8211; aggregate targets for key, if None all targets are aggregated</li>
+<li><strong>kwargs</strong> (<a class="reference external" href="http://python.readthedocs.io/en/latest/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) &#8211; additional arguments, passed to <em>all</em> hooks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.plot"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Create plots for plotkey.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">read_aggregate_data</code><span class="sig-paren">(</span><em>datakey=None</em>, <em>backend='csv'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.read_aggregate_data"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Read aggregate data</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">register_aggregate_post_processing_hook</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_aggregate_post_processing_hook"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Decorator for registering post processing hook to be run on
+aggregate data.</p>
+<p>Sometimes the data needs to be transformed in some way, e.g.
+pivoted into wide format. This decorator registers a post
+processing hook that is run on the aggregated data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">register_annotation_fn</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_annotation_fn"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Decorator for registering annotation functions</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">register_plot</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_plot"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Decorator for registering plot</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">register_post_processing_hook</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.register_post_processing_hook"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Decorator for registering post processing hook.</p>
+<p>Sometimes the data needs to be transformed in some way, e.g.
+pivoted into wide format. This decorator registers a post
+processing hook that is run once the data has been read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">reset_plot_func</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#Application.reset_plot_func"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Remove plotting functions for a key</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
 <div class="section" id="sampleapplication">
 <span id="snakemakelib-application-sampleapplication"></span><h2>SampleApplication<a class="headerlink" href="#sampleapplication" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="snakemakelib.application.SampleApplication">
-<em class="property">class </em><code class="descname">SampleApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#SampleApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.SampleApplication" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><code class="descname">SampleApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#SampleApplication"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>SampleApplication class</p>
 <p>Automagically adds annotation function that annotates data frames
 by sample unit.</p>
@@ -279,8 +520,8 @@ by sample unit.</p>
 <div class="section" id="platformunitapplication">
 <span id="snakemakelib-application-platformunitapplication"></span><h2>PlatformUnitApplication<a class="headerlink" href="#platformunitapplication" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="snakemakelib.application.PlatformUnitApplication">
-<em class="property">class </em><code class="descname">PlatformUnitApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>pukey='PU'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#PlatformUnitApplication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#snakemakelib.application.PlatformUnitApplication" title="Permalink to this definition">¶</a></dt>
+<dt>
+<em class="property">class </em><code class="descname">PlatformUnitApplication</code><span class="sig-paren">(</span><em>samplekey='SM'</em>, <em>pukey='PU'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/snakemakelib/application.html#PlatformUnitApplication"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>PlatformUnitApplication class</p>
 <p>Automagically adds annotation function that annotates data frames
 by sample and platform unit (i.e. run level)</p>
@@ -309,7 +550,7 @@ by sample and platform unit (i.e. run level)</p>
     </p>
     <p>
         &copy; Copyright 2015, Per Unneberg.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.<br/>
     </p>
   </div>
 </footer>
