@@ -1,5 +1,5 @@
 # Copyright (C) 2015 by Per Unneberg
-from snakemakelib.regexp import ReadGroup
+from snakemakelib.io import IOReadGroup
 
 # From tophat2:
 # --rg-id                        <string>    (read group ID)
@@ -12,6 +12,7 @@ from snakemakelib.regexp import ReadGroup
 # --rg-platform                  <string>    (Sequencing platform descriptor)
 
 class TuxedoReadGroup(ReadGroup):
+
     _group_dict = {'ID' : 'id', 'CN' : 'center',
                    'DS' : 'description', 'DT' : 'date',
                    'FO' : 'floworder', 'KS' : 'keysequence',
@@ -19,6 +20,7 @@ class TuxedoReadGroup(ReadGroup):
                    'PI' : 'insertsize', 'PL': 'platform',
                    'PU' : 'platform-unit', 'SM' : 'sample'}
 
+
     def __init__(self, opt_prefix="--rg-", *args, **kwargs):
-        ReadGroup.__init__(self, *args, **kwargs)
+        super(self, IOReadGroup).__init__(self, *args, **kwargs)
         self._opt_prefix = opt_prefix
